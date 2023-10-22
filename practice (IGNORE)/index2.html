@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Post Feed</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include Bootstrap 5 CSS from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <!-- Custom CSS for the theme -->
+    <style>
+        body {
+            background-color: black;
+            color: #bb86fc;
+        }
+
+        header {
+            background-color: #000;
+            color: #bb86fc;
+            padding: 5rem 0;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .card {
+            background-color: #000;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .card .card-title {
+            color: #bb86fc;
+        }
+
+        .card a {
+            color: #03dac5;
+        }
+
+        .card a.liked {
+            color: #ff1493;
+        }
+
+        .filter {
+            background-color: #000;
+            color: white;
+            padding: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="container-fluid">
+        <h1 class="display-4">Post Feed</h1>
+        <p class="lead">Come scroll between the posts. Give a like, leave a comment, or filter between the posts.</p>
+    </header>
+    <main class="container">
+        <div class="row">
+            <!-- post 1 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <div class="small-profile-img">
+                        <img src="img/cat.jpg" alt="post 1" class="img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h2 class="card-title">username: JS</h2>
+                        <p class="card-text">My Favorite Artist</p>
+                        <img src="lana.jpeg" alt="lana del rey">
+                        <a href="#" class="like-link">♥</a>
+                        <a href="#">💬</a>
+                        <a href="#">🔗</a>
+
+                    </div>
+                </div>
+            </div>
+            <!-- post 2 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="img/post2.png" alt="post 2" class="img-fluid">
+                    <div class="card-body">
+                        <h2 class="card-title">username: JS</h2>
+                        <p class="card-text">My Favorite Artist</p>
+                        <a href="#" class="like-link">♥</a>
+                    </div>
+                </div>
+            </div>
+            <!-- post 3 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="img/post3.png" alt="post 3" class="img-fluid">
+                    <div class="card-body">
+                        <h2 class="card-title">username: JS</h2>
+                        <p class="card-text">My Favorite Artist</p>
+                        <a href="#" class="like-link">♥</a>
+                    </div>
+                </div>
+            </div>
+            <!-- post 4 -->
+            <div class="col-md-6 col-lg-3">
+                <div class="card">
+                    <img src="img/post4.png" alt="post 4" class="img-fluid">
+                    <div class="card-body">
+                        <h2 class="card-title">username: JS</h2>
+                        <p class="card-text">My Favorite Artist</p>
+                        <a href="#" class="like-link">♥</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="filter">
+        <h3 color="#03dac5">Filter:</h3>
+        <ul>
+            <li><a href="#">Mood</a></li>
+            <li><a href="#">Genre</a></li>
+            <li><a href="#">Activity</a></li>
+        </ul>
+    </div>
+    <!-- Include Bootstrap 5 JS from CDN at the end of the body for additional functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript to toggle like button color
+        document.querySelectorAll('.like-link').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                link.classList.toggle('liked');
+            });
+        });
+    </script>
+</body>
+
+</html>
