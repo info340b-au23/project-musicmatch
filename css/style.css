@@ -182,28 +182,12 @@
     width: 80%;
 }
 
-.feed .musicMatch-like,
-.musicMatch-comment,
-.musicMatch-share,
-.musicMatch-save {
+.feed .musicMatch-interact {
     padding: 8px;
     float: left;
 }
 
-/*had to resize some images*/
-.feed .musicMatch-like {
-    width: 50px;
-}
-
-.feed .musicMatch-comment {
-    width: 50px;
-}
-
-.feed .musicMatch-share {
-    width: 45px;
-}
-
-.feed .musicMatch-save {
+.musicMatch-save {
     float: right;
     width: 55px;
 }
