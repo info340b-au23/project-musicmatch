@@ -254,7 +254,7 @@
 
 .homepage header > p {
     font-size: 2rem;
-    text-align: center
+    text-align: center;
 }
 
 .homepage .material-icons {
@@ -283,7 +283,7 @@
     left: 0;
     width: 100%;
     color: white;
-    background-color: #bb86fc;
+    background-color: #242526;
     padding: .5rem .5rem 1rem;
 }
 
@@ -295,6 +295,7 @@
 .homepage nav li {
     display: inline;
     margin: 0 1rem;
+    color: white;
 }
 
 .homepage footer a {
@@ -304,7 +305,7 @@
 }
 
 .homepage nav ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
