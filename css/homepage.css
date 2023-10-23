@@ -1,10 +1,10 @@
-body {
+.homepage body {
     font-family: "Nunito Sans", Arial, sans-serif;
     font-size: 16px;
     background-color: black;
 }
 
-h1 {
+.homepage h1 {
     font-family: "Raleway", Helvetica, sans-serif;
     font-weight: bold;
     margin-top: 0;
@@ -13,32 +13,36 @@ h1 {
     font-size: 3.5rem;
 }
 
-header > p {
+.homepage header > p {
     font-size: 2rem;
     text-align: center
 }
 
-.material-icons {
+.homepage .material-icons {
     position: relative;
     top: 5px;
 }
 
+<<<<<<< HEAD
 .material-symbols-outlined {
     padding-top: 0.3rem;
 }
 
 .container {
+=======
+.homepage .container {
+>>>>>>> 1ce7e08b79b2d8fdde1a705f3959597fa8fcdea0
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
 }
 
-p, dl {
+.homepage p, dl {
     margin-top: 0;
     margin-bottom: 1rem;
 }
 
-nav {
+.homepage nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -48,28 +52,28 @@ nav {
     padding: .5rem .5rem 1rem;
 }
 
-nav ul {
+.homepage nav ul {
     padding: 0;
     margin: 0;
 }
 
-nav li {
+.homepage nav li {
     display: inline;
     margin: 0 1rem;
 }
 
-footer a {
+.homepage footer a {
     color: white;
     text-decoration: none;
     padding: 1em;
 }
 
-nav ul li a {
+.homepage nav ul li a {
     color: black;
     text-decoration: none;
 }
 
-header {
+.homepage header {
     color: #03dac5;
     padding-top: 6rem;
     padding-bottom: 1rem;
@@ -79,16 +83,16 @@ header {
     background-color: black;
 }
 
-header p.motto {
+.homepage header p.motto {
     font-size: 1.25rem;
     text-align: center;
 }
 
-section > map {
+.homepage section > map {
     margin: 0;
 }
 
-footer {
+.homepage footer {
     color: white;
     background-color: black;
     margin: 0;
