@@ -323,6 +323,16 @@
     text-align: center;
 }
 
+.homepage .filters {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.homepage .filters > h3 {
+    color: white;
+}
+
 .homepage section > map {
     margin: 0;
 }
