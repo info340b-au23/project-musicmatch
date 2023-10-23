@@ -1,3 +1,8 @@
+
+
+
+
+.feed 
 *,
 *::before,
 *::after {
@@ -81,39 +86,40 @@ body {
     width: 50px;
 }
 
-.musicMatch-share {
+.feed .musicMatch-share {
     width: 45px;
 }
 
-.musicMatch-save {
+.feed .musicMatch-save {
     float: right;
     width: 55px;
 }
 
-.musicMatch-likes {
+.feed .musicMatch-likes {
     padding: 0 16px;
     margin: 0 0 8px 0;
     font-weight: 600;
 }
 
-.musicmatch-comment-profile {
+.feed .musicmatch-comment-profile {
     font-weight: 600;
     color: #bb86fc;
 }
 
-.musicMatch-comments {
+.feed .musicMatch-comments {
     margin-bottom: 4px;
     line-height: 18px;
     padding: 0;
 }
 
-.musicMatch-comment-like-icon {
+.feed .musicMatch-comment-like-icon {
     float: right;
     width: .5px;
     height: .5px;
 }
 
-.filter {
+.feed .filter {
     text-align: center;
     color: #bb86fc;
 }
+
