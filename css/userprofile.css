@@ -1,14 +1,13 @@
 body {
-    background-color: #404040;
+    background-color: #191b1d;
     margin: 0;
 }
 
 header {
     text-align: center;
     color: white;
-    background-color: #03dac5;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin: 0;
 }
 
@@ -35,6 +34,10 @@ p {
 button {
     background-color: #03dac5;
     color: white
+}
+
+.genre, .location, .activity {
+    background-color: #bb86fc;
 }
 
 h2 {
