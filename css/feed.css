@@ -64,25 +64,9 @@ body {
     width: 80%;
 }
 
-.musicMatch-like,
-.musicMatch-comment,
-.musicMatch-share,
-.musicMatch-save {
+.musicMatch-interact {
     padding: 8px;
     float: left;
-}
-
-/*had to resize some images*/
-.musicMatch-like {
-    width: 50px;
-}
-
-.musicMatch-comment {
-    width: 50px;
-}
-
-.musicMatch-share {
-    width: 45px;
 }
 
 .musicMatch-save {
