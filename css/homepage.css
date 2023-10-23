@@ -23,6 +23,10 @@ header > p {
     top: 5px;
 }
 
+.material-symbols-outlined {
+    padding-top: 0.3rem;
+}
+
 .container {
     max-width: 100%;
     margin-left: 0;
