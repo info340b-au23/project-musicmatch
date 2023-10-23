@@ -262,6 +262,10 @@
     top: 5px;
 }
 
+.homepage .material-symbols-outlined {
+    padding-top: 0.3rem;
+}
+
 .homepage .container {
     max-width: 100%;
     margin-left: 0;
