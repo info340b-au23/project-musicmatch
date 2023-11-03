@@ -136,7 +136,7 @@
 
 .feed body {
     background-color: #262626;
-    font-size: 14px;
+    font-size: 18px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -145,8 +145,8 @@
 }
 
 .feed .musicMatch-profile-image {
-    width: 45px;
-    height: 45px;
+    width: 70px;
+    height: 70px;
     border: 1px solid black;
     float: left;
     margin-left: auto;
@@ -179,7 +179,7 @@
 }
 
 .feed .musicMatch-image {
-    width: 80%;
+    width: 50%;
 }
 
 .feed .musicMatch-interact {
