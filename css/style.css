@@ -21,7 +21,7 @@
 }
 
 .profile .profile-pic {
-    border-radius: 50%; 
+    border-radius: 50%;
     margin-top: 2rem;
 }
 
@@ -37,7 +37,9 @@
     color: white
 }
 
-.profile .genre, .profile .location, .profile .activity {
+.profile .genre,
+.profile .location,
+.profile .activity {
     background-color: #bb86fc;
 }
 
@@ -56,14 +58,15 @@
     padding-top: 0;
 }
 
-.profile .liked-songs img, .profile .posts img {
+.profile .liked-songs img,
+.profile .posts img {
     margin-bottom: .5rem;
     height: 200px;
     width: 200px;
 }
 
 .profile .song-name {
-    color:#404040;
+    color: #404040;
     margin-top: 0;
 }
 
@@ -71,7 +74,8 @@
     text-align: center;
 }
 
-.profile .liked-songs, .profile .posts {
+.profile .liked-songs,
+.profile .posts {
     display: flex;
 }
 
@@ -94,7 +98,8 @@
 .aboutus body {
     font-size: 16px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background-color: #262626;;
+    background-color: #262626;
+    ;
     text-align: center;
     color: antiquewhite;
 }
@@ -115,15 +120,10 @@
 
 /* Feed */
 
-.feed 
-*,
+.feed *,
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-.feed .clearfix {
-    clear: both;
 }
 
 .feed main {
@@ -138,10 +138,6 @@
     background-color: #262626;
     font-size: 18px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-}
-
-.feed .musicMatch-posts {
-    border: 1px solid black;
 }
 
 .feed .musicMatch-profile-image {
@@ -209,16 +205,7 @@
     padding: 0;
 }
 
-.feed .musicMatch-comment-like-icon {
-    float: right;
-    width: .5px;
-    height: .5px;
-}
 
-.feed .filter {
-    text-align: center;
-    color: #bb86fc;
-}
 
 /* Home Page */
 .homepage body {
@@ -236,7 +223,7 @@
     font-size: 3.5rem;
 }
 
-.homepage header > p {
+.homepage header>p {
     font-size: 2rem;
     text-align: center;
 }
@@ -256,7 +243,8 @@
     margin-right: 0;
 }
 
-.homepage p, dl {
+.homepage p,
+dl {
     margin-top: 0;
     margin-bottom: 1rem;
 }
@@ -314,11 +302,11 @@
     padding-bottom: 20px;
 }
 
-.homepage .filters > h3 {
+.homepage .filters>h3 {
     color: white;
 }
 
-.homepage section > map {
+.homepage section>map {
     margin: 0;
 }
 
