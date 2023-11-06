@@ -45,6 +45,7 @@
 .profile .profile-pic {
     border-radius: 50%;
     margin-top: 2rem;
+    margin-left: 2rem;
 }
 
 .profile p {
@@ -56,7 +57,33 @@
 
 .profile button {
     background-color: #03dac5;
-    color: white
+    color: white;
+    margin-top: 1rem;
+}
+
+.profile .profile-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.profile .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile #song-form {
+    width: auto;
+}
+
+.profile .posts,
+.profile .liked-songs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .profile .genre,
@@ -72,8 +99,8 @@
 
 .profile .card {
     width: 350px;
-    height: 450px;
-    margin: 2rem;
+    margin: 0.5rem;
+    text-align: center;
 }
 
 .profile h3 {
@@ -83,8 +110,9 @@
 .profile .liked-songs img,
 .profile .posts img {
     margin-bottom: .5rem;
-    height: 200px;
-    width: 200px;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
 }
 
 .profile .song-name {
@@ -94,11 +122,6 @@
 
 .profile .card-body {
     text-align: center;
-}
-
-.profile .liked-songs,
-.profile .posts {
-    display: flex;
 }
 
 .profile .sub-header {
