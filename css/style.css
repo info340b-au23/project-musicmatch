@@ -184,24 +184,24 @@
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.aboutus nav ul {
+.feed nav ul {
     padding: 0;
     margin: 0;
 }
 
-.aboutus nav li {
+.feed nav li {
     display: inline;
     margin: 0 1rem;
     color: white;
 }
 
-.aboutus footer a {
+.feed footer a {
     color: white;
     text-decoration: none;
     padding: 1em;
 }
 
-.aboutus nav ul li a {
+.feed nav ul li a {
     color: white;
     text-decoration: none;
 }
