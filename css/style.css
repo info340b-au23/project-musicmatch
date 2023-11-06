@@ -4,6 +4,28 @@
     margin: 0;
 }
 
+.profile nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.profile nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+.profile footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.profile nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 .profile header {
     text-align: center;
     color: white;
@@ -104,6 +126,28 @@
     color: antiquewhite;
 }
 
+.aboutus nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.aboutus nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+.aboutus footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.aboutus nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 .aboutus img {
     max-width: 300px;
     max-height: 300px;
@@ -138,6 +182,32 @@
     background-color: #262626;
     font-size: 18px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.aboutus nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.aboutus nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+.aboutus footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+.aboutus nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.feed .musicMatch-posts {
+    border: 1px solid black;
 }
 
 .feed .musicMatch-profile-image {
