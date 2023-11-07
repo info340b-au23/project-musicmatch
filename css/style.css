@@ -172,16 +172,51 @@
 
 .feed main {
     text-align: center;
+    font-family: "Rubik";
 }
 
 .feed h1 {
-    color: #03dac5
+    color: #16b1b5
 }
 
 .feed body {
-    background-color: #262626;
+    background-color: black;
     font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* .feed nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.feed nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+.feed nav ul li a {
+    color: white;
+    text-decoration: none;
+} */
+
+.feed .material-icons {
+    position: relative;
+    top: 5px;
+}
+
+.feed .material-symbols-outlined {
+    padding-top: 0.3rem;
+}
+
+.feed nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: #242526;
+    padding: .5rem .5rem 1rem;
 }
 
 .feed nav ul {
@@ -195,19 +230,20 @@
     color: white;
 }
 
-.feed footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-}
-
 .feed nav ul li a {
     color: white;
     text-decoration: none;
 }
 
-.feed .musicMatch-posts {
-    border: 1px solid black;
+.feed footer {
+    color: white;
+    background-color: black;
+    margin: 9em;
+}
+
+.feed footer a {
+    color: white;
+    text-decoration: none;
 }
 
 .feed .musicMatch-profile-image {
@@ -232,9 +268,8 @@
     float: left;
     margin-top: .5rem;
     font-weight: 500;
-    color: #262626;
     margin-left: 1rem;
-    color: #03dac5
+    color: white
 }
 
 .feed .musicMatch-actions {
@@ -246,6 +281,7 @@
 
 .feed .musicMatch-image {
     width: 50%;
+    border: 30px solid white;
 }
 
 .feed .musicMatch-interact {
@@ -275,7 +311,26 @@
     padding: 0;
 }
 
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .feed .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
+    .feed .navbar .logo {
+        margin-bottom: 10px;
+    }
+
+    .feed .navbar .nav-links {
+        margin-top: 10px;
+        flex-direction: column;
+    }
+
+    .feed .navbar .nav-links li {
+        margin: 0;
+    }
+}
 
 /* Home Page */
 .homepage body {

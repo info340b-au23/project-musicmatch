@@ -11,37 +11,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--bootstrap links-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">   
-</head>
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<nav>
-    <ul>
-        <li><a href="../html/index.html"><span class="material-symbols-outlined">Home</span></a></li>
-        <li><a href="../html/aboutus.html">About Us</a></li>
-        <li><a href="../html/feed.html">Feed</a></li>
-        <li><a href="../html/userprofile.html">Profile</a></li>
-    </ul>
-</nav>
+    <!--googlefont links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
 
 <body class="container">
 
-    <!-- <nav>
-        <ul>
-            <li><a href="../html/index.html"><span class="material-symbols-outlined">Home</span></a></li>
-            <li><a href="../html/aboutus.html">About Us</a></li>
-            <li><a href="../html/feed.html">Feed</a></li>
-            <li><a href="../html/userprofile.html">Profile</a></li>
-        </ul>
-    </nav> -->
+   <nav>
+  <ul>
+    <li><a href="../html/index.html"><span class="material-symbols-outlined">Home</span></a></li>
+    <li><a href="../html/aboutus.html">About Us</a></li>
+    <li><a href="../html/feed.html">Feed</a></li>
+    <li><a href="../html/userprofile.html">Profile</a></li>
+  </ul>
+</nav>
 
     <main>
+
         <h1>MusicMatch Feed</h1>
 
         <div id="filtering">
-            <h4 style="color: blueviolet;">Filter By:</h4>
-            <button style="color: blue; background-color: blueviolet;">Mood</button>
-            <button style="color: blue; background-color: blueviolet;">Genre</button>
-            <button style="color: blue; background-color: blueviolet;">Activity</button>
+            <h5 style="color: white;">Filter By:</h5>
+            <button style="color: white; background-color: #16b1b5;">Mood</button>
+            <button style="color: white; background-color: #16b1b5;;">Genre</button>
+            <button style="color: white; background-color: #16b1b5;;">Activity</button>
         </div>
 
         <div class="post1">
@@ -62,7 +60,7 @@
             <!--actions to like, comment, save, and share-->
             <div id="actionsLeftColumn" class="musicMatch-interact">
                 <!--Like button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -70,7 +68,7 @@
                     </svg>
                 </button>
                 <!--Comment button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat" viewBox="0 0 16 16">
                         <path
@@ -79,7 +77,7 @@
                     </svg>
                 </button>
                 <!--Share button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-share" viewBox="0 0 16 16">
                         <path
@@ -91,7 +89,7 @@
 
             <!--Save button-->
             <div id="actionsRightColumn" class="musicMatch-save">
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bookmark-heart" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -105,8 +103,8 @@
 
             <!--comments on page-->
             <div class="d-flex flex-column bd-highlight mb-3">
-                <div class="p-2 bd-highlight text-danger">lanadelrey: nice post!</div>
-                <div class="p-2 bd-highlight text-danger">hey207: lol who dis!</div>
+                <div class="p-2 bd-highlight text-white">lanadelrey: nice post!</div>
+                <div class="p-2 bd-highlight text-white">hey207: lol who dis!</div>
             </div>
         </div>
 
@@ -129,7 +127,7 @@
             <!--actions to like, comment, save, and share-->
             <div id="actionsLeftColumn" class="musicMatch-interact">
                 <!--Like button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -137,7 +135,7 @@
                     </svg>
                 </button>
                 <!--Comment button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat" viewBox="0 0 16 16">
                         <path
@@ -146,7 +144,7 @@
                     </svg>
                 </button>
                 <!--Share button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-share" viewBox="0 0 16 16">
                         <path
@@ -158,7 +156,7 @@
 
             <!--Save button-->
             <div id="actionsRightColumn" class="musicMatch-save">
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bookmark-heart" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -172,8 +170,8 @@
 
             <!--comments on page-->
             <div class="d-flex flex-column bd-highlight mb-3">
-                <div class="p-2 bd-highlight text-danger">lanadelrey: nice post!</div>
-                <div class="p-2 bd-highlight text-danger">hey207: lol who dis!</div>
+                <div class="p-2 bd-highlight text-white">lanadelrey: nice post!</div>
+                <div class="p-2 bd-highlight text-white">hey207: lol who dis!</div>
             </div>
         </div>
 
@@ -196,7 +194,7 @@
             <!--actions to like, comment, save, and share-->
             <div id="actionsLeftColumn" class="musicMatch-interact">
                 <!--Like button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -204,7 +202,7 @@
                     </svg>
                 </button>
                 <!--Comment button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-chat" viewBox="0 0 16 16">
                         <path
@@ -213,7 +211,7 @@
                     </svg>
                 </button>
                 <!--Share button-->
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-share" viewBox="0 0 16 16">
                         <path
@@ -225,7 +223,7 @@
 
             <!--Save button-->
             <div id="actionsRightColumn" class="musicMatch-save">
-                <button type="button" class="btn btn-outline-danger">
+                <button type="button" class="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-bookmark-heart" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -239,16 +237,16 @@
 
             <!--comments on page-->
             <div class="d-flex flex-column bd-highlight mb-3">
-                <div class="p-2 bd-highlight text-danger">lanadelrey: nice post!</div>
-                <div class="p-2 bd-highlight text-danger">hey207: lol who dis!</div>
+                <div class="p-2 bd-highlight text-white">lanadelrey: nice post!</div>
+                <div class="p-2 bd-highlight text-white">hey207: lol who dis!</div>
             </div>
         </div>
 
         <footer>
             <div class="container">
-                <p><a href="mailto:email@musicmatch.uw.edu"><span class="material-icons">email</span>
+                <p><a href="mailto:email@musicmatch.uw.edu"><span class="material-icons">email: </span>
                         email@musicmatch.uw.edu</a></p>
-                <p><a href="tel:555-123-4567"><span class="material-icons">phone</span> 555-123-4567</a></p>
+                <p><a href="tel:555-123-4567"><span class="material-icons">phone: </span> 555-123-4567</a></p>
                 <p>&copy; MusicMatch 2023</p>
             </div>
         </footer>
