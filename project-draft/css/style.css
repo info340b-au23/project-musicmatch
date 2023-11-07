@@ -13,6 +13,7 @@
     color: white;
     background-color: #343434;
     padding: .5rem .5rem 1rem;
+    z-index: 2;
 }
 
 .profile nav ul {
