@@ -336,13 +336,13 @@
 
 /* Home Page */
 .homepage body {
-    font-family: "Nunito Sans", Arial, sans-serif;
+    font-family: "Rubik";
     font-size: 16px;
     background-color: black;
 }
 
 .homepage h1 {
-    font-family: "Raleway", Helvetica, sans-serif;
+    font-family: "Rubik";
     font-weight: bold;
     margin-top: 0;
     margin-bottom: .5rem;
@@ -370,8 +370,7 @@
     margin-right: 0;
 }
 
-.homepage p,
-dl {
+.homepage p, dl {
     margin-top: 0;
     margin-bottom: 1rem;
 }
