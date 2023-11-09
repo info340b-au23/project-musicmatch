@@ -179,7 +179,6 @@
 }
 
 /* Feed */
-
 .feed *,
 *::before,
 *::after {
@@ -189,6 +188,7 @@
 .feed main {
     text-align: center;
     font-family: "Rubik";
+    background-color: #191b1d;
 }
 
 .feed h1 {
@@ -196,7 +196,7 @@
 }
 
 .feed body {
-    background-color: black;
+    background-color: #191b1d;
     font-size: 18px;
 }
 
@@ -206,7 +206,7 @@
     left: 0;
     width: 100%;
     color: white;
-    background-color: #242526;
+    background-color: #191b1d;
     padding: .5rem .5rem 1rem;
 }
 
@@ -363,7 +363,8 @@
     margin-right: 0;
 }
 
-.homepage p, dl {
+.homepage p,
+dl {
     margin-top: 0;
     margin-bottom: 1rem;
 }

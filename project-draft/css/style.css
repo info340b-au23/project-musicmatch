@@ -1,3 +1,33 @@
+/* navbar for all pages! */
+ .navbarAllPages ul {
+    padding-bottom: 1cm;
+    margin: 0;
+}
+
+ .navbarAllPages li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+ .navbarAllPages ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* footer for all pages! */
+.footerAllPages footer {
+    color: white;
+    background-color: black;
+    margin: 0;
+}
+
+.footerAllPages footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
 /* Profile */
 .profile body {
     background-color: black;
@@ -5,7 +35,7 @@
     font-family: 'Rubik', sans-serif;
 }
 
-.profile nav {
+/* .profile nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -25,18 +55,18 @@
     display: inline;
     margin: 0 1rem;
     color: white;
-}
+} */
 
-.profile footer a {
+/* .profile footer a {
     color: white;
     text-decoration: none;
     padding: 1em;
-}
+} */
 
-.profile nav ul li a {
+/* .profile nav ul li a {
     color: white;
     text-decoration: none;
-}
+} */
 
 .profile header {
     text-align: center;
@@ -188,7 +218,7 @@
     color: antiquewhite;
 }
 
-.aboutus nav ul {
+/* .aboutus nav ul {
     padding: 0;
     margin: 0;
 }
@@ -197,18 +227,18 @@
     display: inline;
     margin: 0 1rem;
     color: white;
-}
+} */
 
-.aboutus footer a {
+/* .aboutus footer a {
     color: white;
     text-decoration: none;
     padding: 1em;
-}
+} */
 
-.aboutus nav ul li a {
+/* .aboutus nav ul li a {
     color: white;
     text-decoration: none;
-}
+} */
 
 .aboutus img {
     max-width: 300px;
@@ -234,6 +264,8 @@
 
 .feed main {
     text-align: center;
+    font-family: "Rubik";
+    background-color: black;
 }
 
 .feed h1 {
@@ -241,13 +273,18 @@
 }
 
 .feed body {
-    background-color: #262626;
+    background-color: black;
     font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.feed nav ul {
-    padding: 0;
+.feed .container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* .feed nav ul {
+    padding-bottom: 1cm;
     margin: 0;
 }
 
@@ -257,20 +294,10 @@
     color: white;
 }
 
-.feed footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-}
-
 .feed nav ul li a {
     color: white;
     text-decoration: none;
-}
-
-.feed .musicMatch-posts {
-    border: 1px solid black;
-}
+} */
 
 .feed .musicMatch-profile-image {
     width: 70px;
@@ -315,29 +342,16 @@
     float: left;
 }
 
-.musicMatch-save {
+.feed .musicMatch-save {
     float: right;
     width: 55px;
 }
 
-.feed .musicMatch-likes {
-    padding: 0 16px;
-    margin: 0 0 8px 0;
-    font-weight: 600;
-}
-
-.feed .musicmatch-comment-profile {
-    font-weight: 600;
-    color: #bb86fc;
-}
-
-.feed .musicMatch-comments {
-    margin-bottom: 4px;
-    line-height: 18px;
-    padding: 0;
-}
-
-
+/* .feed footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+} */
 
 /* Home Page */
 .homepage body {
@@ -381,7 +395,7 @@ dl {
     margin-bottom: 1rem;
 }
 
-.homepage nav {
+/* .homepage nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -400,18 +414,18 @@ dl {
     display: inline;
     margin: 0 1rem;
     color: white;
-}
+} */
 
-.homepage footer a {
+/* .homepage footer a {
     color: white;
     text-decoration: none;
     padding: 1em;
-}
+} */
 
-.homepage nav ul li a {
+/* .homepage nav ul li a {
     color: white;
     text-decoration: none;
-}
+} */
 
 .homepage header {
     color: #03dac5;
@@ -442,8 +456,8 @@ dl {
     margin: 0;
 }
 
-.homepage footer {
+/* .homepage footer {
     color: white;
     background-color: black;
     margin: 0;
-}
+} */
