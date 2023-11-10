@@ -1,5 +1,5 @@
 /* navbar for all pages! */
- .navbarAllPages ul {
+.navbarAllPages ul {
     padding-bottom: 1cm;
     margin: 0;
 }
@@ -358,6 +358,7 @@
     font-family: "Nunito Sans", Arial, sans-serif;
     font-size: 16px;
     background-color: black;
+    /* text-align: center; */
 }
 
 .homepage h1 {
