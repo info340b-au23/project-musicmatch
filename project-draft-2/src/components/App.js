@@ -8,7 +8,7 @@ import { Feed } from '/.Feed.js';
 export default function App() {
   //call your components here:
   //   return (
-
+    <Feed />
   //   );
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import './style.css';
+import './style.css'; //import the custom CSS file
 
-export function feed() {
+export function Feed() {
     return (
         <div className="feed">
             {/* Navbar */}
