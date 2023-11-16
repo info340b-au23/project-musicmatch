@@ -1,0 +1,493 @@
+
+/* Profile */
+.profile body {
+    background-color: black;
+    margin: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* .profile nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: #343434;
+    padding: .5rem .5rem 1rem;
+    z-index: 2;
+}
+
+.profile nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.profile nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+} */
+
+/* .profile footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+} */
+
+/* .profile nav ul li a {
+    color: white;
+    text-decoration: none;
+} */
+
+.profile header {
+    text-align: center;
+    color: white;
+    padding-bottom: 1rem;
+    margin: 0;
+}
+
+/*.profile #musicmatch {
+    color: #16B1B5;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}*/
+
+.profile img {
+    height: 300px;
+    width: 300px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile .profile-pic {
+    border-radius: 50%;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.profile p {
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    margin-top: 1rem;
+}
+
+.profile button {
+    background-color: #16B1B5;
+    color: white;
+    margin-top: 1rem;
+}
+
+.profile .profile-container {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.profile .text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 5rem;
+}
+
+.profile #song-form {
+    width: auto;
+}
+
+.profile .posts,
+.profile .liked-songs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.profile .genre,
+.profile .location,
+.profile .activity {
+    background-color: #16B1B5;
+}
+
+.profile h2 {
+    color: white;
+    margin-top: 2rem;
+}
+
+.profile .card {
+    width: 350px;
+    margin: 0.5rem;
+    text-align: center;
+}
+
+.profile h3 {
+    padding-top: 0;
+}
+
+.profile .liked-songs img,
+.profile .posts img {
+    margin-bottom: .5rem;
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+}
+
+.profile .song-name {
+    color: #343434;
+    margin-top: 0;
+}
+
+.profile .card-body {
+    text-align: center;
+}
+
+.profile .sub-header {
+    margin-top: 2rem;
+}
+
+.profile .play {
+    margin-top: 2rem;
+}
+
+.profile .form-inputs {
+    width: 60%;
+}
+
+.profile .form {
+    text-align: center;
+}
+
+.form h2 {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.profile #submit {
+    margin-left: 2rem;
+}
+
+.profile #song-form {
+    margin-right: 8rem;
+}
+
+/* About Us */
+.aboutus header {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    color: antiquewhite;
+    background-color: black;
+}
+
+.aboutus body {
+    font-size: 16px;
+    font-family: 'Rubik', sans-serif;
+    background-color: black;
+    text-align: left;
+    color: antiquewhite;
+}
+
+/* .aboutus nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.aboutus nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+} */
+
+/* .aboutus footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+} */
+
+/* .aboutus nav ul li a {
+    color: white;
+    text-decoration: none;
+} */
+
+.aboutus img {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+/* .aboutus header {
+    color: #03dac5;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+} */
+
+/* Feed */
+
+.feed *,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.feed main {
+    text-align: center;
+    font-family: "Rubik";
+    background-color: black;
+}
+
+/* .feed h1 {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 3.5rem;
+} */
+
+
+.feed body {
+    background-color: black;
+    font-size: 18px;
+}
+
+.feed .container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* .feed nav ul {
+    padding-bottom: 1cm;
+    margin: 0;
+}
+
+.feed nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+.feed nav ul li a {
+    color: white;
+    text-decoration: none;
+} */
+
+.feed .musicMatch-profile-image {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feed .musicMatch-header {
+    height: 60px;
+    width: 100%;
+    padding: 16px;
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.feed .musicMatch-profile-name {
+    float: left;
+    margin-top: .5rem;
+    font-weight: 500;
+    color: #262626;
+    margin-left: 1rem;
+    color: #03dac5
+}
+
+.feed .musicMatch-actions {
+    float: right;
+    margin-top: .5rem;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.feed .musicMatch-image {
+    width: 50%;
+}
+
+.feed .musicMatch-interact {
+    padding: 8px;
+    float: left;
+}
+
+.feed .musicMatch-save {
+    float: right;
+    width: 55px;
+}
+
+/* .feed footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+} */
+
+/* Home Page */
+.homepage body {
+    font-family: "Rubik", sans-serif;
+    font-size: 16px;
+    background-color: black;
+    /* text-align: center; */
+}
+
+/* .homepage h1 {
+    font-family: "Rubik", sans-serif;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 3.5rem;
+} */
+
+.homepage header>p {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.homepage .material-icons {
+    position: relative;
+    top: 5px;
+}
+
+.homepage .material-symbols-outlined {
+    padding-top: 0.3rem;
+}
+
+.homepage .container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.homepage p,
+dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+/* .homepage nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: #242526;
+    padding: .5rem .5rem 1rem;
+}
+
+.homepage nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+.homepage nav li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+} */
+
+/* .homepage footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+} */
+
+/* .homepage nav ul li a {
+    color: white;
+    text-decoration: none;
+} */
+
+/*.homepage header {
+    color: #03dac5;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-image: url('../img/paul-gilmore-145802-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}*/
+
+.homepage header p.motto {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.homepage .filters {
+    text-align: center;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.homepage .filters>h3 {
+    color: white;
+}
+
+.homepage section>map {
+    margin: 0;
+}
+
+/* .homepage footer {
+    color: white;
+    background-color: black;
+    margin: 0;
+} */
+
+/* navbar for all pages! */
+.navbarAllPages ul {
+    padding-bottom: 0.5cm;
+    margin: 0;
+}
+
+ .navbarAllPages li {
+    display: inline;
+    margin: 0 1rem;
+    color: white;
+}
+
+ .navbarAllPages ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbarAllPages {
+    background-color: #343434;
+    padding: 0;
+    margin: 0;
+    top: 0;
+}
+
+/* footer for all pages! */
+.footerAllPages footer {
+    color: white;
+    background-color: black;
+    margin: 0;
+}
+
+.footerAllPages footer a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+
+/* Header all pages! */
+.musicmatch {
+    font-family: "Rubik", sans-serif;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 3.5rem;
+    color: #03dac5;
+    padding-top: 6rem;
+    padding-bottom: 1rem;
+    background-image: url('../img/paul-gilmore-145802-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
