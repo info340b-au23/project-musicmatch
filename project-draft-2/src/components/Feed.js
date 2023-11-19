@@ -1,5 +1,5 @@
 import React from 'react';
-import './style.css'; //import the custom CSS file
+import '../style.css'; //import the custom CSS file
 
 export function Feed() {
     return (
@@ -35,7 +35,7 @@ export function Feed() {
                     </div>
 
                     {/* Image */}
-                    <div className="musicMatch-image">
+                    <div className="musicMatch-image" >
                         <img src="../img/lanadelrey.jpeg" alt="lana del rey" />
                     </div>
 

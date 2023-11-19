@@ -1,4 +1,3 @@
-
 /* Profile */
 .profile body {
     background-color: black;
@@ -282,6 +281,7 @@
     float: left;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 50%;
 }
 
 .feed .musicMatch-header {
@@ -310,7 +310,10 @@
 }
 
 .feed .musicMatch-image {
+    margin-left: auto;
+    margin-right: auto;
     width: 50%;
+
 }
 
 .feed .musicMatch-interact {
@@ -439,19 +442,100 @@ dl {
     margin: 0;
 } */
 
+/* Form */
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: black;
+    font-family: "Rubik";
+    text-align: center;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form .size {
+    font-size: 34px;
+    color: #03dac5;
+    text-align: center;
+}
+
+.form .sizeTwo {
+    font-size: 20px;
+    color: #03dac5;
+    text-align: center;
+}
+
+.form .sizeThree {
+    font-size: 15px;
+    color: #03dac5;
+    text-align: center;
+}
+
+.form label {
+    margin-bottom: 5px;
+}
+
+.form input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.form button {
+    padding: 10px;
+    color: #03dac5;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.form button:hover {
+    color: #03dac5;
+}
+
+.form .submit-button {
+    padding: 10px;
+    color: #03dac5;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+
+/* media queries */
+@media (max-width: 768px) {
+    .form .form {
+        padding: 10px;
+    }
+
+    .form input {
+        padding: 6px;
+    }
+
+    .form button {
+        padding: 8px;
+    }
+}
+
 /* navbar for all pages! */
 .navbarAllPages ul {
     padding-bottom: 0.5cm;
     margin: 0;
 }
 
- .navbarAllPages li {
+.navbarAllPages li {
     display: inline;
     margin: 0 1rem;
     color: white;
 }
 
- .navbarAllPages ul li a {
+.navbarAllPages ul li a {
     color: white;
     text-decoration: none;
 }
@@ -486,7 +570,7 @@ dl {
     color: #03dac5;
     padding-top: 6rem;
     padding-bottom: 1rem;
-    background-image: url('../img/paul-gilmore-145802-unsplash.jpg');
+    /* background-image: url('../img/paul-gilmore-145802-unsplash.jpg'); */
     background-size: cover;
     background-position: center;
     background-color: black;
