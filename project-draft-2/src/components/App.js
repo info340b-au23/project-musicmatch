@@ -11,11 +11,11 @@ import { Form } from './Form.js';
 export default function App() {
   //call your components here:
   return (
-    // <Homepage />
+    //these are the 4 main pages that will be shown to the users:
+     <Homepage />
     // <Aboutus />
     // <Feed />
     // <userProfile />
-    <Form />
   );
 }
 
