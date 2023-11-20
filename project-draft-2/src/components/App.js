@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ReactDOM } from 'react-dom/client';
 
+import '../style.css'; //import the custom CSS file
+
 //import your components here:
 import { Homepage } from './Homepage.js';
 import { Aboutus } from './Aboutus.js';

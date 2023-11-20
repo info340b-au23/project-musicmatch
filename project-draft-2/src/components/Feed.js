@@ -5,7 +5,7 @@ export function Feed(props) {
     const data = props.data;
     const feedInformation = data.map((userData) => (
         /* mapping to diplay each user's profile name and icon, image posted, and comments */
-        <div key={userData.userName} className="post">
+        <div key={userData.userName} >
 
             {/* profile name and icon */}
             <div className="musicMatch-header">
@@ -21,7 +21,7 @@ export function Feed(props) {
 
             {/* profile image */}
             <div className="musicMatch-image">
-                <img
+                <img className="img-fluid musicMatch-image"
                     src={userData.uploadedProfileImage}
                     alt={userData.uploadedProfileImageAlt}
                 />
@@ -48,6 +48,12 @@ export function Feed(props) {
             </div>
 
             {/* profile comments */}
+            <div className="comment">
+                {userData.commentOne}
+            </div>
+            <div className="comment">
+                {userData.commentTwo}
+            </div>
         </div>
     ));
 
@@ -77,10 +83,6 @@ export function Feed(props) {
                 {/* Sample Post */}
                 <div className="post">
                     {feedInformation}
-
-                    {/* Comments */}
-                    <div className="comment">lanadelrey: nice post!</div>
-                    <div className="comment">hey207: lol who dis!</div>
                 </div>
 
 

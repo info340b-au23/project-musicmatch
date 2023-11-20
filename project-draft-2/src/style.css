@@ -312,11 +312,16 @@
 .feed .musicMatch-image {
     margin-left: auto;
     margin-right: auto;
-    height: 50px;
-    width: 50px;
+    /* height: 50px; */
+    /* width: 50px; */
+    width: 80%;
 
 }
 
+/* .feed .post {
+    max-width: 50px;
+    max-height: 50px;
+} */
 .feed .musicMatch-interact {
     padding: 8px;
     float: left;
