@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { UploadAndDisplayImage } from './UploadImage';
+import { UploadAndDisplayImage } from './UploadImage.js';
 import '../style.css';
 
 export function Form() {

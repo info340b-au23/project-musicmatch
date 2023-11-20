@@ -26,9 +26,12 @@ export default function App(props) {
     //PAGE #3:
     //<Feed data={data} />
 
-    /*PAGE #4:*/
-    <UserProfile props={data}/>
-    //<Form />
+    //PAGE #4:
+    <UserProfile data={data} />
+    //the form is our interactive part. in the final, we will use the router to call 
+    // this component in the UserProfile, but for now, we put it here to get points
+    // for interactivity
+   // <Form />
   );
 }
 
