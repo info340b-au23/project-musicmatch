@@ -22,10 +22,11 @@ export default function App(props) {
     // <Aboutus />
 
     //PAGE #3:
-    <Feed data={data} />
+    //<Feed data={data} />
 
-    //PAGE #4:
-    // <userProfile />
+    /*PAGE #4:*/
+    <UserProfile props={data}/>
+    //<Form />
   );
 }
 
