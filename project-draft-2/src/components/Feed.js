@@ -7,10 +7,10 @@ export function Feed() {
             {/* Navbar */}
             <nav className="navbarAllPages">
                 <ul>
-                    <li><a href="../html/index.html"><span className="material-symbols-outlined">Home</span></a></li>
-                    <li><a href="../html/aboutus.html">About Us</a></li>
-                    <li><a href="../html/feed.html">Feed</a></li>
-                    <li><a href="../html/userprofile.html">Profile</a></li>
+                    <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
+                    <li><a href="./src/Aboutus.js">About Us</a></li>
+                    <li><a href="./src/Feed.js">Feed</a></li>
+                    <li><a href="./src/userProfile.js">Profile</a></li>
                 </ul>
             </nav>
 

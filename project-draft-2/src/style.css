@@ -326,6 +326,13 @@
     width: 55px;
 }
 
+.feed .comment {
+    text-align: center;
+    font-family: "Rubik";
+    color: white;
+    font-size: 19px;
+}
+
 /* .feed footer a {
     color: white;
     text-decoration: none;

@@ -3,12 +3,12 @@ import '../style.css';
 
 export function HomepageFiltering() {
     return (
-        <div class="filters">
+        <div className="filters">
             <h3>Filter By:</h3>
-            <button class="genre">#genre</button>
-            <button class="location">#location</button>
-            <button class="mood">#mood</button>
-            <button class="activity">#activity</button>
+            <button className="genre">#genre</button>
+            <button className="location">#location</button>
+            <button className="mood">#mood</button>
+            <button className="activity">#activity</button>
       </div>
     );
 }

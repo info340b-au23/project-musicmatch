@@ -8,10 +8,10 @@ export function Homepage() {
         <div className="container">
             <nav className="navbarAllPages">
                 <ul>
-                    <li><a href="#home"><span class="material-symbols-outlined">Home</span></a></li>
-                    <li><a href="../html/aboutus.html">About Us</a></li>
-                    <li><a href="../html/feed.html">Feed</a></li>
-                    <li><a href="../html/userprofile.html">Profile</a></li>
+                    <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
+                    <li><a href="./src/Aboutus.js">About Us</a></li>
+                    <li><a href="./src/Feed.js">Feed</a></li>
+                    <li><a href="./src/userProfile.js">Profile</a></li>
                 </ul>
             </nav>
 
@@ -21,11 +21,11 @@ export function Homepage() {
                         <h1 className="musicmatch">MUSICMATCH</h1>
                         <p className="motto">See what your friends are listening to!</p>
                     </div>
-                </header>  
+                </header>
             </main>
 
             <HomepageFiltering />
-            <Map/>;
+            <Map />;
 
             <footer>
                 <div className="container">

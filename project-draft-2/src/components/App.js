@@ -9,8 +9,8 @@ import { Form } from './Form.js';
 export default function App() {
   //call your components here:
   return (
-     <Homepage />
-    // <Feed />
+   //  <Homepage />
+     <Feed />
     // <Form />
   );
 }
