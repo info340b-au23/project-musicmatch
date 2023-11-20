@@ -1,0 +1,17 @@
+[
+    {
+        "userName": "JasmineLosovsky",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "JasmineLosovsky profile icon",
+        "uploadedProfileImage": "../img/lanadelrey.jpeg",
+        "uploadedProfileImageAlt": "post made by JasmineLosovsky"
+        
+    },
+    {
+        "userName": "Somebody123",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "Somebody123 profile icon",
+        "uploadedProfileImage": "../img/profile.jpg",
+        "uploadedProfileImageAlt": "post made by Somebody123"
+    }
+]

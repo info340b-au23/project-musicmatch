@@ -8,13 +8,23 @@ import { Feed } from './Feed.js';
 import { UserProfile } from './UserProfile.js';
 import { Form } from './Form.js';
 
-export default function App() {
+export default function App(props) {
+  //props for data that will be used in Feed
+  const data = props.data;
+
   //call your components here:
   return (
     //these are the 4 main pages that will be shown to the users:
-     <Homepage />
+    // PAGE #1:
+    // <Homepage />
+
+    // PAGE #2:
     // <Aboutus />
-    // <Feed />
+
+    //PAGE #3:
+    <Feed data={data} />
+
+    //PAGE #4:
     // <userProfile />
   );
 }

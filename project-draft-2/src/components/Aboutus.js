@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function aboutUs() {
+export function Aboutus() {
     return (
         <div className="aboutus">
             {/* Navbar */}
