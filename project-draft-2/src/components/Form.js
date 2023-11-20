@@ -4,14 +4,15 @@ import '../style.css';
 
 export function Form() {
     const [formData, setFormData] = useState({
-        songName: '',
-        location: '',
+        songName: "",
+        location: "",
+        activity: ""
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
 
-    const handleInputChange = (event) => {
-        const { name, value } = event.target;
+    const handleInputChange = (input) => {
+        const { name, value } = input.target;
         setFormData({ ...formData, [name]: value });
     };
 
@@ -30,15 +31,16 @@ export function Form() {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log('Form submitted:', {
+        console.log("Form submitted:", {
             ...formData,
             genre: selectedGenres,
         });
 
-        // Reset the form after submission
+        //reset the form after submission
         setFormData({
-            songName: '',
-            location: '',
+            songName: "",
+            location: "",
+            activity: ""
         });
         setSelectedGenres([]);
     };
@@ -76,6 +78,20 @@ export function Form() {
                                     type="text"
                                     name="location"
                                     value={formData.location}
+                                    onChange={handleInputChange}
+                                    className="form-inputs"
+                                />
+                            </div>
+                        </p>
+                        <p>
+                            <label htmlFor="activity" className="sizeTwo">
+                                Activity:{" "}
+                            </label>
+                            <div>
+                                <input
+                                    type="text"
+                                    name="activity"
+                                    value={formData.activity}
                                     onChange={handleInputChange}
                                     className="form-inputs"
                                 />

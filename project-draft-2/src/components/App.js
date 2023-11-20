@@ -5,17 +5,17 @@ import { ReactDOM } from 'react-dom/client';
 import { Homepage } from './Homepage.js';
 import { Aboutus } from './Aboutus.js';
 import { Feed } from './Feed.js';
-import { userProfile } from './userProfile.js';
+import { UserProfile } from './UserProfile.js';
 import { Form } from './Form.js';
 
 export default function App() {
   //call your components here:
   return (
-    <Homepage />
+    // <Homepage />
     // <Aboutus />
     // <Feed />
     // <userProfile />
-    // <Form />
+    <Form />
   );
 }
 
