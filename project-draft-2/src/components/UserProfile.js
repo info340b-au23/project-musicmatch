@@ -21,14 +21,14 @@ export function UserProfile(props) {
                 </header>
                 <main>
                     <div className="profile-container">
-                        <img
+                        {/*<img
                             className="profile-pic"
                             src={props.userNameProfileIcon}
-                            alt={props.usernameIconAlt}
-                        />
+                            alt={props.usernameIconAlt}/>*/}
+                        <img class="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
                         <div className="text-container">
-                            <p id="username">{props.userName}</p>
-                            <p id="email">y{props.userEmail}</p>
+                            <p id="username">{props.userName}music_lover21</p>
+                            <p id="email">y{props.userEmail}yaymusic@gmail.com</p>
                             <button id='profile-button'>Edit Profile</button>
                         </div>
                         <button id='song-form'>Create Post</button>
