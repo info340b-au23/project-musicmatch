@@ -5,7 +5,7 @@ import { Map } from './Map.js';
 
 export function Homepage() {
     return (
-        <div className="container">
+        <div className="homepage">
             <nav className="navbarAllPages">
                 <ul>
                     <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>

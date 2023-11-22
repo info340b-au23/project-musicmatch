@@ -18,20 +18,19 @@ export default function App(props) {
   return (
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
-    // <Homepage />
+    <Homepage />
 
     // PAGE #2:
     // <Aboutus />
 
-    //PAGE #3:
-    //<Feed data={data} />
+    // PAGE #3:
+    // <Feed data={data} />
 
     //PAGE #4:
-    <UserProfile data={data} />
-    //the form is our interactive part. in the final, we will use the router to call 
-    // this component in the UserProfile, but for now, we put it here to get points
-    // for interactivity
-   // <Form />
+    // <UserProfile data={data} />
+    // the form is our interactive part. in the final, we will use the router to call 
+    // this component in the UserProfile, but for now, we put it here for interactivity
+  //  <Form />
   );
 }
 

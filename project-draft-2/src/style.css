@@ -345,6 +345,10 @@
 } */
 
 /* Home Page */
+.homepage {
+    background-color: black;
+}
+
 .homepage body {
     font-family: "Rubik", sans-serif;
     font-size: 16px;
@@ -385,6 +389,10 @@
 dl {
     margin-top: 0;
     margin-bottom: 1rem;
+}
+
+.homepage div {
+    text-align: center;
 }
 
 /* .homepage nav {
@@ -432,6 +440,7 @@ dl {
 .homepage header p.motto {
     font-size: 1.25rem;
     text-align: center;
+    color: white;
 }
 
 .homepage .filters {
@@ -578,9 +587,10 @@ dl {
     margin-top: 0;
     margin-bottom: .5rem;
     text-align: center;
-    font-size: 3.5rem;
+    font-size: 5rem;
+    font-weight: bold;
     color: #03dac5;
-    padding-top: 6rem;
+    padding-top: 5rem;
     padding-bottom: 1rem;
     /* background-image: url('../img/paul-gilmore-145802-unsplash.jpg'); */
     background-size: cover;
