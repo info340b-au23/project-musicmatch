@@ -16,6 +16,7 @@ export default function App(props) {
 
   //call your components here:
   return (
+
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
     <Homepage />
@@ -24,7 +25,7 @@ export default function App(props) {
     // <Aboutus />
 
     // PAGE #3:
-    // <Feed data={data} />
+   // <Feed data={data} />
 
     //PAGE #4:
     // <UserProfile data={data} />

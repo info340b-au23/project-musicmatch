@@ -6,12 +6,12 @@ export function UserProfile(props) {
         <div className='profile'>
             {/* Navbar */}
             <nav className="navbarAllPages">
-                <ul>
-                    <li><a href="../Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
-                    <li><a href="../Aboutus.js">About Us</a></li>
-                    <li><a href="../Feed.js">Feed</a></li>
-                    <li><a href="../UserProfile.js">Profile</a></li>
-                </ul>
+                <Routes>
+                    <Route path='Home' element={<Homepage/>} />
+                    <Route path='About Us' element={<Aboutus/>}/>
+                    <Route path='Feed' element={<Feed/>}/>
+                    <Route path='Profile' element={<UserProfile/>}/>
+                </Routes>
             </nav>
 
             <body class="container">

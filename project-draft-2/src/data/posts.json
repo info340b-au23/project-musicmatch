@@ -1,0 +1,40 @@
+[
+    {
+        "ID": "1",
+        "username": "@kylahm",
+        "image": "../img/cat.jpg",
+        "songTitle": "Billie Jean",
+        "songArtist": "Micheal Jackson",
+        "activity": "Social",
+        "genre": "Pop"
+    },
+    {
+        "ID": "2",
+        "username": "@anug",
+        "image": "../img/cat.jpg",
+        "songTitle": "Rolling in the Deep",
+        "songArtist": "Adele",
+        "activity": "Studying",
+        "genre": "Pop"
+    },
+
+    {
+        "ID": "3",
+        "username": "@jessiga03",
+        "image": "../img/cat.jpg",
+        "songTitle": "Smells Like Teen Spirit",
+        "songArtist": "Nirvana",
+        "activity": "WorkingOut",
+        "genre": "Rock"
+    },
+
+    {
+        "ID": "4",
+        "username": "@jasmine22",
+        "image": "../img/cat.jpg",
+        "songTitle": "The Four Seasons",
+        "songArtist": "Antonio Vivaldi",
+        "activity": "Studying",
+        "genre": "Classic"
+    }
+]

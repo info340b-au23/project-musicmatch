@@ -7,12 +7,12 @@ export function Homepage() {
     return (
         <div className="homepage">
             <nav className="navbarAllPages">
-                <ul>
-                    <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
-                    <li><a href="./src/Aboutus.js">About Us</a></li>
-                    <li><a href="./src/Feed.js">Feed</a></li>
-                    <li><a href="./src/UserProfile.js">Profile</a></li>
-                </ul>
+                <Routes>
+                    <Route path='Home' element={<Homepage/>} />
+                    <Route path='About Us' element={<Aboutus/>}/>
+                    <Route path='Feed' element={<Feed/>}/>
+                    <Route path='Profile' element={<UserProfile/>}/>
+                </Routes>
             </nav>
 
             <main>
