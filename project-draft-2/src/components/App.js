@@ -9,6 +9,7 @@ import { Aboutus } from './Aboutus.js';
 import { Feed } from './Feed.js';
 import { UserProfile } from './UserProfile.js';
 import { Form } from './Form.js';
+import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function App(props) {
   //props for data that will be used in Feed
@@ -16,10 +17,18 @@ export default function App(props) {
 
   //call your components here:
   return (
+    <Router>
+        <Routes>
+          <Route path='Home' element={<Homepage/>} />
+          <Route path='About Us' element={<Aboutus/>}/>
+          <Route path='Feed' element={<Feed data={data}/>}/>
+          <Route path='Profile' element={<UserProfile/>}/>
+      </Routes>
+    </Router>
 
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
-    <Homepage />
+    //<Homepage />
 
     // PAGE #2:
     // <Aboutus />

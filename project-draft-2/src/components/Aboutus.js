@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export function Aboutus() {
     return (
         <div className="aboutus">
             {/* Navbar */}
             <nav className="navbarAllPages">
-                <Routes>
-                    <Route path='Home' element={<Homepage/>} />
-                    <Route path='About Us' element={<Aboutus/>}/>
-                    <Route path='Feed' element={<Feed/>}/>
-                    <Route path='Profile' element={<UserProfile/>}/>
-                </Routes>
+                <ul> 
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">About Us</Link></li>
+                    <li><Link to="/">Feed</Link></li>
+                    <li><Link to="/">Profile</Link></li>
+                </ul>
             </nav>
 
             {/* Body */}
@@ -121,3 +122,5 @@ export function Aboutus() {
         </div>
     );
 }
+
+export default Aboutus;

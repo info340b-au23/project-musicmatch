@@ -2,17 +2,18 @@ import React from 'react';
 import '../style.css';
 import { HomepageFiltering } from './HomepageFiltering.js';
 import { Map } from './Map.js';
+import { Link } from 'react-router-dom';
 
 export function Homepage() {
     return (
         <div className="homepage">
             <nav className="navbarAllPages">
-                <Routes>
-                    <Route path='Home' element={<Homepage/>} />
-                    <Route path='About Us' element={<Aboutus/>}/>
-                    <Route path='Feed' element={<Feed/>}/>
-                    <Route path='Profile' element={<UserProfile/>}/>
-                </Routes>
+                <ul> 
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">About Us</Link></li>
+                    <li><Link to="/">Feed</Link></li>
+                    <li><Link to="/">Profile</Link></li>
+                </ul>
             </nav>
 
             <main>
@@ -37,3 +38,5 @@ export function Homepage() {
         </div>
     );
 }
+
+export default Homepage;

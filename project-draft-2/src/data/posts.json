@@ -36,5 +36,15 @@
         "songArtist": "Antonio Vivaldi",
         "activity": "Studying",
         "genre": "Classic"
+    },
+
+    {
+        "ID": "5",
+        "username": "@timC",
+        "image": "../img/cat.jpg",
+        "songTitle": "Rush",
+        "songArtist": "Troy Sivan",
+        "activity": "Working Out",
+        "genre": "Pop"
     }
 ]

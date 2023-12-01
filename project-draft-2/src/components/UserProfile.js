@@ -1,17 +1,18 @@
 import React from 'react';
 import '../style.css';
+import { Link } from 'react-router-dom';
 
 export function UserProfile(props) {
     return (
         <div className='profile'>
             {/* Navbar */}
             <nav className="navbarAllPages">
-                <Routes>
-                    <Route path='Home' element={<Homepage/>} />
-                    <Route path='About Us' element={<Aboutus/>}/>
-                    <Route path='Feed' element={<Feed/>}/>
-                    <Route path='Profile' element={<UserProfile/>}/>
-                </Routes>
+                <ul> 
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/">About Us</Link></li>
+                    <li><Link to="/">Feed</Link></li>
+                    <li><Link to="/">Profile</Link></li>
+                </ul>
             </nav>
 
             <body class="container">
@@ -92,3 +93,5 @@ export function UserProfile(props) {
         </div>
     );
 }
+
+export default UserProfile;
