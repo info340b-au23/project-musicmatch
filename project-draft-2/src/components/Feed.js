@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import '../style.css'; //import the custom CSS file
 
 export function Feed(props) {
@@ -62,10 +64,10 @@ export function Feed(props) {
             {/* Navbar */}
             <nav className="navbarAllPages">
                 <ul>
-                    <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
-                    <li><a href="./src/Aboutus.js">About Us</a></li>
-                    <li><a href="./src/Feed.js">Feed</a></li>
-                    <li><a href="./src/UserProfile.js">Profile</a></li>
+                    <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
+                    <li><NavLink to="/aboutUs">About Us</NavLink></li>
+                    <li><NavLink to="/feed">Feed</NavLink></li>
+                    <li><NavLink to="/profile">Profile</NavLink></li>
                 </ul>
             </nav>
 

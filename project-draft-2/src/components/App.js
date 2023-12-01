@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactDOM } from 'react-dom/client';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 
 import '../style.css'; //import the custom CSS file
 
@@ -9,7 +9,7 @@ import { Aboutus } from './Aboutus.js';
 import { Feed } from './Feed.js';
 import { UserProfile } from './UserProfile.js';
 import { Form } from './Form.js';
-import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import {  BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 export default function App(props) {
   //props for data that will be used in Feed
@@ -17,14 +17,12 @@ export default function App(props) {
 
   //call your components here:
   return (
-    <Router>
-        <Routes>
-          <Route path='Home' element={<Homepage/>} />
-          <Route path='About Us' element={<Aboutus/>}/>
-          <Route path='Feed' element={<Feed data={data}/>}/>
-          <Route path='Profile' element={<UserProfile/>}/>
+      <Routes>
+        <Route path='/home' element={<Homepage />} />
+        <Route path='/aboutUs' element={<Aboutus />} />
+        <Route path='/feed' element={<Feed data={data} />} />
+        <Route path='/profile' element={<UserProfile />} />
       </Routes>
-    </Router>
 
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
@@ -34,13 +32,13 @@ export default function App(props) {
     // <Aboutus />
 
     // PAGE #3:
-   // <Feed data={data} />
+    // <Feed data={data} />
 
     //PAGE #4:
     // <UserProfile data={data} />
     // the form is our interactive part. in the final, we will use the router to call 
     // this component in the UserProfile, but for now, we put it here for interactivity
-  //  <Form />
+    //  <Form />
   );
 }
 

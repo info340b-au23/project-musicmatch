@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App';
+import { BrowserRouter } from 'react-router-dom'
 
 import './style.css'; //import css file!
 
 //import json data file for Feed
-import POST_DATA from './data/postsData.json'; 
+import POST_DATA from './data/postsData.json';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <App data={POST_DATA} />
-  </React.StrictMode>
+  </ BrowserRouter>
 );

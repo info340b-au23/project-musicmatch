@@ -3,16 +3,21 @@ import '../style.css';
 import { HomepageFiltering } from './HomepageFiltering.js';
 import { Map } from './Map.js';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export function Homepage() {
     return (
         <div className="homepage">
             <nav className="navbarAllPages">
-                <ul> 
-                    <li><Link to="/">Home</Link></li>
+                <ul>
+                    <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
+                    <li><NavLink to="/aboutUs">About Us</NavLink></li>
+                    <li><NavLink to="/feed">Feed</NavLink></li>
+                    <li><NavLink to="/profile">Profile</NavLink></li>
+                    {/* <li><Link to="/">Home</Link></li>
                     <li><Link to="/">About Us</Link></li>
                     <li><Link to="/">Feed</Link></li>
-                    <li><Link to="/">Profile</Link></li>
+                    <li><Link to="/">Profile</Link></li> */}
                 </ul>
             </nav>
 
