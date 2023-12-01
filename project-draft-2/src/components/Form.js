@@ -6,7 +6,8 @@ export function Form() {
     const [formData, setFormData] = useState({
         songName: "",
         location: "",
-        activity: ""
+        activity: "",
+        genres: []
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
