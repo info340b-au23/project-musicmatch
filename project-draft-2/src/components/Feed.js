@@ -1,6 +1,5 @@
 import React from 'react';
 import '../style.css'; //import the custom CSS file
-import { Link } from 'react-router-dom';
 
 export function Feed(props) {
     const data = props.data;
@@ -62,11 +61,11 @@ export function Feed(props) {
         <div className="feed">
             {/* Navbar */}
             <nav className="navbarAllPages">
-                <ul> 
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/">About Us</Link></li>
-                    <li><Link to="/">Feed</Link></li>
-                    <li><Link to="/">Profile</Link></li>
+                <ul>
+                    <li><a href="./src/Homepage.js"><span className="material-symbols-outlined">Home</span></a></li>
+                    <li><a href="./src/Aboutus.js">About Us</a></li>
+                    <li><a href="./src/Feed.js">Feed</a></li>
+                    <li><a href="./src/UserProfile.js">Profile</a></li>
                 </ul>
             </nav>
 
@@ -99,7 +98,4 @@ export function Feed(props) {
             </main>
         </div>
     );
-
 }
-
-export default Feed;
