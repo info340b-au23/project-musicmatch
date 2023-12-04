@@ -6,7 +6,8 @@
         "songTitle": "Billie Jean",
         "songArtist": "Micheal Jackson",
         "activity": "Social",
-        "genre": "Pop"
+        "genre": "Pop",
+        "Location": "Mary Gates"
     },
     {
         "ID": "2",
@@ -15,7 +16,8 @@
         "songTitle": "Rolling in the Deep",
         "songArtist": "Adele",
         "activity": "Studying",
-        "genre": "Pop"
+        "genre": "Pop",
+        "Location": "Mary Gates"
     },
 
     {
@@ -25,7 +27,8 @@
         "songTitle": "Smells Like Teen Spirit",
         "songArtist": "Nirvana",
         "activity": "WorkingOut",
-        "genre": "Rock"
+        "genre": "Rock",
+        "Location": "IMA"
     },
 
     {
@@ -35,7 +38,8 @@
         "songTitle": "The Four Seasons",
         "songArtist": "Antonio Vivaldi",
         "activity": "Studying",
-        "genre": "Classic"
+        "genre": "Classic",
+        "Location": "Suzzallo"
     },
 
     {
@@ -45,6 +49,7 @@
         "songTitle": "Rush",
         "songArtist": "Troy Sivan",
         "activity": "Working Out",
-        "genre": "Pop"
+        "genre": "Pop",
+        "Location": "Mary Gates"
     }
 ]

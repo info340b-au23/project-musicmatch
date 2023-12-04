@@ -9,14 +9,14 @@ export function Map() {
         map.height = "600px";
         map.style.border = 'none';
 
-    const marker = L.icon {
-        iconUrl: '../../project-draft-2/public/img/favicon.ico';
-        iconSize: [32, 32];
-        iconAnchor: [16, 32];
-        popupAnchor: [0, -32];
-    }
+    const marker = L.icon ({
+        iconUrl: '../../project-draft-2/public/img/favicon.icon',
+        iconSize: [32, 32],
+        iconAnchor: [16, 32],
+        popupAnchor: [0, -32]
+    });
 
-    map.addListener('click', function(event) {
+    map.addEventListener('click', function(event) {
         L.marker([event.latlng], { icon: marker }, addTo(map));
     });
 

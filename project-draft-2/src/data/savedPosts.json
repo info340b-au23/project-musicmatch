@@ -6,7 +6,8 @@
         "songTitle": "Rolling in the Deep",
         "songArtist": "Adele",
         "activity": "Studying",
-        "genre": "Pop"
+        "genre": "Pop",
+        "Location": "Mary Gates"
     },
 
     {
@@ -16,6 +17,7 @@
         "songTitle": "The Four Seasons",
         "songArtist": "Antonio Vivaldi",
         "activity": "Studying",
-        "genre": "Classic"
+        "genre": "Classic",
+        "Location": "Suzzallo"
     }
 ]
