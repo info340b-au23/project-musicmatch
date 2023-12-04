@@ -1,8 +1,6 @@
 import React from 'react';
 import '../style.css';
-import { HomepageFiltering } from './HomepageFiltering.js';
 import { Map } from './Map.js';
-import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 export function Homepage() {
@@ -30,7 +28,6 @@ export function Homepage() {
                 </header>
             </main>
 
-            <HomepageFiltering />
             <Map />;
 
             <footer>
