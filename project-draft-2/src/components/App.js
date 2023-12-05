@@ -22,16 +22,6 @@ export default function App(props) {
 
   //call components here:
   return (
-<<<<<<< HEAD
-     /* <Routes>
-        <Route index element={<Homepage />} />
-        <Route path='/home' element={<Homepage />} />
-        <Route path='/aboutUs' element={<Aboutus />} />
-        <Route path='/feed' element={<Feed data={data} />} />
-        <Route path='/profile' element={<UserProfile />} />
-      </Routes>*/
-=======
->>>>>>> c570321ab13ea650ce6c0d8aadf37100f25edf66
     <Routes>
       <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />} >
         {/*route for information a specific person out of the 4 contributors*/}
