@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
-import { Footer } from './Footer.js';
 
 export default function Aboutus() {
     return (
@@ -92,7 +91,7 @@ export default function Aboutus() {
                     {/* About the Designers */}
                     {/*display the child routes element, which will be information about each contributor*/}
                     <Outlet />
-                    
+
                     {/* <section>
                         <h2> About the Designers: </h2>
 
@@ -117,16 +116,14 @@ export default function Aboutus() {
             </body>
 
             {/* Footer */}
-            <footer className="footerAllPages">
+            {/* <footer className="footerAllPages">
                 <div className="container">
                     <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
                     <p><a href="tel:555-123-4567"><span className="material-icons">phone</span> 555-123-4567</a></p>
                     <p>&copy; MusicMatch 2023</p>
                 </div>
-            </footer>
+            </footer> */}
            
-            {/* Not sure if were using this */}
-                {/* <Footer /> */}
         </div>
     );
 }

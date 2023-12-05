@@ -39,7 +39,10 @@ export default function App(props) {
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path="*" element={<Navigate to='/aboutUs' />} />
-      </Routes></>
+      </Routes>
+
+      <Footer />
+      </>
 
 
     //   {/* //these are the 4 main pages that will be shown to the users:

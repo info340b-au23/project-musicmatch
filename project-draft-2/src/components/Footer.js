@@ -1,4 +1,4 @@
-//our footer for each page: NOT SURE IF WERE USING THIS, MIGHT DELETE
+//our footer for each page
 
 export function Footer() {
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import '../style.css';
 import { NavLink } from 'react-router-dom';
-import { Footer } from './Footer.js';
 
 export default function UserProfile(props) {
     return (
@@ -82,16 +81,14 @@ export default function UserProfile(props) {
                     </div>
 
                     {/* Footer */}
-                    <footer className="footerAllPages">
+                    {/* <footer className="footerAllPages">
                         <div className="container">
                             <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
                             <p><a href="tel:555-123-4567"><span className="material-icons">phone</span> 555-123-4567</a></p>
                             <p>&copy; MusicMatch 2023</p>
                         </div>
-                    </footer>
+                    </footer> */}
 
-                    {/* Not sure if were using this */}
-                    {/* <Footer /> */}
                 </main>
             </body>
         </div>
