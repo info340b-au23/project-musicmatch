@@ -24,7 +24,7 @@ export default function App(props) {
 
   //call components here:
   return (
-    <div>
+    <>
       <Navbar />
 
       <Routes>
@@ -38,29 +38,24 @@ export default function App(props) {
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
+        <Route path="*" element={<Navigate to='/aboutUs' />} />
+      </Routes></>
 
-        <Route path="*" element={<Navigate to='/home' />} />
-      </Routes>
 
-      {/* Not sure if were using this */}
-      {/* <Footer /> */}
-    </div>
+    //   {/* //these are the 4 main pages that will be shown to the users:
+    // // PAGE #1:
+    // // <Homepage />
 
-    //these are the 4 main pages that will be shown to the users:
-    // PAGE #1:
-    // <Homepage />
+    // // PAGE #2:
+    // // <Aboutus />
 
-    // PAGE #2:
-    // <Aboutus />
+    // // PAGE #3:
+    // // <Feed data={data} />
 
-    // PAGE #3:
-    // <Feed data={data} />
-
-    //PAGE #4:
-    // <UserProfile data={data} />
-    // the form is our interactive part. in the final, we will use the router to call 
-    // this component in the UserProfile, but for now, we put it here for interactivity
-    //  <Form />
+    // //PAGE #4:
+    // // <UserProfile data={data} />
+    // // the form is our interactive part. in the final, we will use the router to call 
+    // // this component in the UserProfile, but for now, we put it here for interactivity
+    // //  <Form /> */}
   );
 }
-
