@@ -17,6 +17,7 @@ export default function App(props) {
   //call your components here:
   return (
       <Routes>
+        <Route index element={<Homepage />} />
         <Route path='/home' element={<Homepage />} />
         <Route path='/aboutUs' element={<Aboutus />} />
         <Route path='/feed' element={<Feed data={data} />} />
@@ -40,4 +41,3 @@ export default function App(props) {
     //  <Form />
   );
 }
-
