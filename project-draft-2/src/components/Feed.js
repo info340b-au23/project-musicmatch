@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 import '../style.css'; //import the custom CSS file
 
-export function Feed(props) {
+export default function Feed(props) {
     const data = props.data;
     const feedInformation = data.map((userData) => (
         /* mapping to diplay each user's profile name and icon, image posted, and comments */

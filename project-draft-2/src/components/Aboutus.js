@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
-export function Aboutus() {
+export default function Aboutus(props) {
     return (
         <div className="aboutus">
             {/* Navbar */}
@@ -12,10 +12,6 @@ export function Aboutus() {
                     <li><NavLink to="/aboutUs">About Us</NavLink></li>
                     <li><NavLink to="/feed">Feed</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
-                    {/* <li><Link to="/">Home</Link></li>
-                    <li><Link to="/">About Us</Link></li>
-                    <li><Link to="/">Feed</Link></li>
-                    <li><Link to="/">Profile</Link></li> */}
                 </ul>
             </nav>
 
@@ -93,7 +89,9 @@ export function Aboutus() {
                     </section>
 
                     {/* About the Designers */}
-                    <section>
+                    {/*display the child routes element, which will be information about each contributor*/}
+                    <Outlet />
+                    {/* <section>
                         <h2> About the Designers: </h2>
 
                         <p>This is a design for INFO 340 - Web Development.</p>
@@ -112,7 +110,7 @@ export function Aboutus() {
                         <p>Anu Ghosh</p>
                         <p> Lorem ipsum dolor sit amet. Qui odio sunt ut facilis voluptas sed rerum porro? Ea quae eius quo deserunt
                             recusandae quilaborum quia et consequatur repellendus At nesciunt quia cum nisi praesentium.</p>
-                    </section>
+                    </section> */}
                 </main>
             </body>
 
@@ -128,4 +126,3 @@ export function Aboutus() {
     );
 }
 
-export default Aboutus;

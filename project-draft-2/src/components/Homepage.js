@@ -3,7 +3,7 @@ import '../style.css';
 import { Map } from './Map.js';
 import { NavLink } from 'react-router-dom';
 
-export function Homepage() {
+export default function Homepage() {
     return (
         <div className="homepage">
             <nav className="navbarAllPages">
@@ -12,10 +12,6 @@ export function Homepage() {
                     <li><NavLink to="/aboutUs">About Us</NavLink></li>
                     <li><NavLink to="/feed">Feed</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
-                    {/* <li><Link to="/">Home</Link></li>
-                    <li><Link to="/">About Us</Link></li>
-                    <li><Link to="/">Feed</Link></li>
-                    <li><Link to="/">Profile</Link></li> */}
                 </ul>
             </nav>
 
@@ -40,5 +36,3 @@ export function Homepage() {
         </div>
     );
 }
-
-export default Homepage;
