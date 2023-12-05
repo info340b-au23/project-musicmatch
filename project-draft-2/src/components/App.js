@@ -27,7 +27,7 @@ export default function App(props) {
         {/*route for information a specific person out of the 4 contributors*/}
         <Route path=":contributorName" element={<ContributorDetail />} />
         {/*child route*/}
-        {/* <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} /> */}
+        <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
       </Route>
 
       <Route index element={<Homepage />}></Route>
