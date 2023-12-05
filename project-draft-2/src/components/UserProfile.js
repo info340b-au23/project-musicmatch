@@ -1,11 +1,8 @@
 import React from 'react';
 import '../style.css';
 import { NavLink } from 'react-router-dom';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
 import { Footer } from './Footer.js';
->>>>>>> 7477a429a1193fe5ac005af77ba0d5d3094d4d27
 
 export default function UserProfile(props) {
     return (
