@@ -530,23 +530,7 @@ dl {
 }
 
 
-/* media queries */
-@media (max-width: 768px) {
-    .form .form {
-        padding: 10px;
-    }
-
-    .form input {
-        padding: 6px;
-    }
-
-    .form button {
-        padding: 8px;
-    }
-}
-
-
-/* THIS IS CSS CODE FOR ContributorDetail ! for carousel bootstrap ONLY*/
+/* THIS IS CSS CODE FOR ContributorDetail! for carousel bootstrap ONLY*/
 .contributor-detail {
     text-align: center;
     padding-top: 45px;
@@ -564,7 +548,7 @@ dl {
     color: #03dac5;
 }
 
-/* THIS IS CSS CODE FOR ContributorList! for ContributorList component ONLY*/
+/* THIS IS CSS CODE FOR ContributorList class! for ContributorCard component ONLY*/
 .contributor-card {
     margin: 0.5rem;
     display: flex;
@@ -579,6 +563,21 @@ dl {
 
 .contributor-card .card-body {
     padding: 1rem;
+}
+
+/* THIS IS CSS CODE FOR ContributorList class! for ContributorList component ONLY*/
+.contributorlist-header {
+    color: #03dac5;
+    font-family: "Rubik", sans-serif;
+    font-size: 2.2rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.contributorlist-name {
+    color: #03dac5;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.5rem;
 }
 
 
@@ -635,3 +634,48 @@ dl {
     background-position: center;
     background-color: black;
 }
+
+/* MEDIA QUERIES */
+/* for Form class*/
+@media (max-width: 768px) {
+    .form .form {
+        padding: 10px;
+    }
+
+    .form input {
+        padding: 6px;
+    }
+
+    .form button {
+        padding: 8px;
+    }
+}
+
+/* for ContributorList class */
+
+/* THIS IS CSS CODE FOR ContributorList class! for ContributorList component ONLY*/
+.contributorlist-header {
+    color: #03dac5;
+    font-family: "Rubik", sans-serif;
+    font-size: 2.2rem;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.contributorlist-name {
+    color: #03dac5;
+    font-family: "Rubik", sans-serif;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 500px) {
+    .contributorlist-header {
+        font-size: 1.5rem;
+    }
+
+    .contributorlist-name {
+        font-size: 1rem;
+    }
+}
+
+/* for ContributorDetail class */

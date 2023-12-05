@@ -9,8 +9,8 @@ export default function ContributorList(props) {
 
     return (
         <div>
-            <h2>Learn About Each Contributor:</h2>
-            <div className="row">
+            <h2 className="contributorlist-header">Learn About Each Contributor:</h2>
+            <div className="row contributorlist-name">
                 {eachContributorCard}
             </div>
         </div>
@@ -25,7 +25,7 @@ function ContributorCard(props) {
           <img className="card-img-top" src={contributor.images[0]} alt={contributor.name + "'s Image"} />
           <div className="card-body">
             <h3 className="card-title">{contributor.name}</h3>
-            <Link className="btn btn-primary" to={contributor.name}>Learn more about: {contributor.name}</Link>
+            <Link className="btn btn-info" to={contributor.name}>Learn more about: {contributor.name}</Link>
           </div>
         </div>
       </div>
