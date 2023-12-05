@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style.css';
 import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function UserProfile(props) {
     return (
@@ -32,7 +33,7 @@ export default function UserProfile(props) {
                             <p id="email">y{props.userEmail}yaymusic@gmail.com</p>
                             <button id='profile-button'>Edit Profile</button>
                         </div>
-                        <button id='song-form'>Create Post</button>
+                        <Link to='/profile/form'><button id='song-form'>Create Post</button></Link>
                     </div>
 
                     {/* Sample Post */}
