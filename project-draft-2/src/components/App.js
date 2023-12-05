@@ -22,15 +22,13 @@ export default function App(props) {
 
   //call components here:
   return (
-<<<<<<< HEAD
-      <Routes>
+     /* <Routes>
         <Route index element={<Homepage />} />
         <Route path='/home' element={<Homepage />} />
         <Route path='/aboutUs' element={<Aboutus />} />
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
-      </Routes>
-=======
+      </Routes>*/
     <Routes>
       <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />} >
         {/*route for information a specific person out of the 4 contributors*/}
@@ -44,7 +42,6 @@ export default function App(props) {
       <Route path='/profile' element={<UserProfile />} />
       <Route path="*" element={<Navigate to='/aboutUs' />} />
     </Routes>
->>>>>>> 80d5d06a8694cdf798deea00b53c9fab9495394b
 
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
