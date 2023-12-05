@@ -1,19 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { Footer } from './Footer.js';
 
-export default function Aboutus(props) {
+export default function Aboutus() {
     return (
         <div className="aboutus">
             {/* Navbar */}
-            <nav className="navbarAllPages">
+            {/* <nav className="navbarAllPages">
                 <ul>
                     <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
                     <li><NavLink to="/aboutUs">About Us</NavLink></li>
                     <li><NavLink to="/feed">Feed</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
                 </ul>
-            </nav>
+            </nav> */}
 
             {/* Body */}
             <body>
@@ -91,6 +92,7 @@ export default function Aboutus(props) {
                     {/* About the Designers */}
                     {/*display the child routes element, which will be information about each contributor*/}
                     <Outlet />
+                    
                     {/* <section>
                         <h2> About the Designers: </h2>
 
@@ -122,6 +124,9 @@ export default function Aboutus(props) {
                     <p>&copy; MusicMatch 2023</p>
                 </div>
             </footer>
+           
+            {/* Not sure if were using this */}
+                {/* <Footer /> */}
         </div>
     );
 }

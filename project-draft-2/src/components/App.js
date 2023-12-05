@@ -11,6 +11,8 @@ import ContributorList from './ContributorList.js';
 import Feed from './Feed.js';
 import UserProfile from './UserProfile.js';
 import { Form } from './Form.js';
+import { Navbar } from './Navbar.js';
+import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 
@@ -22,14 +24,10 @@ export default function App(props) {
 
   //call components here:
   return (
-    <Routes>
-      <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />} >
-        {/*route for information a specific person out of the 4 contributors*/}
-        <Route path=":contributorName" element={<ContributorDetail />} />
-        {/*child route*/}
-        <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
-      </Route>
+    <>
+      <Navbar />
 
+<<<<<<< HEAD
       <Route index element={<Homepage />}></Route>
       <Route path='/home' element={<Homepage />} />
       <Route path='/feed' element={<Feed data={data} />} />
@@ -37,21 +35,37 @@ export default function App(props) {
       <Route path='/profile/form' element={<Form />} />
       <Route path="*" element={<Navigate to='/home' />} />
     </Routes>
+=======
+      <Routes>
+        <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />}>
+          {/*route for information a specific person out of the 4 contributors*/}
+          <Route path=":contributorName" element={<ContributorDetail />} />
+          {/*child route*/}
+          <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
+        </Route>
+>>>>>>> 7477a429a1193fe5ac005af77ba0d5d3094d4d27
 
-    //these are the 4 main pages that will be shown to the users:
-    // PAGE #1:
-    // <Homepage />
+        <Route path='/home' element={<Homepage />} />
+        <Route path='/feed' element={<Feed data={data} />} />
+        <Route path='/profile' element={<UserProfile />} />
+        <Route path="*" element={<Navigate to='/aboutUs' />} />
+      </Routes></>
 
-    // PAGE #2:
-    // <Aboutus />
 
-    // PAGE #3:
-    // <Feed data={data} />
+    //   {/* //these are the 4 main pages that will be shown to the users:
+    // // PAGE #1:
+    // // <Homepage />
 
-    //PAGE #4:
-    // <UserProfile data={data} />
-    // the form is our interactive part. in the final, we will use the router to call 
-    // this component in the UserProfile, but for now, we put it here for interactivity
-    //  <Form />
+    // // PAGE #2:
+    // // <Aboutus />
+
+    // // PAGE #3:
+    // // <Feed data={data} />
+
+    // //PAGE #4:
+    // // <UserProfile data={data} />
+    // // the form is our interactive part. in the final, we will use the router to call 
+    // // this component in the UserProfile, but for now, we put it here for interactivity
+    // //  <Form /> */}
   );
 }

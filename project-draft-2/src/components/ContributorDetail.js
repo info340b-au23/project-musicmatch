@@ -13,6 +13,8 @@ export default function ContributorDetail(props) {
 
     let contributor = _.find(INFO_ABOUT_US, { name: contributorNameString }); //find each contributor in the data
 
+    if (!contributor) return <h2>No such contributor exists</h2>
+    
     //make a bootstrap carousel to display each contributor:
     let carouselItems = contributor.images.map(function (img) {
         return (

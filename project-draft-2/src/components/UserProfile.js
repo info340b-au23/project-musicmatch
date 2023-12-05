@@ -1,20 +1,24 @@
 import React from 'react';
 import '../style.css';
 import { NavLink } from 'react-router-dom';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
+=======
+import { Footer } from './Footer.js';
+>>>>>>> 7477a429a1193fe5ac005af77ba0d5d3094d4d27
 
 export default function UserProfile(props) {
     return (
         <div className='profile'>
             {/* Navbar */}
-            <nav className="navbarAllPages">
+            {/* <nav className="navbarAllPages">
                 <ul>
                     <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
                     <li><NavLink to="/aboutUs">About Us</NavLink></li>
                     <li><NavLink to="/feed">Feed</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
                 </ul>
-            </nav>
+            </nav> */}
 
             <body class="container">
                 {/* Main Content */}
@@ -89,6 +93,9 @@ export default function UserProfile(props) {
                             <p>&copy; MusicMatch 2023</p>
                         </div>
                     </footer>
+
+                    {/* Not sure if were using this */}
+                    {/* <Footer /> */}
                 </main>
             </body>
         </div>

@@ -2,18 +2,19 @@ import React from 'react';
 import '../style.css';
 import { Map } from './Map.js';
 import { NavLink } from 'react-router-dom';
+import { Footer } from './Footer.js';
 
 export default function Homepage() {
     return (
         <div className="homepage">
-            <nav className="navbarAllPages">
+            {/* <nav className="navbarAllPages">
                 <ul>
                     <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
                     <li><NavLink to="/aboutUs">About Us</NavLink></li>
                     <li><NavLink to="/feed">Feed</NavLink></li>
                     <li><NavLink to="/profile">Profile</NavLink></li>
                 </ul>
-            </nav>
+            </nav> */}
 
             <main>
                 <header>
@@ -26,6 +27,7 @@ export default function Homepage() {
 
             <Map />;
 
+            {/* Footer */}
             <footer>
                 <div className="container">
                     <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
@@ -33,6 +35,9 @@ export default function Homepage() {
                     <p>&copy; MusicMatch 2023</p>
                 </div>
             </footer>
+
+            {/* Not sure if were using this */}
+            {/* <Footer /> */}
         </div>
     );
 }
