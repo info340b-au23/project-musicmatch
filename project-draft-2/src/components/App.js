@@ -22,6 +22,7 @@ export default function App(props) {
 
   //call components here:
   return (
+<<<<<<< HEAD
      /* <Routes>
         <Route index element={<Homepage />} />
         <Route path='/home' element={<Homepage />} />
@@ -29,18 +30,21 @@ export default function App(props) {
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
       </Routes>*/
+=======
+>>>>>>> c570321ab13ea650ce6c0d8aadf37100f25edf66
     <Routes>
       <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />} >
         {/*route for information a specific person out of the 4 contributors*/}
         <Route path=":contributorName" element={<ContributorDetail />} />
         {/*child route*/}
-        <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
+        {/* <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} /> */}
       </Route>
 
+      <Route index element={<Homepage />}></Route>
       <Route path='/home' element={<Homepage />} />
       <Route path='/feed' element={<Feed data={data} />} />
       <Route path='/profile' element={<UserProfile />} />
-      <Route path="*" element={<Navigate to='/aboutUs' />} />
+      <Route path="*" element={<Navigate to='/home' />} />
     </Routes>
 
     //these are the 4 main pages that will be shown to the users:
