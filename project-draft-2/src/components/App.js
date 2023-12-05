@@ -11,6 +11,8 @@ import ContributorList from './ContributorList.js';
 import Feed from './Feed.js';
 import UserProfile from './UserProfile.js';
 import { Form } from './Form.js';
+import { Navbar } from './Navbar.js';
+import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 
@@ -22,19 +24,27 @@ export default function App(props) {
 
   //call components here:
   return (
-    <Routes>
-      <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />} >
-        {/*route for information a specific person out of the 4 contributors*/}
-        <Route path=":contributorName" element={<ContributorDetail />} />
-        {/*child route*/}
-        <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
-      </Route>
+    <div>
+      <Navbar />
 
-      <Route path='/home' element={<Homepage />} />
-      <Route path='/feed' element={<Feed data={data} />} />
-      <Route path='/profile' element={<UserProfile />} />
-      <Route path="*" element={<Navigate to='/aboutUs' />} />
-    </Routes>
+      <Routes>
+        <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />}>
+          {/*route for information a specific person out of the 4 contributors*/}
+          <Route path=":contributorName" element={<ContributorDetail />} />
+          {/*child route*/}
+          <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
+        </Route>
+
+        <Route path='/home' element={<Homepage />} />
+        <Route path='/feed' element={<Feed data={data} />} />
+        <Route path='/profile' element={<UserProfile />} />
+
+        <Route path="*" element={<Navigate to='/home' />} />
+      </Routes>
+
+      {/* Not sure if were using this */}
+      {/* <Footer /> */}
+    </div>
 
     //these are the 4 main pages that will be shown to the users:
     // PAGE #1:
