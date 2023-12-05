@@ -25,6 +25,8 @@ export default function App(props) {
   //call components here:
   return (
     <>
+    <Navbar />
+
       <Routes>
         <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />}>
           {/*route for information a specific person out of the 4 contributors*/}
@@ -38,6 +40,8 @@ export default function App(props) {
         <Route path='/profile' element={<UserProfile />} />
         <Route path="*" element={<Navigate to='/aboutUs' />} />
       </Routes>
+
+      <Footer />
     </>
 
 

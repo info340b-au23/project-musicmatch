@@ -3,6 +3,7 @@
     background-color: black;
     font-family: 'Rubik', sans-serif;
 }
+
 /* .profile nav {
     position: fixed;
     top: 0;
@@ -543,6 +544,43 @@ dl {
         padding: 8px;
     }
 }
+
+
+/* THIS IS CSS CODE FOR ContributorDetail ! for carousel bootstrap ONLY*/
+.contributor-detail {
+    text-align: center;
+    padding-top: 45px;
+    padding-bottom: 45px;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-heading-style {
+    font-family: "Rubik", sans-serif;
+    color: #03dac5;
+}
+
+/* THIS IS CSS CODE FOR ContributorList! for ContributorList component ONLY*/
+.contributor-card {
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contributor-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.contributor-card .card-body {
+    padding: 1rem;
+}
+
 
 /* navbar for all pages! */
 .navbarAllPages ul {

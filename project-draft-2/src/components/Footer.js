@@ -1,4 +1,5 @@
 //our footer for each page
+import '../style.css'; //import the custom CSS file
 
 export function Footer() {
     return (

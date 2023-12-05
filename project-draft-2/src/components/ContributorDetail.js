@@ -21,22 +21,46 @@ export default function ContributorDetail(props) {
     if (!contributor) return <h2>No such contributor exists</h2>
 
     //make a bootstrap carousel to display each contributor:
-    let carouselItems = contributor.images.map(function (img, imgIndex) {
-        return (
-            <Carousel.Item key={imgIndex}>
-                <img className="d-block w-100" src={'../' + img} alt={contributor.name + ' Image'} />
-            </Carousel.Item>
-        )
-    });
+    // let carouselItems = contributor.images.map(function (img, imgIndex) {
+    //     return (
+    //         <Carousel.Item key={imgIndex} className="carousel-item">
+    //             <img className="contributor-image" src={'../' + img} alt={contributor.name + ' Image'} />
+    //         </Carousel.Item>
+    //     )
+    // });
 
 
+    // return (
+    //     <div className="contributor-detail">
+    //         <h2>About: {contributor.name}</h2>
+    //         <p>{contributor.description}</p>
+    //         <div className="carousel-container">
+    //             <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} prevLabel="" nextLabel="" interval={null}>
+    //                 {carouselItems}
+    //             </Carousel>
+    //         </div>
+    //     </div>
+    // );
     return (
-        <div>
-            <h2>About: {contributor.name}</h2>
-            <p>{contributor.description}</p>
-            <div>
-                <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} prevLabel="" nextLabel="">
-                    {carouselItems}
+        <div className="contributor-detail">
+            <h2 className="carousel-heading-style">About: {contributor.name}</h2>
+            <p className="carousel-heading-style">{contributor.description}</p>
+            <div className="carousel-container">
+                <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} prevLabel="" nextLabel="" interval={null}>
+                    {contributor.images.map((img, imgIndex) => (
+                        <Carousel.Item key={imgIndex} className="carousel-item">
+                            <img
+                                style={{
+                                    width: '100%',
+                                    height: 'auto',
+                                    maxWidth: '600px',
+                                    maxHeight: '600px',
+                                }}
+                                src={'../' + img}
+                                alt={contributor.name + ' Image'}
+                            />
+                        </Carousel.Item>
+                    ))}
                 </Carousel>
             </div>
         </div>
