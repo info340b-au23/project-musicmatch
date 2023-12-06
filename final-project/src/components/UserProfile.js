@@ -32,7 +32,7 @@ export default function UserProfile(props) {
                         <div className="text-container">
                             <p id="username">{props.userName}music_lover21</p>
                             <p id="email">y{props.userEmail}yaymusic@gmail.com</p>
-                            <button id='profile-button'>Edit Profile</button>
+                            <Link to='/SavedPosts'><button id='profile-button'>Saved Music</button></Link>
                         </div>
                         <Link to='/profile/form'><button id='song-form'>Create Post</button></Link>
                     </div>

@@ -92,6 +92,7 @@
     background-color: #16B1B5;
     color: white;
     margin-top: 1rem;
+    display: inline-block;
 }
 
 .profile .profile-container {
