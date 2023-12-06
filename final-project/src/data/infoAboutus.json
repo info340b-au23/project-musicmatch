@@ -12,12 +12,13 @@
     },
     {
         "name": "Kylah",
-        "description": "info about Kylah Moon",
+        "description": "My name is Kylah, and I am a Junior in Informatics with a data science minor. I spend most of my time either working as a Barista at the Husky Grind, playing on my intramural volleyball team (we lost all our games), making art, listening to music, spending time outside, and hanging out with my friends.",
         "images": [
-            "img/cat.jpg",
-            "img/lanadelrey.jpeg",
-            "img/logo.png",
-            "img/profile.jpg"
+            "img/kylah_1.jpeg",
+            "img/kylah_2.jpeg",
+            "img/kylah_3.jpeg",
+            "img/kylah_4.jpeg",
+            "img/kylah_5.jpeg"
         ]
     },
     {

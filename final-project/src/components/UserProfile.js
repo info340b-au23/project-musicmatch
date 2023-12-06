@@ -32,7 +32,7 @@ export default function UserProfile(props) {
                         <div className="text-container">
                             <p id="username">{props.userName}music_lover21</p>
                             <p id="email">y{props.userEmail}yaymusic@gmail.com</p>
-                            <button id='profile-button'>Edit Profile</button>
+                            <Link to='/savedMusic'><button id='profile-button'>Saved Music</button></Link>
                         </div>
                         <Link to='/profile/form'><button id='song-form'>Create Post</button></Link>
                     </div>
@@ -61,12 +61,12 @@ export default function UserProfile(props) {
                     </div>
 
                     {/* Sample Liked Song */}
-                    <div class="container">
+                    {/* <div class="container">
                         <div class="row">
                             <h2 class="sub-header">Liked Songs</h2>
-                            <div class="liked-songs">
+                            <div class="liked-songs"> */}
                                 {/* Song 1 */}
-                                <div class="col-12 col-md-4">
+                                {/* <div class="col-12 col-md-4">
                                     <div class="card">
                                         <div class="card-body">
                                             <h2 class="song-name">Song 1</h2>
@@ -74,13 +74,12 @@ export default function UserProfile(props) {
                                             <button class="genre">Pop</button>
                                             <button class="location">Suzzallo</button>
                                             <button class="activity">Studying</button>
-                                            <div><button class="play">Play</button></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     {/* Footer */}
                     {/* <footer className="footerAllPages">
