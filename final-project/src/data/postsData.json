@@ -3,21 +3,6 @@
         "userName": "JasmineLosovsky",
         "userNameProfileIcon": "../img/cat.jpg",
         "usernameIconAlt": "JasmineLosovsky profile icon",
-        "uploadedProfileImage": "../img/lanadelrey.jpeg",
-        "uploadedProfileImageAlt": "post made by JasmineLosovsky",
-        "commentOne": "lanadelrey: nice post!",
-        "commentTwo": "hey207: lol who dis"
-    },
-    {
-        "userName": "Somebody123",
-        "userNameProfileIcon": "../img/cat.jpg",
-        "usernameIconAlt": "Somebody123 profile icon",
-        "uploadedProfileImage": "../img/profile.jpg",
-        "uploadedProfileImageAlt": "post made by Somebody123",
-        "commentOne": "whatsUp: where r u",
-        "commentTwo": "barakObama: love dis <3"
-    },
-    {
         "songName": "highway to hell",
         "artistName": "ACDC",
         "genre": "rock",
@@ -27,6 +12,9 @@
         "postImageAlt": "post made"
     },
     {
+        "userName": "Somebody123",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "Somebody123 profile icon",
         "songName": "hello",
         "artistName": "adele",
         "genre": "pop",
@@ -36,6 +24,9 @@
         "postImageAlt": "post made"
     },
     {
+        "userName": "JasmineLosovsky",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "JasmineLosovsky profile icon",
         "songName": "whatever",
         "artistName": "tame impala",
         "genre": "indie",
@@ -45,6 +36,9 @@
         "postImageAlt": "post made"
     },
     {
+        "userName": "Somebody123",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "Somebody123 profile icon",
         "songName": "6 foot 7 foot",
         "artistName": "lil wayne",
         "genre": "rap",
@@ -54,6 +48,9 @@
         "postImageAlt": "post made"
     },
     {
+        "userName": "JasmineLosovsky",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "usernameIconAlt": "JasmineLosovsky profile icon",
         "songName": "yo",
         "artistName": "the who",
         "genre": "r&b",

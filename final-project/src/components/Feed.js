@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Feed(props) {
     const data = props.data;
+    
     const samplePost = data.map((userData) => (
         /* mapping to diplay each user's profile name and icon, image posted, and comments */
         <div key={userData.userName} >
