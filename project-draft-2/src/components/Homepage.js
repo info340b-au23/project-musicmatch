@@ -18,7 +18,7 @@ export default function Homepage() {
             <main>
                 <header>
                     <div className="container">
-                        <h1 className="musicmatch">MUSICMATCH</h1>
+                        <h1 className="musicmatch-header">MUSICMATCH</h1>
                         <p className="motto">See what your friends are listening to!</p>
                     </div>
                 </header>

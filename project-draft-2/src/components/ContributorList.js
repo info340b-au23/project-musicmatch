@@ -20,14 +20,14 @@ export default function ContributorList(props) {
 function ContributorCard(props) {
     let contributor = props.contributor;
     return (
-        <div className="col-4 contributor-card">
+        <div className="col-lg-4 col-md-6 col-sm-12 contributor-card">
         <div className="card mb-3 d-flex">
-          <img className="card-img-top" src={contributor.images[0]} alt={contributor.name + "'s Image"} />
-          <div className="card-body">
-            <h3 className="card-title">{contributor.name}</h3>
-            <Link className="btn btn-info" to={contributor.name}>Learn more about: {contributor.name}</Link>
-          </div>
+            <img className="card-img-top" src={contributor.images[0]} alt={contributor.name + "'s Image"} />
+            <div className="card-body">
+                <h3 className="card-title">{contributor.name}</h3>
+                <Link className="btn btn-info" to={contributor.name}>Learn more about: {contributor.name}</Link>
+            </div>
         </div>
-      </div>
+    </div>
     );
 }

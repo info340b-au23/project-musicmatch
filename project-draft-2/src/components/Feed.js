@@ -3,25 +3,25 @@ import { NavLink } from 'react-router-dom';
 
 export default function Feed(props) {
     const data = props.data;
-    const feedInformation = data.map((userData) => (
+    const samplePost = data.map((userData) => (
         /* mapping to diplay each user's profile name and icon, image posted, and comments */
         <div key={userData.userName} >
 
             {/* profile name and icon */}
-            <div className="musicMatch-header">
+            <div className="header">
                 <img
-                    className="musicMatch-profile-image"
+                    className="profile-image"
                     src={userData.userNameProfileIcon}
                     alt={userData.usernameIconAlt}
                 />
-                <span className="musicMatch-profile-name">
+                <span className="profile-name">
                     {userData.userName}
                 </span>
             </div>
 
             {/* profile image */}
-            <div className="musicMatch-image">
-                <img className="img-fluid musicMatch-image"
+            <div className="image">
+                <img className="img-fluid image"
                     src={userData.uploadedProfileImage}
                     alt={userData.uploadedProfileImageAlt}
                 />
@@ -29,7 +29,7 @@ export default function Feed(props) {
 
             {/* profile actions: like button and save button */}
             {/* Like button */}
-            <div className="musicMatch-interact">
+            <div className="like">
                 <button type="button" className="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
@@ -38,7 +38,7 @@ export default function Feed(props) {
             </div>
 
             {/* Save button */}
-            <div className="musicMatch-save">
+            <div className="save">
                 <button type="button" className="btn btn-info">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
@@ -71,7 +71,7 @@ export default function Feed(props) {
 
             {/* Main Content */}
             <main>
-                <h1 className="musicmatch">MUSICMATCH</h1>
+                <h1 className="musicmatch-header">MUSICMATCH</h1>
 
                 <div id="filtering">
                     <h5 style={{ color: 'white' }}>Filter By:</h5>
@@ -82,7 +82,7 @@ export default function Feed(props) {
 
                 {/* Sample Post */}
                 <div className="post">
-                    {feedInformation}
+                    {samplePost}
                 </div>
 
 

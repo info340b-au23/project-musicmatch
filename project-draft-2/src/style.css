@@ -1,3 +1,19 @@
+/* Header all pages! */
+.musicmatch-header {
+    font-family: "Rubik", sans-serif;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #03dac5;
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
 /* Profile */
 .profile body {
     background-color: black;
@@ -184,7 +200,7 @@
     font-family: 'Rubik', sans-serif;
     background-color: black;
     text-align: left;
-    color: antiquewhite;
+    color: white;
 }
 
 /* .aboutus nav ul {
@@ -237,44 +253,12 @@
     background-color: black;
 }
 
-/* .feed h1 {
-    font-family: "Rubik", sans-serif;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: .5rem;
-    text-align: center;
-    font-size: 3.5rem;
-} */
-
-
 .feed body {
     background-color: black;
     font-size: 18px;
 }
 
-.feed .container {
-    max-width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-/* .feed nav ul {
-    padding-bottom: 1cm;
-    margin: 0;
-}
-
-.feed nav li {
-    display: inline;
-    margin: 0 1rem;
-    color: white;
-}
-
-.feed nav ul li a {
-    color: white;
-    text-decoration: none;
-} */
-
-.feed .musicMatch-profile-image {
+.feed .profile-image {
     width: 70px;
     height: 70px;
     border: 1px solid black;
@@ -284,7 +268,7 @@
     border-radius: 50%;
 }
 
-.feed .musicMatch-header {
+.feed .header {
     height: 60px;
     width: 100%;
     padding: 16px;
@@ -293,7 +277,7 @@
     display: inline-block;
 }
 
-.feed .musicMatch-profile-name {
+.feed .profile-name {
     float: left;
     margin-top: .5rem;
     font-weight: 500;
@@ -302,32 +286,18 @@
     color: #03dac5
 }
 
-.feed .musicMatch-actions {
-    float: right;
-    margin-top: .5rem;
-    font-weight: bold;
-    font-size: 30px;
-}
-
-.feed .musicMatch-image {
+.feed .image {
     margin-left: auto;
     margin-right: auto;
-    /* height: 50px; */
-    /* width: 50px; */
     width: 80%;
-
 }
 
-/* .feed .post {
-    max-width: 50px;
-    max-height: 50px;
-} */
-.feed .musicMatch-interact {
+.feed .like {
     padding: 8px;
     float: left;
 }
 
-.feed .musicMatch-save {
+.feed .save {
     float: right;
     width: 55px;
 }
@@ -337,13 +307,8 @@
     font-family: "Rubik";
     color: white;
     font-size: 19px;
+    margin-top: 20px;
 }
-
-/* .feed footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-} */
 
 /* Home Page */
 .homepage {
@@ -548,7 +513,7 @@ dl {
     color: #03dac5;
 }
 
-/* THIS IS CSS CODE FOR ContributorList class! for ContributorCard component ONLY*/
+/* ContributorList class! for ContributorCard component ONLY*/
 .contributor-card {
     margin: 0.5rem;
     display: flex;
@@ -565,13 +530,19 @@ dl {
     padding: 1rem;
 }
 
-/* THIS IS CSS CODE FOR ContributorList class! for ContributorList component ONLY*/
+.contributorlist-name {
+    margin: 0 -0.5rem;
+}
+
+/* ContributorList class, for ContributorList component ONLY*/
 .contributorlist-header {
     color: #03dac5;
     font-family: "Rubik", sans-serif;
     font-size: 2.2rem;
     padding-top: 15px;
     padding-bottom: 15px;
+    text-align: center;
+    /* Center the title */
 }
 
 .contributorlist-name {
@@ -580,60 +551,68 @@ dl {
     font-size: 1.5rem;
 }
 
-
-/* navbar for all pages! */
-.navbarAllPages ul {
-    padding-bottom: 0.5cm;
-    margin: 0;
+/* navigation bar for all pages! */
+/* .navbarAllPages {
+    background-color: #343434;
+    padding: 8px;
 }
 
-.navbarAllPages li {
-    display: inline;
+.navItem {
+    display: inline-block;
     margin: 0 1rem;
     color: white;
+    font-size: 20px;
 }
 
-.navbarAllPages ul li a {
+.navItem a {
+    color: white;
+    text-decoration: none;
+} */
+
+.navbarAllPages {
+    background-color: #343434;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-button {
+    cursor: pointer;
+    font-size: 20px;
+    color: white;
+    padding: 0.5rem;
+    display: none;
+}
+
+.navItems {
+    display: flex;
+}
+
+.navItem {
+    margin: 0 1rem;
+    color: white;
+    font-size: 20px;
+}
+
+.navItem a {
     color: white;
     text-decoration: none;
 }
 
-.navbarAllPages {
-    background-color: #343434;
-    padding: 0;
-    margin: 0;
-    top: 0;
-}
-
 /* footer for all pages! */
-.footerAllPages footer {
+.footerAllPages {
     color: white;
     background-color: black;
     margin: 0;
 }
 
-.footerAllPages footer a {
+.footerAllPages a {
     color: white;
     text-decoration: none;
     padding: 1em;
 }
 
-/* Header all pages! */
-.musicmatch {
-    font-family: "Rubik", sans-serif;
-    margin-top: 0;
-    margin-bottom: .5rem;
-    text-align: center;
-    font-size: 5rem;
-    font-weight: bold;
-    color: #03dac5;
-    padding-top: 5rem;
-    padding-bottom: 1rem;
-    /* background-image: url('../img/paul-gilmore-145802-unsplash.jpg'); */
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-}
 
 /* MEDIA QUERIES */
 /* for Form class*/
@@ -651,31 +630,113 @@ dl {
     }
 }
 
-/* for ContributorList class */
-
-/* THIS IS CSS CODE FOR ContributorList class! for ContributorList component ONLY*/
-.contributorlist-header {
-    color: #03dac5;
-    font-family: "Rubik", sans-serif;
-    font-size: 2.2rem;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.contributorlist-name {
-    color: #03dac5;
-    font-family: "Rubik", sans-serif;
-    font-size: 1.5rem;
-}
-
-@media (min-width: 500px) {
-    .contributorlist-header {
-        font-size: 1.5rem;
+/* for Navbar class */
+@media (max-width: 768px) {
+    .navItems {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #343434;
+        /* z-index: 1; */
     }
 
+    .navItems.show {
+        display: flex;
+    }
+
+    .menu-button {
+        display: block;
+    }
+}
+
+/* for ContributorDetail AND ContributorList classes */
+@media (max-width: 768px) {
+    .contributor-detail {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .carousel-container {
+        display: block;
+    }
+
+    .carousel-heading-style {
+        font-size: 18px;
+    }
+
+    .contributor-card {
+        margin: 0.5rem 0;
+    }
+
+    .contributor-card .card-img-top {
+        height: 150px;
+    }
+
+    .contributor-card .card-body {
+        padding: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
     .contributorlist-name {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .contributor-card {
+        margin: 1rem;
+        flex: 0 0 calc(33.333% - 2rem);
+    }
+
+    .contributor-card .card-img-top {
+        height: 200px;
+    }
+
+    .contributor-card .card-body {
+        padding: 1rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .carousel-heading-style {
+        font-size: 24px;
+    }
+
+    .contributor-card .card-img-top {
+        height: 250px;
+    }
+
+    .contributor-card .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* for Feed class*/
+@media (max-width: 768px) {
+    .feed .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feed .profile-image {
+        width: 60px;
+        height: 60px;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .feed .profile-name {
         font-size: 1rem;
     }
-}
 
-/* for ContributorDetail class */
+    .musicmatch {
+        font-size: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 0.5rem;
+    }
+}

@@ -20,7 +20,7 @@ export default function Aboutus() {
 
                 {/* Header */}
                 <header>
-                    <h1 className="musicmatch">MUSICMATCH</h1>
+                    <h1 className="musicmatch-header">MUSICMATCH</h1>
                     <p>Come connect on UW campus with music</p>
                 </header>
 

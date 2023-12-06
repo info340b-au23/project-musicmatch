@@ -20,7 +20,7 @@ export default function UserProfile(props) {
             <body class="container">
                 {/* Main Content */}
                 <header>
-                    <h1 class="musicmatch">MY PROFILE</h1>
+                    <h1 class="musicmatch-header">MY PROFILE</h1>
                 </header>
                 <main>
                     <div className="profile-container">

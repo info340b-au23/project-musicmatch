@@ -19,11 +19,6 @@ import { Footer } from './Footer.js';
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 import users from '../data/data.json';
 
-// Test for changing Anu's username in Realtime database
-const db = getDatabase();
-const anuUsernameRef = ref(db, "users/anu/username");
-const newValForAnuUsername = "anughosh";
-firebaseSet(anuUsernameRef, newValForAnuUsername);
 
 export default function App(props) {
   //props for data that will be used in Feed
@@ -31,12 +26,18 @@ export default function App(props) {
   //props for data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
 
+  // Test for changing Anu's username in Realtime database
+  const db = getDatabase();
+  const anuUsernameRef = ref(db, "users/anu/username");
+  const newValForAnuUsername = "anughosh";
+  firebaseSet(anuUsernameRef, newValForAnuUsername);
+
   const [currentUser, setCurrentUser] = useState(users[0]);
 
   //call components here:
   return (
     <>
-    <Navbar />
+      <Navbar />
 
       <Routes>
         <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />}>
