@@ -59,16 +59,6 @@ export default function Feed(props) {
 
     return (
         <div className="feed">
-            {/* Navbar */}
-            {/* <nav className="navbarAllPages">
-                <ul>
-                    <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
-                    <li><NavLink to="/aboutUs">About Us</NavLink></li>
-                    <li><NavLink to="/feed">Feed</NavLink></li>
-                    <li><NavLink to="/profile">Profile</NavLink></li>
-                </ul>
-            </nav> */}
-
             {/* Main Content */}
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
@@ -84,17 +74,6 @@ export default function Feed(props) {
                 <div className="post">
                     {samplePost}
                 </div>
-
-
-                {/* Footer */}
-                {/* <footer className="footerAllPages">
-                    <div className="container">
-                        <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
-                        <p><a href="tel:555-123-4567"><span className="material-icons">phone</span> 555-123-4567</a></p>
-                        <p>&copy; MusicMatch 2023</p>
-                    </div>
-                </footer> */}
-
             </main>
         </div>
     );

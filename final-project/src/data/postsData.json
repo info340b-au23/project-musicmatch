@@ -16,5 +16,50 @@
         "uploadedProfileImageAlt": "post made by Somebody123",
         "commentOne": "whatsUp: where r u",
         "commentTwo": "barakObama: love dis <3"
+    },
+    {
+        "songName": "highway to hell",
+        "artistName": "ACDC",
+        "genre": "rock",
+        "location": "HUB",
+        "activity": "studying",
+        "postImage": "../img/profile.jpg",
+        "postImageAlt": "post made"
+    },
+    {
+        "songName": "hello",
+        "artistName": "adele",
+        "genre": "pop",
+        "location": "bus stop",
+        "activity": "working out",
+        "postImage": "../img/lanadelrey.jpeg",
+        "postImageAlt": "post made"
+    },
+    {
+        "songName": "whatever",
+        "artistName": "tame impala",
+        "genre": "indie",
+        "location": "mary gates",
+        "activity": "social",
+        "postImage": "../img/profile.jpg",
+        "postImageAlt": "post made"
+    },
+    {
+        "songName": "6 foot 7 foot",
+        "artistName": "lil wayne",
+        "genre": "rap",
+        "location": "library",
+        "activity": "commute",
+        "postImage": "../img/profile.jpg",
+        "postImageAlt": "post made"
+    },
+    {
+        "songName": "yo",
+        "artistName": "the who",
+        "genre": "r&b",
+        "location": "ima",
+        "activity": "eating",
+        "postImage": "../img/profile.jpg",
+        "postImageAlt": "post made"
     }
 ]

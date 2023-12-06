@@ -52,7 +52,8 @@ export default function App(props) {
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
-        <Route path="*" element={<Navigate to='/aboutUs' />} />
+        {/*change route to home!*/}
+        <Route path="*" element={<Navigate to='/home' />} />
       </Routes>
 
       <Footer />

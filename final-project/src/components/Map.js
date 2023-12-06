@@ -27,10 +27,10 @@ export function Map() {
         iframe.height = "600px";
         iframe.style.border = "none";
 
-        // Append the iframe content as a string to the map state
+        //append the iframe content as a string to the map state
         setMap(iframe.outerHTML);
 
-        // Clean up the iframe when the component unmounts
+        //clean the iframe 
         return () => {
             if (iframe.parentNode) {
                 iframe.parentNode.removeChild(iframe);
