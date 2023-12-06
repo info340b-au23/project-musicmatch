@@ -12,6 +12,7 @@ import ContributorDetail from './ContributorDetail.js';
 import ContributorList from './ContributorList.js';
 import Feed from './Feed.js';
 import UserProfile from './UserProfile.js';
+import SavedMusic from './SavedMusic';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
@@ -52,6 +53,7 @@ export default function App(props) {
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
+        <Route path="/savedMusic" component={<SavedMusic data={data}/>} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
       </Routes>
