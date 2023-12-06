@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-
+import React, { useState, useEffect  } from 'react';
 
 export default function Feed(props) {
     const data = props.data;
+    //variable to see when a post was saved
     const [savedPosts, setSavedPosts] = useState([]);
+
+    //variables for the form to be used for filtering
+    const [filteredPosts, setFilteredPosts] = useState([]);
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [selectedActivities, setSelectedActivities] = useState([]);
 
     const handleSaveClick = (post) => {
         setSavedPosts([...savedPosts, post]);
@@ -29,8 +34,8 @@ export default function Feed(props) {
             {/* profile image */}
             <div className="image">
                 <img className="img-fluid image"
-                    src={userData.uploadedProfileImage}
-                    alt={userData.uploadedProfileImageAlt}
+                    src={userData.postImage}
+                    alt={userData.postImageAlt}
                 />
             </div>
 

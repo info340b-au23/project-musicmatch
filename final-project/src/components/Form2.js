@@ -11,6 +11,8 @@ export function Form() {
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [selectedActivities, setSelectedActivities] = useState([]);
 
     const handleInputChange = (input) => {
         const { name, value } = input.target;
@@ -21,11 +23,31 @@ export function Form() {
         const isSelected = selectedGenres.includes(genre);
 
         if (isSelected) {
-            // Genre is already selected, remove it
+            //if genre is already selected, remove it
             setSelectedGenres(selectedGenres.filter((g) => g !== genre));
         } else {
-            // Genre is not selected, add it
+            //if genre is not selected, add it
             setSelectedGenres([...selectedGenres, genre]);
+        }
+    };
+
+    const handleLocationChange = (location) => {
+        const isSelected = selectedLocations.includes(location);
+
+        if (isSelected) {
+            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
+        } else {
+            setSelectedLocations([...selectedLocations, location]);
+        }
+    };
+
+    const handleActivityChange = (activity) => {
+        const isSelected = selectedActivities.includes(activity);
+
+        if (isSelected) {
+            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
+        } else {
+            setSelectedActivities([...selectedActivities, activity]);
         }
     };
 
@@ -34,16 +56,22 @@ export function Form() {
 
         console.log("Form submitted:", {
             ...formData,
-            genre: selectedGenres,
+            genres: selectedGenres,
+            location: selectedLocations,
+            activity: selectedActivities,
         });
 
         //reset the form after submission
         setFormData({
             songName: "",
-            location: "",
-            activity: ""
+            artistName: "",
+            genres: [],
+            location: [],
+            activity: []
         });
         setSelectedGenres([]);
+        setSelectedLocations([]);
+        setSelectedActivities([]);
     };
 
     return (
