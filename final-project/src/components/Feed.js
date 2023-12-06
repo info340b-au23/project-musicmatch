@@ -47,14 +47,6 @@ export default function Feed(props) {
                     </svg>
                 </button>
             </div>
-
-            {/* profile comments */}
-            <div className="comment">
-                {userData.commentOne}
-            </div>
-            <div className="comment">
-                {userData.commentTwo}
-            </div>
         </div>
     ));
 
