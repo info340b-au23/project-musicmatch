@@ -8,7 +8,7 @@ import { initializeApp } from "firebase/app"; //added from firebase
 import './style.css'; //import css file!
 
 //import json data file for Feed
-import DATA from './data/postsData.json';
+import DATA from './data/data.json';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {

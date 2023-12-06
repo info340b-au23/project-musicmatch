@@ -17,14 +17,15 @@ import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
-import users from '../data/data.json';
-
+import FEED_EXAMPLE_DATA from '../data/postsData.json';
 
 export default function App(props) {
-  //props for data that will be used in Feed
-  const data = props.data;
-  //props for data that will be used in AboutUs
+  //data that will be used in Feed to show an EXAMPLE of the feed
+  const data = FEED_EXAMPLE_DATA;
+  //data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
+  //we import the realtime data in index.js
+  let users = props.data;
 
   // Test for changing Anu's username in Realtime database
   const db = getDatabase();
