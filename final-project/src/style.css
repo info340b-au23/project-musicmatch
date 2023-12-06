@@ -311,6 +311,13 @@
     margin-top: 20px;
 }
 
+/* Saved Music */
+.savedMusic body {
+    background-color: black;
+    font-size: 18px;
+}
+
+
 /* Home Page */
 .homepage {
     background-color: black;
