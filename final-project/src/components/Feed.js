@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom';
 
 export default function Feed(props) {
     const data = props.data;
-    const [savedMusic, setSavedMusic] = useState([]);
+    const [savedPosts, setSavedPosts] = useState([]);
 
     const handleSaveClick = (post) => {
-        setSavedMusic([...savedMusic, post]);
+        setSavedPosts([...savedPosts, post]);
     };
 
     const samplePost = data.map((userData) => (
