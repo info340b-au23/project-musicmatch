@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import firebase from 'firebase/app';
+import { getDatabase, ref, onValue, set as firebaseSet } from 'firebase/database';
 
 import '../style.css'; //import the custom CSS file
 
@@ -15,12 +17,21 @@ import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
+import users from '../data/data.json';
+
+// Test for changing Anu's username in Realtime database
+const db = getDatabase();
+const anuUsernameRef = ref(db, "users/anu/username");
+const newValForAnuUsername = "anughosh";
+firebaseSet(anuUsernameRef, newValForAnuUsername);
 
 export default function App(props) {
   //props for data that will be used in Feed
   const data = props.data;
   //props for data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
+
+  const [currentUser, setCurrentUser] = useState(users[0]);
 
   //call components here:
   return (
@@ -38,6 +49,7 @@ export default function App(props) {
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
+        <Route path='/profile/form' element={<Form />} />
         <Route path="*" element={<Navigate to='/aboutUs' />} />
       </Routes>
 

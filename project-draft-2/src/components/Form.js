@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { UploadAndDisplayImage } from './UploadImage.js';
 import '../style.css';
 
+
 export function Form() {
     const [formData, setFormData] = useState({
         songName: "",
-        location: "",
-        activity: "",
-        genres: []
+        artistName: "",
+        genres: [],
+        location: [],
+        activity: [],
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
@@ -69,30 +71,15 @@ export function Form() {
                                 />
                             </div>
                         </p>
-                        <h2 className="size">More Details</h2>
                         <p>
-                            <label htmlFor="location" className="sizeTwo">
-                                Location:{" "}
+                            <label htmlFor="artistName" className="sizeTwo">
+                                Artist Name:{" "}
                             </label>
                             <div>
                                 <input
                                     type="text"
-                                    name="location"
-                                    value={formData.location}
-                                    onChange={handleInputChange}
-                                    className="form-inputs"
-                                />
-                            </div>
-                        </p>
-                        <p>
-                            <label htmlFor="activity" className="sizeTwo">
-                                Activity:{" "}
-                            </label>
-                            <div>
-                                <input
-                                    type="text"
-                                    name="activity"
-                                    value={formData.activity}
+                                    name="artistName"
+                                    value={formData.artistName}
                                     onChange={handleInputChange}
                                     className="form-inputs"
                                 />
@@ -147,6 +134,111 @@ export function Form() {
                                         onChange={() => handleGenreChange("r&b")}
                                     />
                                     R&B
+                                </label>
+                            </div>
+                        </p>
+                        <h2 className="size">More Details</h2>
+                        <p>
+                            <label htmlFor="location" className="sizeTwo">
+                                Location:{" "}
+                            </label>
+                            <div>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="HUB"
+                                        checked={selectedGenres.includes("HUB")}
+                                        onChange={() => handleGenreChange("HUB")}
+                                    />
+                                    HUB
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="bus stop"
+                                        checked={selectedGenres.includes("bus stop")}
+                                        onChange={() => handleGenreChange("bus stop")}
+                                    />
+                                    bus stop
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Mary Gates"
+                                        checked={selectedGenres.includes("Mary Gates")}
+                                        onChange={() => handleGenreChange("Mary Gates")}
+                                    />
+                                    Mary Gates
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Library"
+                                        checked={selectedGenres.includes("Library")}
+                                        onChange={() => handleGenreChange("Library")}
+                                    />
+                                    Library
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="IMA"
+                                        checked={selectedGenres.includes("IMA")}
+                                        onChange={() => handleGenreChange("IMA")}
+                                    />
+                                    IMA
+                                </label>
+                            </div>
+                        </p>
+                        <p>
+                            <label htmlFor="activity" className="sizeTwo">
+                                Activity:{" "}
+                            </label>
+                            <div>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Studying"
+                                        checked={selectedGenres.includes("Studying")}
+                                        onChange={() => handleGenreChange("Studying")}
+                                    />
+                                    Studying
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Working Out"
+                                        checked={selectedGenres.includes("OWorking Out")}
+                                        onChange={() => handleGenreChange("Working Out")}
+                                    />
+                                    Working Out
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Social"
+                                        checked={selectedGenres.includes("Social")}
+                                        onChange={() => handleGenreChange("Social")}
+                                    />
+                                    Social
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Commute"
+                                        checked={selectedGenres.includes("Commute")}
+                                        onChange={() => handleGenreChange("Commute")}
+                                    />
+                                    Commute
+                                </label>
+                                <label className="sizeThree">
+                                    <input
+                                        type="checkbox"
+                                        name="Eating"
+                                        checked={selectedGenres.includes("Eating")}
+                                        onChange={() => handleGenreChange("Eating")}
+                                    />
+                                    Eating
                                 </label>
                             </div>
                         </p>
