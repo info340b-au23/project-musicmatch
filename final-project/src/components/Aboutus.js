@@ -1,20 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 export default function Aboutus() {
     return (
         <div className="aboutus">
-            {/* Navbar */}
-            {/* <nav className="navbarAllPages">
-                <ul>
-                    <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
-                    <li><NavLink to="/aboutUs">About Us</NavLink></li>
-                    <li><NavLink to="/feed">Feed</NavLink></li>
-                    <li><NavLink to="/profile">Profile</NavLink></li>
-                </ul>
-            </nav> */}
-
             {/* Body */}
             <body>
 
@@ -91,38 +80,8 @@ export default function Aboutus() {
                     {/* About the Designers */}
                     {/*display the child routes element, which will be information about each contributor*/}
                     <Outlet />
-
-                    {/* <section>
-                        <h2> About the Designers: </h2>
-
-                        <p>This is a design for INFO 340 - Web Development.</p>
-                        <p>Jasmine Losovsky</p>
-                        <p> Lorem ipsum dolor sit amet. Qui odio sunt ut facilis voluptas sed rerum porro? Ea quae eius quo deserunt
-                            recusandae quilaborum quia et consequatur repellendus At nesciunt quia cum nisi praesentium.</p>
-
-                        <p>Kylah Moon</p>
-                        <p> Lorem ipsum dolor sit amet. Qui odio sunt ut facilis voluptas sed rerum porro? Ea quae eius quo deserunt
-                            recusandae quilaborum quia et consequatur repellendus At nesciunt quia cum nisi praesentium.</p>
-
-                        <p>Jessica Wang</p>
-                        <p> Lorem ipsum dolor sit amet. Qui odio sunt ut facilis voluptas sed rerum porro? Ea quae eius quo deserunt
-                            recusandae quilaborum quia et consequatur repellendus At nesciunt quia cum nisi praesentium.</p>
-
-                        <p>Anu Ghosh</p>
-                        <p> Lorem ipsum dolor sit amet. Qui odio sunt ut facilis voluptas sed rerum porro? Ea quae eius quo deserunt
-                            recusandae quilaborum quia et consequatur repellendus At nesciunt quia cum nisi praesentium.</p>
-                    </section> */}
                 </main>
             </body>
-
-            {/* Footer */}
-            {/* <footer className="footerAllPages">
-                <div className="container">
-                    <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
-                    <p><a href="tel:555-123-4567"><span className="material-icons">phone</span> 555-123-4567</a></p>
-                    <p>&copy; MusicMatch 2023</p>
-                </div>
-            </footer> */}
            
         </div>
     );

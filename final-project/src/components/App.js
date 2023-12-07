@@ -28,6 +28,21 @@ export default function App(props) {
   //we import the realtime data in index.js
   let users = props.data;
 
+  //to control the feed filtering
+  const [filterCriteria, setFilterCriteria] = useState({
+    location: "",
+    genre: "",
+    activity: ""
+  });
+
+  let applyFilter = (location, genre, activity) => {
+    setFilterCriteria({
+      location: location,
+      genre: genre,
+      activity: activity
+    });
+  };
+
   // Test for changing Anu's username in Realtime database
   const db = getDatabase();
   const anuRef = ref(db, "users/anu");
@@ -51,10 +66,15 @@ export default function App(props) {
         </Route>
 
         <Route path='/home' element={<Homepage />} />
-        <Route path='/feed' element={<Feed data={data} />} />
+        <Route path='/feed' element={<Feed
+          data={data}
+          filterCriteria={filterCriteria}
+          setFilterCriteria={setFilterCriteria}
+          applyFilterCallback={applyFilter}
+        />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
-        <Route path="/savedMusic" component={<SavedMusic data={data}/>} />
+        <Route path="/savedMusic" component={<SavedMusic data={data} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
       </Routes>
@@ -62,21 +82,5 @@ export default function App(props) {
       <Footer />
     </>
 
-
-    //   {/* //these are the 4 main pages that will be shown to the users:
-    // // PAGE #1:
-    // // <Homepage />
-
-    // // PAGE #2:
-    // // <Aboutus />
-
-    // // PAGE #3:
-    // // <Feed data={data} />
-
-    // //PAGE #4:
-    // // <UserProfile data={data} />
-    // // the form is our interactive part. in the final, we will use the router to call 
-    // // this component in the UserProfile, but for now, we put it here for interactivity
-    // //  <Form /> */}
   );
 }
