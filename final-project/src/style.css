@@ -15,51 +15,12 @@
     font-family: 'Rubik', sans-serif;
 }
 
-/* .profile nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    background-color: #343434;
-    padding: .5rem .5rem 1rem;
-    z-index: 2;
-}
-
-.profile nav ul {
-    padding: 0;
-    margin: 0;
-}
-
-.profile nav li {
-    display: inline;
-    margin: 0 1rem;
-    color: white;
-} */
-
-/* .profile footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-} */
-
-/* .profile nav ul li a {
-    color: white;
-    text-decoration: none;
-} */
-
 .profile header {
     text-align: center;
     color: white;
     padding-bottom: 1rem;
     margin: 0;
 }
-
-/*.profile #musicmatch {
-    color: #16B1B5;
-    margin-bottom: 2rem;
-    margin-top: 2rem;
-}*/
 
 .profile img {
     height: 300px;
@@ -199,42 +160,10 @@
     color: white;
 }
 
-/* .aboutus nav ul {
-    padding: 0;
-    margin: 0;
-}
-
-.aboutus nav li {
-    display: inline;
-    margin: 0 1rem;
-    color: white;
-} */
-
-/* .aboutus footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-} */
-
-/* .aboutus nav ul li a {
-    color: white;
-    text-decoration: none;
-} */
-
 .aboutus img {
     max-width: 300px;
     max-height: 300px;
 }
-
-/* .aboutus header {
-    color: #03dac5;
-    padding-top: 6rem;
-    padding-bottom: 1rem;
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-} */
-
 
 /* Feed */
 .feed *,
@@ -366,15 +295,6 @@
     /* text-align: center; */
 }
 
-/* .homepage h1 {
-    font-family: "Rubik", sans-serif;
-    font-weight: bold;
-    margin-top: 0;
-    margin-bottom: .5rem;
-    text-align: center;
-    font-size: 3.5rem;
-} */
-
 .homepage header>p {
     font-size: 2rem;
     text-align: center;
@@ -405,48 +325,6 @@ dl {
     text-align: center;
 }
 
-/* .homepage nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: white;
-    background-color: #242526;
-    padding: .5rem .5rem 1rem;
-}
-
-.homepage nav ul {
-    padding: 0;
-    margin: 0;
-}
-
-.homepage nav li {
-    display: inline;
-    margin: 0 1rem;
-    color: white;
-} */
-
-/* .homepage footer a {
-    color: white;
-    text-decoration: none;
-    padding: 1em;
-} */
-
-/* .homepage nav ul li a {
-    color: white;
-    text-decoration: none;
-} */
-
-/*.homepage header {
-    color: #03dac5;
-    padding-top: 6rem;
-    padding-bottom: 1rem;
-    background-image: url('../img/paul-gilmore-145802-unsplash.jpg');
-    background-size: cover;
-    background-position: center;
-    background-color: black;
-}*/
-
 .homepage header p.motto {
     font-size: 1.25rem;
     text-align: center;
@@ -466,12 +344,6 @@ dl {
 .homepage section>map {
     margin: 0;
 }
-
-/* .homepage footer {
-    color: white;
-    background-color: black;
-    margin: 0;
-} */
 
 /* Form */
 .form {
@@ -594,24 +466,6 @@ dl {
     font-family: "Rubik", sans-serif;
     font-size: 1.5rem;
 }
-
-/* navigation bar for all pages! */
-/* .navbarAllPages {
-    background-color: #343434;
-    padding: 8px;
-}
-
-.navItem {
-    display: inline-block;
-    margin: 0 1rem;
-    color: white;
-    font-size: 20px;
-}
-
-.navItem a {
-    color: white;
-    text-decoration: none;
-} */
 
 .navbarAllPages {
     background-color: #343434;
