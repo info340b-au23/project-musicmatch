@@ -1,13 +1,14 @@
 [
     {
         "name": "Jasmine",
-        "description": "My name is Jasmine Losovsky, and I am a junior majoring in informatics and business administration. In my free time, I like to read, listen to music, hang out with friends, and travel (when I am not broke). I also LOVE pickles",
+        "description": "My name is Jasmine Losovsky, and I am a junior majoring in informatics and business administration. I also work in research (iCare team) and Trader Joe's! In my free time, I like to read, listen to music, eat, hang out with friends, and travel (when I am not broke ofc).",
         "images": [
             "img/jasmine1.png",
             "img/jasmine2.png",
             "img/jasmine3.png",
             "img/jasmine4.png",
-            "img/jasmine5.png"
+            "img/jasmine5.png",
+            "img/jasmine6.png"
         ]
     },
     {

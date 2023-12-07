@@ -8,9 +8,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton';
 
 import '../style.css'; //import the custom CSS file
 
-//import songdata from '../data/searchpagedata.json';
-//import { Filter } from './Filter.js';
-
 //import your components here:
 import Homepage from './Homepage.js';
 import Aboutus from './Aboutus.js';
@@ -70,14 +67,10 @@ export default function App(props) {
           {/*child route*/}
           <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
         </Route>
-
-        {/* <Route path="/filter" element={<Filter props={songdata}/>}/>*/}
-
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed
           data={data}
           filterCriteria={filterCriteria}
-          setFilterCriteria={setFilterCriteria}
           applyFilterCallback={applyFilter}
         />} />
         <Route path='/profile' element={<UserProfile />} />

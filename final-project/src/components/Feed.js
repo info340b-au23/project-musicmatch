@@ -4,7 +4,6 @@ import Form from 'react-bootstrap/Form';
 
 export default function Feed(props) {
     const data = props.data;
-    const filterCriteria = props.filterCriteria;
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
@@ -15,27 +14,18 @@ export default function Feed(props) {
     //callback functions
     const handleLocation = (event) => {
         console.log("Selected Location: ", event.target.value)
-        // setlocation(event.target.checked);
         setlocation(event.target.value);
     }
 
     const handleGenre = (event) => {
-        // setGenre(event.target.checked);
         console.log("Selected Genre: ", event.target.value)
         setGenre(event.target.value);
     }
 
     const handleActivity = (event) => {
-        // setActivity(event.target.checked);
         console.log("SelectedActivity: ", event.target.value)
         setActivity(event.target.value);
     }
-
-    //callback function for button 
-    const handleClick = () => {
-        //call the passed down applyFilterCallback function
-        props.applyFilterCallback(location, genre, activity);
-    };
 
     //for viewing saved posts 
     const [savedPosts, setSavedPosts] = useState([]);
@@ -45,27 +35,16 @@ export default function Feed(props) {
 
     function filterBy(postObj) {
         if (
-            ((location !== "All") && ((location !== postObj.location)) )
-            
+            ((location !== "All") && ((location !== postObj.location)))
+
         )
-        return false
+            return false
         else return true;
     }
 
     const filteredPosts = data.filter(filterBy);
 
-    /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
-
-    // const samplePost = data
-    //     .filter((userData) => {
-    //         const userLocation = filterCriteria.location ? userData.location === filterCriteria.location : true;
-    //         const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
-    //         const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
-
-    //         return userLocation && userGenre && userActivity;
-    //     })
-
-const samplePost = filteredPosts
+    const samplePost = filteredPosts
 
         .map((userData) => (
             <div key={userData.songName}>
@@ -129,8 +108,22 @@ const samplePost = filteredPosts
         <div className="feed">
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
-                
+
                 <div className={"d-flex justify-content-center"}>
+                    <Form.Group className="mb-3" controlId="Genre">
+                        <Form.Label className="text-white">Genre :</Form.Label>
+                        <Form.Select aria-label="Genre filter" defaultValue={genre} onChange={handleGenre} className="btn btn-info">
+
+                            <option value="All">All</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Indie">Indie</option>
+                            <option value="Rap">Rap</option>
+                            <option value="R&B">R&B</option>
+
+                        </Form.Select>
+                    </Form.Group>
+
                     <Form.Group className="mb-3" controlId="Location">
                         <Form.Label className="text-white">Location :</Form.Label>
                         <Form.Select aria-label="Location filter" defaultValue={location} onChange={handleLocation} className="btn btn-info">
@@ -141,59 +134,24 @@ const samplePost = filteredPosts
                             <option value="Mary Gates">Mary Gates</option>
                             <option value="Libary">Library</option>
                             <option value="IMA">IMA</option>
+
                         </Form.Select>
                     </Form.Group>
 
-                    
+                    <Form.Group className="mb-3" controlId="Activity">
+                        <Form.Label className="text-white">Activity :</Form.Label>
+                        <Form.Select aria-label="Activity filter" defaultValue={activity} onChange={handleActivity} className="btn btn-info">
 
+                            <option value="All">All</option>
+                            <option value="Studying">Studying</option>
+                            <option value="Working Out">Working Out</option>
+                            <option value="Social">Social</option>
+                            <option value="Commuting">Commuting</option>
+                            <option value="Eating">Eating</option>
 
-                {/* <div className="form-check">
-                    <input
-                        id="locationCheckBox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={location}
-                        onChange={handleLocation}
-                    />
-                    <label htmlFor="locationCheckBox" className="form-check-label">
-                        Location
-                    </label>
-                </div>
+                        </Form.Select>
+                    </Form.Group>
 
-                <div className="form-check">
-                    <input
-                        id="genreCheckBox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={genre}
-                        onChange={handleGenre}
-                    />
-                    <label htmlFor="genreCheckBox" className="form-check-label">
-                        Genre
-                    </label>
-                </div>
-
-                <div className="form-check">
-                    <input
-                        id="activityCheckbox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={activity}
-                        onChange={handleActivity}
-                    />
-                    <label htmlFor="activityCheckbox" className="form-check-label">
-                        Activity
-                    </label>
-                </div> */}
-
-                {/* <button
-                    id="submitButton"
-                    type="submit"
-                    className="mb-3"
-                    onClick={handleClick}
-                >
-                    Apply Filter
-                </button> */}
                 </div>
                 <div className="post">{samplePost}</div>
             </main>
