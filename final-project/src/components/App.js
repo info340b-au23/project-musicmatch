@@ -30,9 +30,10 @@ export default function App(props) {
 
   // Test for changing Anu's username in Realtime database
   const db = getDatabase();
+  const anuRef = ref(db, "users/anu");
   const anuUsernameRef = ref(db, "users/anu/username");
   const newValForAnuUsername = "anughosh";
-  firebaseSet(anuUsernameRef, newValForAnuUsername);
+  firebaseSet(anuRef, newValForAnuUsername);
 
   const [currentUser, setCurrentUser] = useState(users[0]);
 
