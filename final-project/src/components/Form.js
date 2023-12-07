@@ -12,6 +12,8 @@ export function Form() {
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [selectedActivities, setSelectedActivities] = useState([]);
 
     const handleInputChange = (input) => {
         const { name, value } = input.target;
@@ -22,14 +24,44 @@ export function Form() {
         const isSelected = selectedGenres.includes(genre);
 
         if (isSelected) {
-            // Genre is already selected, remove it
+            // if genre is already selected, remove it
             setSelectedGenres(selectedGenres.filter((g) => g !== genre));
         } else {
-            // Genre is not selected, add it
+            // if genre is not selected, add it
             setSelectedGenres([...selectedGenres, genre]);
         }
+
+        //update the formData state with the selected genres
+        setFormData({ ...formData, genres: selectedGenres });
     };
-    
+
+    const handleLocationChange = (location) => {
+        const isSelected = selectedLocations.includes(location);
+
+        if (isSelected) {
+            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
+        } else {
+            setSelectedLocations([...selectedLocations, location]);
+        }
+
+        //update the formData state with the selected locations
+        setFormData({ ...formData, location: selectedLocations });
+    };
+
+
+    const handleActivityChange = (activity) => {
+        const isSelected = selectedActivities.includes(activity);
+
+        if (isSelected) {
+            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
+        } else {
+            setSelectedActivities([...selectedActivities, activity]);
+        }
+
+        //update the formData state with the selected activities
+        setFormData({ ...formData, activity: selectedActivities });
+    };
+
     const db = getDatabase();
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -46,17 +78,37 @@ export function Form() {
         };
         //postData = push(postData)
         push(postData)
-        .then(() => {
-            console.log('Submitted');
-            setFormData({
-                songName: '',
-                artistName: ''
+            .then(() => {
+                console.log('Submitted');
+                setFormData({
+                    songName: '',
+                    artistName: ''
+                })
+                setSelectedGenres([]);
             })
-            setSelectedGenres([]);
-        })
-        .catch((error) => {
-            console.error('Error: ', error);
-        })
+            .catch((error) => {
+                console.error('Error: ', error);
+            })
+
+        //JASMINE ADDED THIS HERE, I COMMENTED IT OUT FOR NOW 
+        /*  console.log("Form submitted:", {
+             ...formData,
+             genres: selectedGenres,
+             location: selectedLocations,
+             activity: selectedActivities,
+         });
+ 
+         //reset the form after submission
+         setFormData({
+             songName: "",
+             artistName: "",
+             genres: [],
+             location: [],
+             activity: []
+         });
+         setSelectedGenres([]);
+         setSelectedLocations([]);
+         setSelectedActivities([]); */
     };
 
     return (
@@ -158,8 +210,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="HUB"
-                                        checked={selectedGenres.includes("HUB")}
-                                        onChange={() => handleGenreChange("HUB")}
+                                        checked={selectedLocations.includes("HUB")}
+                                        onChange={() => handleLocationChange("HUB")}
                                     />
                                     HUB
                                 </label>
@@ -167,8 +219,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="bus stop"
-                                        checked={selectedGenres.includes("bus stop")}
-                                        onChange={() => handleGenreChange("bus stop")}
+                                        checked={selectedLocations.includes("bus stop")}
+                                        onChange={() => handleLocationChange("bus stop")}
                                     />
                                     bus stop
                                 </label>
@@ -176,8 +228,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Mary Gates"
-                                        checked={selectedGenres.includes("Mary Gates")}
-                                        onChange={() => handleGenreChange("Mary Gates")}
+                                        checked={selectedLocations.includes("Mary Gates")}
+                                        onChange={() => handleLocationChange("Mary Gates")}
                                     />
                                     Mary Gates
                                 </label>
@@ -185,8 +237,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Library"
-                                        checked={selectedGenres.includes("Library")}
-                                        onChange={() => handleGenreChange("Library")}
+                                        checked={selectedLocations.includes("Library")}
+                                        onChange={() => handleLocationChange("Library")}
                                     />
                                     Library
                                 </label>
@@ -194,8 +246,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="IMA"
-                                        checked={selectedGenres.includes("IMA")}
-                                        onChange={() => handleGenreChange("IMA")}
+                                        checked={selectedLocations.includes("IMA")}
+                                        onChange={() => handleLocationChange("IMA")}
                                     />
                                     IMA
                                 </label>
@@ -210,8 +262,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Studying"
-                                        checked={selectedGenres.includes("Studying")}
-                                        onChange={() => handleGenreChange("Studying")}
+                                        checked={selectedActivities.includes("Studying")}
+                                        onChange={() => handleActivityChange("Studying")}
                                     />
                                     Studying
                                 </label>
@@ -219,8 +271,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Working Out"
-                                        checked={selectedGenres.includes("OWorking Out")}
-                                        onChange={() => handleGenreChange("Working Out")}
+                                        checked={selectedActivities.includes("OWorking Out")}
+                                        onChange={() => handleActivityChange("Working Out")}
                                     />
                                     Working Out
                                 </label>
@@ -228,8 +280,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Social"
-                                        checked={selectedGenres.includes("Social")}
-                                        onChange={() => handleGenreChange("Social")}
+                                        checked={selectedActivities.includes("Social")}
+                                        onChange={() => handleActivityChange("Social")}
                                     />
                                     Social
                                 </label>
@@ -237,8 +289,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Commute"
-                                        checked={selectedGenres.includes("Commute")}
-                                        onChange={() => handleGenreChange("Commute")}
+                                        checked={selectedActivities.includes("Commute")}
+                                        onChange={() => handleActivityChange("Commute")}
                                     />
                                     Commute
                                 </label>
@@ -246,8 +298,8 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Eating"
-                                        checked={selectedGenres.includes("Eating")}
-                                        onChange={() => handleGenreChange("Eating")}
+                                        checked={selectedActivities.includes("Eating")}
+                                        onChange={() => handleActivityChange("Eating")}
                                     />
                                     Eating
                                 </label>
