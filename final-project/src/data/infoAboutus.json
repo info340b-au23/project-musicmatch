@@ -33,12 +33,13 @@
     },
     {
         "name": "Anu",
-        "description": "Hi! I'm Anu, and I'm a junior majoring in Informatics at UW. I like to travel, listen to music, and am on a dance team!",
+        "description": "Hi! I'm Anu, and I'm a junior majoring in Informatics with a minor in Business. I'm in a business fraternity and competitive dance team at UW. In my free time, I like to travel, listen to music, explore new cafes, and go hiking!",
         "images": [
-            "img/cat.jpg",
-            "img/lanadelrey.jpeg",
-            "img/logo.png",
-            "img/profile.jpg"
+            "img/Anu-1.jpeg",
+            "img/Anu-2.jpeg",
+            "img/Anu-3.jpg",
+            "img/Anu-4.jpg",
+            "img/Anu-5.jpg"
         ]
     }
 ]
