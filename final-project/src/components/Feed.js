@@ -1,26 +1,34 @@
 import React, { useState } from 'react';
 
+import Form from 'react-bootstrap/Form';
+
 export default function Feed(props) {
     const data = props.data;
     const filterCriteria = props.filterCriteria;
 
     //filtering code to let the user filter on posts:
-    const [location, setlocation] = useState(false);
-    const [genre, setGenre] = useState(false);
-    const [activity, setActivity] = useState(false);
+    const [location, setlocation] = useState("All");
+    const [genre, setGenre] = useState("All");
+    const [activity, setActivity] = useState("All");
 
 
     //callback functions
     const handleLocation = (event) => {
-        setlocation(event.target.checked);
+        console.log("Selected Location: ", event.target.value)
+        // setlocation(event.target.checked);
+        setlocation(event.target.value);
     }
 
     const handleGenre = (event) => {
-        setGenre(event.target.checked);
+        // setGenre(event.target.checked);
+        console.log("Selected Genre: ", event.target.value)
+        setGenre(event.target.value);
     }
 
     const handleActivity = (event) => {
-        setActivity(event.target.checked);
+        // setActivity(event.target.checked);
+        console.log("SelectedActivity: ", event.target.value)
+        setActivity(event.target.value);
     }
 
     //callback function for button 
@@ -35,15 +43,30 @@ export default function Feed(props) {
         setSavedPosts([...savedPosts, post]);
     };
 
-    /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
-    const samplePost = data
-        .filter((userData) => {
-            const userLocation = filterCriteria.location ? userData.location === filterCriteria.location : true;
-            const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
-            const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
+    function filterBy(postObj) {
+        if (
+            ((location !== "All") && ((location !== postObj.location)) )
+            
+        )
+        return false
+        else return true;
+    }
 
-            return userLocation && userGenre && userActivity;
-        })
+    const filteredPosts = data.filter(filterBy);
+
+    /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
+
+    // const samplePost = data
+    //     .filter((userData) => {
+    //         const userLocation = filterCriteria.location ? userData.location === filterCriteria.location : true;
+    //         const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
+    //         const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
+
+    //         return userLocation && userGenre && userActivity;
+    //     })
+
+const samplePost = filteredPosts
+
         .map((userData) => (
             <div key={userData.songName}>
                 <div className="row">
@@ -106,8 +129,25 @@ export default function Feed(props) {
         <div className="feed">
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
+                
+                <div className={"d-flex justify-content-center"}>
+                    <Form.Group className="mb-3" controlId="Location">
+                        <Form.Label className="text-white">Location :</Form.Label>
+                        <Form.Select aria-label="Location filter" defaultValue={location} onChange={handleLocation} className="btn btn-info">
 
-                <div className="form-check">
+                            <option value="All">All</option>
+                            <option value="HUB">HUB</option>
+                            <option value="Bus Stop">Bus Stop</option>
+                            <option value="Mary Gates">Mary Gates</option>
+                            <option value="Libary">Library</option>
+                            <option value="IMA">IMA</option>
+                        </Form.Select>
+                    </Form.Group>
+
+                    
+
+
+                {/* <div className="form-check">
                     <input
                         id="locationCheckBox"
                         type="checkbox"
@@ -144,17 +184,17 @@ export default function Feed(props) {
                     <label htmlFor="activityCheckbox" className="form-check-label">
                         Activity
                     </label>
-                </div>
+                </div> */}
 
-                <button
+                {/* <button
                     id="submitButton"
                     type="submit"
-                    className="btn btn-info"
+                    className="mb-3"
                     onClick={handleClick}
                 >
                     Apply Filter
-                </button>
-
+                </button> */}
+                </div>
                 <div className="post">{samplePost}</div>
             </main>
         </div>

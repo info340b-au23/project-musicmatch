@@ -5,8 +5,9 @@
         "userNameIconAlt": "JasmineLosovsky profile icon",
         "songName": "highway to hell",
         "artistName": "ACDC",
-        "genre": "rock",
+        "genre": "Rock",
         "location": "HUB",
+        "activity":"Studying",
         "postImage": "../img/profile.jpg",
         "postImageAlt": "post made"
     },
@@ -16,8 +17,9 @@
         "userNameIconAlt": "Somebody123 profile icon",
         "songName": "hello",
         "artistName": "adele",
-        "genre": "pop",
-        "location": "bus stop",
+        "genre": "Pop",
+        "location": "Bus Stop",
+        "activity":"Working Out",
         "postImage": "../img/lanadelrey.jpeg",
         "postImageAlt": "post made"
     },
@@ -27,8 +29,9 @@
         "userNameIconAlt": "JasmineLosovsky profile icon",
         "songName": "whatever",
         "artistName": "tame impala",
-        "genre": "indie",
-        "location": "mary gates",
+        "genre": "Indie",
+        "location": "Mary Gates",
+        "activity":"Social",
         "postImage": "../img/profile.jpg",
         "postImageAlt": "post made"
     },
@@ -39,7 +42,8 @@
         "songName": "6 foot 7 foot",
         "artistName": "lil wayne",
         "genre": "rap",
-        "location": "library",
+        "location": "Library",
+        "activity":"Commute",
         "postImage": "../img/logo.png",
         "postImageAlt": "post made"
     },
@@ -49,10 +53,22 @@
         "userNameIconAlt": "JasmineLosovsky profile icon",
         "songName": "yo",
         "artistName": "the who",
-        "genre": "r&b",
-        "location": "ima",
-        "activity": "eating",
+        "genre": "R&B",
+        "location": "IMA",
+        "activity": "Eating",
         "postImage": "../img/logo.png",
+        "postImageAlt": "post made"
+    },
+    {
+        "userName": "JasmineLosovsky",
+        "userNameProfileIcon": "../img/cat.jpg",
+        "userNameIconAlt": "JasmineLosovsky profile icon",
+        "songName": "Information Wars",
+        "artistName": "Jackson Brown",
+        "genre": "Indie",
+        "location": "HUB",
+        "activity":"Studying",
+        "postImage": "../img/profile.jpg",
         "postImageAlt": "post made"
     }
 ]
