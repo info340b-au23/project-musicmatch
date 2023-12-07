@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 export default function Feed(props) {
     const data = props.data;
+    const filterCriteria = props.filterCriteria;
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState(false);
@@ -35,69 +36,76 @@ export default function Feed(props) {
     };
 
     /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
-    const samplePost = data.map((userData) => (
-        <div key={userData.userName} className="post-item">
-            {/* profile name and icon */}
-            <div className="header">
-                <img
-                    className="profile-image"
-                    src={userData.userNameProfileIcon}
-                    alt={userData.usernameIconAlt}
-                />
-                <span className="profile-name">
-                    {userData.userName}
-                </span>
-            </div>
+    const samplePost = data
+        .filter((userData) => {
+            const userLocation = filterCriteria.location ? userData.location === filterCriteria.location : true;
+            const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
+            const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
 
-            {/* profile image */}
-            <div className="image">
-                <img
-                    className="img-fluid image"
-                    src={userData.postImage}
-                    alt={userData.postImageAlt}
-                />
-            </div>
+            // Log intermediate values for debugging
+            console.log('userLocation:', userLocation);
+            console.log('userGenre:', userGenre);
+            console.log('userActivity:', userActivity);
 
-            {/* profile actions: like button and save button */}
-            {/* Like button */}
-            <div className="like">
-                <button type="button" className="btn btn-info">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
-                        <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
-                    </svg>
-                </button>
-            </div>
+            return userLocation && userGenre && userActivity;
+        })
+        .map((userData) => (
+            <div key={userData.songName}>
+                <div className="row">
+                    {/* Profile name and icon */}
+                    <div className="col-12 header">
+                        <img
+                            className="profile-icon"
+                            src={userData.userNameProfileIcon}
+                            alt={userData.usernameIconAlt}
+                        />
+                        <span className="profile-name">
+                            {userData.userName}
+                        </span>
+                    </div>
 
-            {/* Save button */}
-            <div className="save">
-                <button type="button" className="btn btn-info" onClick={() => handleSaveClick(userData)}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
-                        <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
-                        <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
-                    </svg>
-                </button>
-            </div>
+                    {/* Profile image */}
+                    <div className="col-12 ">
+                        <img
+                            className="img-fluid image"
+                            src={userData.postImage}
+                            alt={userData.postImageAlt}
+                        />
+                    </div>
 
-            {/* Filter information */}
-            <div className="filter-info">
-                {location && (
-                    <span className="filter-item">
-                        Location: {userData.location}
-                    </span>
-                )}
-                {genre && (
-                    <span className="filter-item">
-                        Genre: {userData.genre}
-                    </span>
-                )}
-                {activity && (
-                    <span className="filter-item">
-                        Activity: {userData.activity}
-                    </span>
-                )}
+                    {/* Like button */}
+                    <div className="col-12 actions">
+                        {/* Like button */}
+                        <button type="button" className="btn btn-info like">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-heart-fill" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"></path>
+                            </svg>
+                        </button>
+
+                        {/* Save button */}
+                        <button type="button" className="btn btn-info save" onClick={() => handleSaveClick(userData)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
+                                <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
+                                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    {/* Filter information */}
+                    <div className="col-12 filter-info text-center">
+                        <span className="filter-item">
+                            Location: {userData.location}
+                        </span>
+                        <span className="filter-item">
+                            Genre: {userData.genre}
+                        </span>
+                        <span className="filter-item">
+                            Activity: {userData.activity}
+                        </span>
+                    </div>
+                </div>
+
             </div>
-        </div>
-    ));
+        ));
 
     return (
         <div className="feed">
@@ -146,7 +154,7 @@ export default function Feed(props) {
                 <button
                     id="submitButton"
                     type="submit"
-                    className="btn btn-warning"
+                    className="btn btn-info"
                     onClick={handleClick}
                 >
                     Apply Filter
