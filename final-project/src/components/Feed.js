@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import Form from 'react-bootstrap/Form';
 
 export default function Feed(props) {
@@ -37,7 +36,7 @@ export default function Feed(props) {
         if (
             ((location !== "All") && ((location !== postObj.location)))
             || ((genre !== "All") && ((genre !== postObj.genre)))
-            || ((genre !== "All") && ((activity !== postObj.activity)))
+            || ((activity !== "All") && ((activity !== postObj.activity)))
         )
             return false
         else return true;
