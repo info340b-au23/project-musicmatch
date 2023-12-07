@@ -3,6 +3,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 
 import '../style.css'; //import the custom CSS file
 
+//import songdata from '../data/searchpagedata.json';
+//import { Filter } from './Filter.js';
+
 //import your components here:
 import Homepage from './Homepage.js';
 import Aboutus from './Aboutus.js';
@@ -55,6 +58,8 @@ export default function App(props) {
           {/*child route*/}
           <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
         </Route>
+
+        {/* <Route path="/filter" element={<Filter props={songdata}/>}/>*/}
 
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed

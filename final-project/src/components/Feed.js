@@ -42,11 +42,6 @@ export default function Feed(props) {
             const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
             const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
 
-            // Log intermediate values for debugging
-            console.log('userLocation:', userLocation);
-            console.log('userGenre:', userGenre);
-            console.log('userActivity:', userActivity);
-
             return userLocation && userGenre && userActivity;
         })
         .map((userData) => (
