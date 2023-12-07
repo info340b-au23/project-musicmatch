@@ -1,24 +1,42 @@
-import React, { useState, useEffect  } from 'react';
+import React, { useState } from 'react';
 
 export default function Feed(props) {
     const data = props.data;
-    //variable to see when a post was saved
+
+    //filtering code to let the user filter on posts:
+    const [location, setlocation] = useState(false);
+    const [genre, setGenre] = useState(false);
+    const [activity, setActivity] = useState(false);
+
+
+    //callback functions
+    const handleLocation = (event) => {
+        setlocation(event.target.checked);
+    }
+
+    const handleGenre = (event) => {
+        setGenre(event.target.checked);
+    }
+
+    const handleActivity = (event) => {
+        setActivity(event.target.checked);
+    }
+
+    //callback function for button 
+    const handleClick = () => {
+        //call the passed down applyFilterCallback function
+        props.applyFilterCallback(location, genre, activity);
+    };
+
+    //for viewing saved posts 
     const [savedPosts, setSavedPosts] = useState([]);
-
-    //variables for the form to be used for filtering
-    const [filteredPosts, setFilteredPosts] = useState([]);
-    const [selectedGenres, setSelectedGenres] = useState([]);
-    const [selectedLocations, setSelectedLocations] = useState([]);
-    const [selectedActivities, setSelectedActivities] = useState([]);
-
     const handleSaveClick = (post) => {
         setSavedPosts([...savedPosts, post]);
     };
 
+    /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
     const samplePost = data.map((userData) => (
-        /* mapping to diplay each user's profile name and icon, image posted, and comments */
-        <div key={userData.userName} >
-
+        <div key={userData.userName} className="post-item">
             {/* profile name and icon */}
             <div className="header">
                 <img
@@ -33,7 +51,8 @@ export default function Feed(props) {
 
             {/* profile image */}
             <div className="image">
-                <img className="img-fluid image"
+                <img
+                    className="img-fluid image"
                     src={userData.postImage}
                     alt={userData.postImageAlt}
                 />
@@ -51,33 +70,89 @@ export default function Feed(props) {
 
             {/* Save button */}
             <div className="save">
-                <button type="button" className="btn btn-info"  onClick={() => handleSaveClick(userData)}>
+                <button type="button" className="btn btn-info" onClick={() => handleSaveClick(userData)}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
                         <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
                         <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
                     </svg>
                 </button>
             </div>
+
+            {/* Filter information */}
+            <div className="filter-info">
+                {location && (
+                    <span className="filter-item">
+                        Location: {userData.location}
+                    </span>
+                )}
+                {genre && (
+                    <span className="filter-item">
+                        Genre: {userData.genre}
+                    </span>
+                )}
+                {activity && (
+                    <span className="filter-item">
+                        Activity: {userData.activity}
+                    </span>
+                )}
+            </div>
         </div>
     ));
 
     return (
         <div className="feed">
-            {/* Main Content */}
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
 
-                <div id="filtering">
-                    <h5 style={{ color: 'white' }}>Filter By:</h5>
-                    <button style={{ color: 'white', backgroundColor: '#16b1b5' }}>Mood</button>
-                    <button style={{ color: 'white', backgroundColor: '#16b1b5' }}>Genre</button>
-                    <button style={{ color: 'white', backgroundColor: '#16b1b5' }}>Activity</button>
+                <div className="form-check">
+                    <input
+                        id="locationCheckBox"
+                        type="checkbox"
+                        className="form-check-input"
+                        checked={location}
+                        onChange={handleLocation}
+                    />
+                    <label htmlFor="locationCheckBox" className="form-check-label">
+                        Location
+                    </label>
                 </div>
 
-                {/* Sample Post */}
-                <div className="post">
-                    {samplePost}
+                <div className="form-check">
+                    <input
+                        id="genreCheckBox"
+                        type="checkbox"
+                        className="form-check-input"
+                        checked={genre}
+                        onChange={handleGenre}
+                    />
+                    <label htmlFor="genreCheckBox" className="form-check-label">
+                        Genre
+                    </label>
                 </div>
+
+                <div className="form-check">
+                    <input
+                        id="activityCheckbox"
+                        type="checkbox"
+                        className="form-check-input"
+                        checked={activity}
+                        onChange={handleActivity}
+                    />
+                    <label htmlFor="activityCheckbox" className="form-check-label">
+                        Activity
+                    </label>
+                </div>
+
+                <button
+                    id="submitButton"
+                    type="submit"
+                    className="btn btn-warning"
+                    onClick={handleClick}
+                >
+                    Apply Filter
+                </button>
+
+                <div className="post">{samplePost}</div>
             </main>
         </div>
     );

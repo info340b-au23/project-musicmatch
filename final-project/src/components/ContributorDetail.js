@@ -7,7 +7,7 @@ import _ from 'lodash';
 //importing a data file with information about each on
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 
-export default function ContributorDetail(props) {
+export default function ContributorDetail() {
     const contributorNameString = useParams().contributorName;
     //adding setState and event listener to follow each time a user clicks one of the arrows on the slides 
     const [index, setIndex] = useState(0);
@@ -20,27 +20,6 @@ export default function ContributorDetail(props) {
 
     if (!contributor) return <h2>No such contributor exists</h2>
 
-    //make a bootstrap carousel to display each contributor:
-    // let carouselItems = contributor.images.map(function (img, imgIndex) {
-    //     return (
-    //         <Carousel.Item key={imgIndex} className="carousel-item">
-    //             <img className="contributor-image" src={'../' + img} alt={contributor.name + ' Image'} />
-    //         </Carousel.Item>
-    //     )
-    // });
-
-
-    // return (
-    //     <div className="contributor-detail">
-    //         <h2>About: {contributor.name}</h2>
-    //         <p>{contributor.description}</p>
-    //         <div className="carousel-container">
-    //             <Carousel activeIndex={index} onSelect={handleSelect} indicators={false} prevLabel="" nextLabel="" interval={null}>
-    //                 {carouselItems}
-    //             </Carousel>
-    //         </div>
-    //     </div>
-    // );
     return (
         <div className="contributor-detail">
             <h2 className="carousel-heading-style">About: {contributor.name}</h2>
