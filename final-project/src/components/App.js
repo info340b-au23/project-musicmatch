@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import firebase from 'firebase/app';
-import { getDatabase, ref, onValue, set as firebaseSet } from 'firebase/database';
 
 import '../style.css'; //import the custom CSS file
 
@@ -42,13 +40,6 @@ export default function App(props) {
       activity: activity
     });
   };
-
-  // Test for changing Anu's username in Realtime database
-  const db = getDatabase();
-  const anuRef = ref(db, "users/anu");
-  const anuUsernameRef = ref(db, "users/anu/username");
-  const newValForAnuUsername = "anughosh";
-  firebaseSet(anuRef, newValForAnuUsername);
 
   const [currentUser, setCurrentUser] = useState(users[0]);
 

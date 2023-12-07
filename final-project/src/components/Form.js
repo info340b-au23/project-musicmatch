@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { UploadAndDisplayImage } from './UploadImage.js';
+import { getDatabase, ref, onValue, set as firebaseSet, push } from 'firebase/database';
 
 export function Form() {
     const [formData, setFormData] = useState({
@@ -28,22 +29,34 @@ export function Form() {
             setSelectedGenres([...selectedGenres, genre]);
         }
     };
-
+    
+    const db = getDatabase();
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log("Form submitted:", {
-            ...formData,
-            genre: selectedGenres,
-        });
+        const postsRef = ref(db, "posts");
 
-        //reset the form after submission
-        setFormData({
-            songName: "",
-            location: "",
-            activity: ""
-        });
-        setSelectedGenres([]);
+        const postData = {
+            songTitle: formData.songName,
+            songArtist: formData.artistName,
+            genre: selectedGenres.join(', '),
+            Location: formData.location.join(', '),
+            activity: formData.activity.join(', '),
+            image: formData.image
+        };
+        //postData = push(postData)
+        push(postData)
+        .then(() => {
+            console.log('Submitted');
+            setFormData({
+                songName: '',
+                artistName: ''
+            })
+            setSelectedGenres([]);
+        })
+        .catch((error) => {
+            console.error('Error: ', error);
+        })
     };
 
     return (
