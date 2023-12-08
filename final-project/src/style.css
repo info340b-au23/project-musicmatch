@@ -251,28 +251,17 @@
     color: #03dac5;
 }
 
-/* for filter checkboxes and apply-filter button */
-.feed .form-check {
-    margin-top: 10px;
+/* css for the filtering component */
+.feed .filter-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; 
 }
 
-.feed .form-check-label {
-    color: #03dac5;
-    font-weight: 500;
-}
-
-.feed #submitButton {
-    margin-top: 10px;
-    color: black;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.feed #submitButton:hover {
-    background-color: #ffa000;
+/* Adjust the styling for each filter dropdown */
+.mb-3 {
+    width: 150px; 
+    margin-right: 10px; 
 }
 
 

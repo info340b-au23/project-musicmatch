@@ -88,7 +88,6 @@ export function Form() {
                 console.error('Error: ', error);
             })
 
-        //JASMINE ADDED THIS HERE, I COMMENTED IT OUT FOR NOW 
         /*  console.log("Form submitted:", {
              ...formData,
              genres: selectedGenres,
@@ -220,7 +219,7 @@ export function Form() {
                                         checked={selectedLocations.includes("bus stop")}
                                         onChange={() => handleLocationChange("bus stop")}
                                     />
-                                    bus stop
+                                    Bus Stop
                                 </label>
                                 <label className="sizeThree">
                                     <input

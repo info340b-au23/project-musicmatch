@@ -4,9 +4,6 @@ import { getDatabase, ref } from 'firebase/database';
 
 import '../style.css'; //import the custom CSS file
 
-//import songdata from '../data/searchpagedata.json';
-//import { Filter } from './Filter.js';
-
 //import your components here:
 import Homepage from './Homepage.js';
 import Aboutus from './Aboutus.js';
@@ -60,6 +57,7 @@ export default function App(props) {
   }, []);
 
   //const [currentUser, setCurrentUser] = useState(users[0]);
+  const [currentUser, setCurrentUser] = useState(users[0]);
 
   //call components here:
   return (
@@ -74,8 +72,6 @@ export default function App(props) {
           <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
         </Route>
 
-        {/* <Route path="/filter" element={<Filter props={songdata}/>}/>*/}
-
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed
           data={postData}
@@ -83,6 +79,7 @@ export default function App(props) {
           setFilterCriteria={setFilterCriteria}
           applyFilterCallback={applyFilter}
         />} />
+        <Route path='/feed' element={<Feed data={postData} />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
         <Route path="/savedMusic" component={<SavedMusic data={postData} />} />

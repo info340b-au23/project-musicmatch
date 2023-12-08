@@ -1,33 +1,31 @@
 import React, { useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import { getDatabase, ref, push } from 'firebase/database';
 
 export default function Feed(props) {
     const data = props.data;
-    const filterCriteria = props.filterCriteria;
 
     //filtering code to let the user filter on posts:
-    const [location, setlocation] = useState(false);
-    const [genre, setGenre] = useState(false);
-    const [activity, setActivity] = useState(false);
+    const [location, setlocation] = useState("All");
+    const [genre, setGenre] = useState("All");
+    const [activity, setActivity] = useState("All");
 
 
     //callback functions
     const handleLocation = (event) => {
-        setlocation(event.target.checked);
+        console.log("Selected Location: ", event.target.value)
+        setlocation(event.target.value);
     }
 
     const handleGenre = (event) => {
-        setGenre(event.target.checked);
+        console.log("Selected Genre: ", event.target.value)
+        setGenre(event.target.value);
     }
 
     const handleActivity = (event) => {
-        setActivity(event.target.checked);
+        console.log("SelectedActivity: ", event.target.value)
+        setActivity(event.target.value);
     }
-
-    //callback function for button 
-    const handleClick = () => {
-        //call the passed down applyFilterCallback function
-        props.applyFilterCallback(location, genre, activity);
-    };
 
     //for viewing saved posts 
     const [savedPosts, setSavedPosts] = useState([]);
@@ -35,17 +33,22 @@ export default function Feed(props) {
         setSavedPosts([...savedPosts, post]);
     };
 
-    /* mapping to diplay each user's profile name and icon, image posted, location, genre, and a */
-    const samplePost = data
-        .filter((userData) => {
-            const userLocation = filterCriteria.location ? userData.location === filterCriteria.location : true;
-            const userGenre = filterCriteria.genre ? userData.genre === filterCriteria.genre : true;
-            const userActivity = filterCriteria.activity ? (userData.activity ? userData.activity === filterCriteria.activity : false) : true;
+    function filterBy(postObj) {
+        if (
+            ((location !== "All") && ((location !== postObj.location)))
+            || ((genre !== "All") && ((genre !== postObj.genre)))
+            || ((activity !== "All") && ((activity !== postObj.activity)))
+        )
+            return false
+        else return true;
+    }
 
-            return userLocation && userGenre && userActivity;
-        })
+    const filteredPosts = data.filter(filterBy);
+
+    const samplePost = filteredPosts
+
         .map((userData) => (
-            <div key={userData.songName}>
+            <div key={userData.id}>
                 <div className="row">
                     {/* Profile name and icon */}
                     <div className="col-12 header">
@@ -85,6 +88,15 @@ export default function Feed(props) {
                             </svg>
                         </button>
                     </div>
+                    {/* song name and artist */}
+                    <div className="col-12 filter-info text-center">
+                        <span className="filter-item">
+                            Song name: {userData.songName}
+                        </span>
+                        <span className="filter-item">
+                            Artist: {userData.artistName}
+                        </span>
+                    </div>
                     {/* Filter information */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
@@ -107,54 +119,50 @@ export default function Feed(props) {
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
 
-                <div className="form-check">
-                    <input
-                        id="locationCheckBox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={location}
-                        onChange={handleLocation}
-                    />
-                    <label htmlFor="locationCheckBox" className="form-check-label">
-                        Location
-                    </label>
+                <div className={"d-flex justify-content-center filter-container"}>
+                    <Form.Group className="mb-3" controlId="Genre">
+                        <Form.Label className="text-white filter-container">Genre:</Form.Label>
+                        <Form.Select aria-label="Genre filter" defaultValue={genre} onChange={handleGenre} className="btn btn-info" style={{ width: "100px" }}>
+
+                            <option value="All">All</option>
+                            <option value="Pop">Pop</option>
+                            <option value="Rock">Rock</option>
+                            <option value="Indie">Indie</option>
+                            <option value="Rap">Rap</option>
+                            <option value="R&B">R&B</option>
+
+                        </Form.Select>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="Location">
+                        <Form.Label className="text-white filter-container">Location:</Form.Label>
+                        <Form.Select aria-label="Location filter" defaultValue={location} onChange={handleLocation} className="btn btn-info" style={{ width: "100px" }}>
+
+                            <option value="All">All</option>
+                            <option value="HUB">HUB</option>
+                            <option value="Bus Stop">Bus Stop</option>
+                            <option value="Mary Gates">Mary Gates</option>
+                            <option value="Libary">Library</option>
+                            <option value="IMA">IMA</option>
+
+                        </Form.Select>
+                    </Form.Group>
+
+                    <Form.Group className="mb-3" controlId="Activity">
+                        <Form.Label className="text-white filter-container">Activity:</Form.Label>
+                        <Form.Select aria-label="Activity filter" defaultValue={activity} onChange={handleActivity} className="btn btn-info" style={{ width: "100px" }}>
+
+                            <option value="All">All</option>
+                            <option value="Studying">Studying</option>
+                            <option value="Working Out">Working Out</option>
+                            <option value="Social">Social</option>
+                            <option value="Commuting">Commuting</option>
+                            <option value="Eating">Eating</option>
+
+                        </Form.Select>
+                    </Form.Group>
+
                 </div>
-
-                <div className="form-check">
-                    <input
-                        id="genreCheckBox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={genre}
-                        onChange={handleGenre}
-                    />
-                    <label htmlFor="genreCheckBox" className="form-check-label">
-                        Genre
-                    </label>
-                </div>
-
-                <div className="form-check">
-                    <input
-                        id="activityCheckbox"
-                        type="checkbox"
-                        className="form-check-input"
-                        checked={activity}
-                        onChange={handleActivity}
-                    />
-                    <label htmlFor="activityCheckbox" className="form-check-label">
-                        Activity
-                    </label>
-                </div>
-
-                <button
-                    id="submitButton"
-                    type="submit"
-                    className="btn btn-info"
-                    onClick={handleClick}
-                >
-                    Apply Filter
-                </button>
-
                 <div className="post">{samplePost}</div>
             </main>
         </div>
