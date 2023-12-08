@@ -222,7 +222,7 @@ export function Form() {
                                         checked={selectedLocations.includes("bus stop")}
                                         onChange={() => handleLocationChange("bus stop")}
                                     />
-                                    bus stop
+                                    Bus Stop
                                 </label>
                                 <label className="sizeThree">
                                     <input

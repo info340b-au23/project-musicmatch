@@ -87,6 +87,15 @@ export default function Feed(props) {
                             </svg>
                         </button>
                     </div>
+                    {/* song name and artist */}
+                    <div className="col-12 filter-info text-center">
+                        <span className="filter-item">
+                            Song name: {userData.songName}
+                        </span>
+                        <span className="filter-item">
+                            Artist: {userData.artistName}
+                        </span>
+                    </div>
                     {/* Filter information */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
