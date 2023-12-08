@@ -26,21 +26,6 @@ export default function App(props) {
   //we import the realtime data in index.js
   let users = props.data;
 
-  //to control the feed filtering
-  const [filterCriteria, setFilterCriteria] = useState({
-    location: "",
-    genre: "",
-    activity: ""
-  });
-
-  let applyFilter = (location, genre, activity) => {
-    setFilterCriteria({
-      location: location,
-      genre: genre,
-      activity: activity
-    });
-  };
-
   const [currentUser, setCurrentUser] = useState(users[0]);
 
   //call components here:
@@ -57,12 +42,7 @@ export default function App(props) {
         </Route>
 
         <Route path='/home' element={<Homepage />} />
-        <Route path='/feed' element={<Feed
-          data={data}
-          filterCriteria={filterCriteria}
-          setFilterCriteria={setFilterCriteria}
-          applyFilterCallback={applyFilter}
-        />} />
+        <Route path='/feed' element={<Feed data={data} />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
         <Route path="/savedMusic" component={<SavedMusic data={data} />} />

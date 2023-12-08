@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
+import { getDatabase, ref, push } from 'firebase/database';
 
 export default function Feed(props) {
     const data = props.data;
