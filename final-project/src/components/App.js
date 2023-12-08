@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { getDatabase, ref } from 'firebase/database';
+import { getDatabase, ref, get } from 'firebase/database';
 
 import '../style.css'; //import the custom CSS file
 
@@ -47,13 +47,19 @@ export default function App(props) {
     const db = getDatabase()
     const postsRef = ref(db, "posts");
 
-    postsRef.once('value', (snapshot) => {
-      const data = snapshot.val();
-      if (data) {
-        const array = Object.values(data);
-        setPostData(array);
-      }
-    });
+    get(postsRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          const data = snapshot.val(); 
+          const array = Object.values(data);
+          setPostData(array);
+        } else {
+          console.log('No data');
+        }
+      })
+      .catch((error) => {
+        console.log('Error:', error);
+      });
   }, []);
 
   //const [currentUser, setCurrentUser] = useState(users[0]);
