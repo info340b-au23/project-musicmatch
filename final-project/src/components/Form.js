@@ -68,7 +68,7 @@ export function Form() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const validationErrors = error;
+        const validationErrors = {};
 
         if (!formData.songName.trim()) {
             validationErrors.songName = "Song name is required";
