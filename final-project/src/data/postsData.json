@@ -1,5 +1,6 @@
 [
     {
+        "id": "1",
         "userName": "JasmineLosovsky",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "JasmineLosovsky profile icon",
@@ -7,10 +8,12 @@
         "artistName": "ACDC",
         "genre": "Rock",
         "location": "HUB",
+        "activity": "Working Out",
         "postImage": "../img/profile.jpg",
         "postImageAlt": "post made"
     },
     {
+        "id": "1]2",
         "userName": "Somebody123",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "Somebody123 profile icon",
@@ -22,22 +25,24 @@
         "postImageAlt": "post made"
     },
     {
+        "id": "3",
         "userName": "Somebody123",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "Somebody123 profile icon",
-        "songName": "hello",
-        "artistName": "adele",
+        "songName": "goodbye",
+        "artistName": "bridge",
         "genre": "Pop",
         "location": "Mary Gates",
         "postImage": "../img/lanadelrey.jpeg",
         "postImageAlt": "post made"
     },
     {
+        "id": "4",
         "userName": "Somebody123",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "Somebody123 profile icon",
         "songName": "bye",
-        "artistName": "adele",
+        "artistName": "bueue",
         "genre": "Pop",
         "location": "Mary Gates",
         "activity":"Eating",
@@ -45,11 +50,12 @@
         "postImageAlt": "post made"
     },
     {
+        "id": "5",
         "userName": "Somebody123",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "Somebody123 profile icon",
-        "songName": "hello",
-        "artistName": "adele",
+        "songName": "stay",
+        "artistName": "rihanna",
         "genre": "Pop",
         "location": "Mary Gates",
         "activity":"Eating",
@@ -57,6 +63,7 @@
         "postImageAlt": "post made"
     },
     {
+        "id": "6",
         "userName": "JasmineLosovsky",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "JasmineLosovsky profile icon",
@@ -68,6 +75,7 @@
         "postImageAlt": "post made"
     },
     {
+        "id": "7",
         "userName": "Somebody123",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "Somebody123 profile icon",
@@ -79,6 +87,7 @@
         "postImageAlt": "post made"
     },
     {
+        "id": "8",
         "userName": "JasmineLosovsky",
         "userNameProfileIcon": "../img/cat.jpg",
         "userNameIconAlt": "JasmineLosovsky profile icon",
@@ -86,7 +95,7 @@
         "artistName": "the who",
         "genre": "R&B",
         "location": "IMA",
-        "activity": "Eating",
+        "activity": "Studying",
         "postImage": "../img/logo.png",
         "postImageAlt": "post made"
     }

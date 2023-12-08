@@ -47,7 +47,7 @@ export default function Feed(props) {
     const samplePost = filteredPosts
 
         .map((userData) => (
-            <div key={userData.songName}>
+            <div key={userData.id}>
                 <div className="row">
                     {/* Profile name and icon */}
                     <div className="col-12 header">
@@ -118,10 +118,10 @@ export default function Feed(props) {
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
 
-                <div className={"d-flex justify-content-center"}>
+                <div className={"d-flex justify-content-center filter-container"}>
                     <Form.Group className="mb-3" controlId="Genre">
-                        <Form.Label className="text-white">Genre :</Form.Label>
-                        <Form.Select aria-label="Genre filter" defaultValue={genre} onChange={handleGenre} className="btn btn-info">
+                        <Form.Label className="text-white filter-container">Genre:</Form.Label>
+                        <Form.Select aria-label="Genre filter" defaultValue={genre} onChange={handleGenre} className="btn btn-info" style={{ width: "100px" }}>
 
                             <option value="All">All</option>
                             <option value="Pop">Pop</option>
@@ -134,8 +134,8 @@ export default function Feed(props) {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="Location">
-                        <Form.Label className="text-white">Location :</Form.Label>
-                        <Form.Select aria-label="Location filter" defaultValue={location} onChange={handleLocation} className="btn btn-info">
+                        <Form.Label className="text-white filter-container">Location:</Form.Label>
+                        <Form.Select aria-label="Location filter" defaultValue={location} onChange={handleLocation} className="btn btn-info" style={{ width: "100px" }}>
 
                             <option value="All">All</option>
                             <option value="HUB">HUB</option>
@@ -148,8 +148,8 @@ export default function Feed(props) {
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="Activity">
-                        <Form.Label className="text-white">Activity :</Form.Label>
-                        <Form.Select aria-label="Activity filter" defaultValue={activity} onChange={handleActivity} className="btn btn-info">
+                        <Form.Label className="text-white filter-container">Activity:</Form.Label>
+                        <Form.Select aria-label="Activity filter" defaultValue={activity} onChange={handleActivity} className="btn btn-info" style={{ width: "100px" }}>
 
                             <option value="All">All</option>
                             <option value="Studying">Studying</option>

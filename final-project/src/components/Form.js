@@ -90,7 +90,6 @@ export function Form() {
                 console.error('Error: ', error);
             })
 
-        //JASMINE ADDED THIS HERE, I COMMENTED IT OUT FOR NOW 
         /*  console.log("Form submitted:", {
              ...formData,
              genres: selectedGenres,
