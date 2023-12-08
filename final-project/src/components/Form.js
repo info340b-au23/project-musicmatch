@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { UploadAndDisplayImage } from './UploadImage.js';
-import { getDatabase, ref, onValue, set as firebaseSet, push } from 'firebase/database';
+import { getDatabase, ref, onValue, set as firebaseSet, push as firebasePush } from 'firebase/database';
 
 export function Form() {
     const [formData, setFormData] = useState({
@@ -9,11 +9,13 @@ export function Form() {
         genres: [],
         location: [],
         activity: [],
+        image: null
     });
 
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectedActivities, setSelectedActivities] = useState([]);
+    const [error, setError] = useState([]);
 
     const handleInputChange = (input) => {
         const { name, value } = input.target;
@@ -62,20 +64,52 @@ export function Form() {
         setFormData({ ...formData, activity: selectedActivities });
     };
 
-    const db = getDatabase();
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
 
-        const postData = {
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const validationErrors = error;
+
+        if (!formData.songName.trim()) {
+            validationErrors.songName = "Song name is required";
+        }
+        if (!formData.artisteName.trim()) {
+            validationErrors.songName = "Artist name is required";
+        }
+
+        if (Object.keys(validationErrors).length === 0) {
+            const db = getDatabase();
+            const postsRef = ref(db, 'posts');
+
+            const postData = {
             songTitle: formData.songName,
             songArtist: formData.artistName,
             genre: selectedGenres.join(', '),
             Location: formData.location.join(', '),
             activity: formData.activity.join(', '),
-            image: formData.image
-        };
-        push(postData)
+            image: null
+            };
+
+            firebasePush(postsRef, postData)
+            .then(() => {
+                console.log('Submitted');
+                setFormData({
+                    songName: '',
+                    artistName: ''
+                })
+                setSelectedGenres([]);
+                setSelectedActivities([]);
+                setSelectedLocations([])
+            })
+            .catch((error) => {
+                console.error('Error writing to Firebase Database: ', error);
+            });
+        } else {
+            setError(validationErrors);
+        }
+
+       
+       /* push(postData)
             .then(() => {
                 console.log('Submitted');
                 setFormData({
@@ -86,7 +120,7 @@ export function Form() {
             })
             .catch((error) => {
                 console.error('Error: ', error);
-            })
+            })*/
 
         /*  console.log("Form submitted:", {
              ...formData,
