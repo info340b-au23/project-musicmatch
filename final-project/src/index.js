@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom'
 import { initializeApp } from "firebase/app"; //added from firebase
-import { getDatabase, ref, onValue, set as firebaseSet } from 'firebase/database';
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
 //import CSS
 import './style.css'; //import css file!
@@ -22,7 +22,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
   // Test for changing Anu's username in Realtime database
   const db = getDatabase();

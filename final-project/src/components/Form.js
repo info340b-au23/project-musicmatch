@@ -63,10 +63,9 @@ export function Form() {
     };
 
     const db = getDatabase();
+
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const postsRef = ref(db, "posts");
 
         const postData = {
             songTitle: formData.songName,
@@ -76,7 +75,6 @@ export function Form() {
             activity: formData.activity.join(', '),
             image: formData.image
         };
-        //postData = push(postData)
         push(postData)
             .then(() => {
                 console.log('Submitted');

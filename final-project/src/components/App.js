@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import { getDatabase, ref } from 'firebase/database';
 
 import '../style.css'; //import the custom CSS file
 
@@ -19,11 +20,11 @@ import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
-import FEED_EXAMPLE_DATA from '../data/postsData.json';
+// import FEED_EXAMPLE_DATA from '../data/postsData.json';
 
 export default function App(props) {
   //data that will be used in Feed to show an EXAMPLE of the feed
-  const data = FEED_EXAMPLE_DATA;
+  // const data = FEED_EXAMPLE_DATA;
   //data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
   //we import the realtime data in index.js
@@ -44,7 +45,21 @@ export default function App(props) {
     });
   };
 
-  const [currentUser, setCurrentUser] = useState(users[0]);
+  const [postData, setPostData] = useState([]);
+  useEffect(() => {
+    const db = getDatabase()
+    const postsRef = ref(db, "posts");
+
+    postsRef.once('value', (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const array = Object.values(data);
+        setPostData(array);
+      }
+    });
+  }, []);
+
+  //const [currentUser, setCurrentUser] = useState(users[0]);
 
   //call components here:
   return (
@@ -63,14 +78,14 @@ export default function App(props) {
 
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed
-          data={data}
+          data={postData}
           filterCriteria={filterCriteria}
           setFilterCriteria={setFilterCriteria}
           applyFilterCallback={applyFilter}
         />} />
         <Route path='/profile' element={<UserProfile />} />
         <Route path='/profile/form' element={<Form />} />
-        <Route path="/savedMusic" component={<SavedMusic data={data} />} />
+        <Route path="/savedMusic" component={<SavedMusic data={postData} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
       </Routes>
