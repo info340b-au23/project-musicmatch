@@ -14,10 +14,9 @@ import DATA from './data/data.json';
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyChR-uCZQrXIuC8l0QGQynq6D6z43cRXN8",
-  authDomain: "react-chat-firebase1-temp.firebaseapp.com",
-  projectId: "react-chat-firebase1-temp",
-  storageBucket: "react-chat-firebase1-temp.appspot.com",
-  messagingSenderId: "1052807428829",
+  authDomain: "info-340-final-8c670-default-rtdb.firebaseio.com/",
+  projectId: "info-340-final-8c670",
+  storageBucket: "info-340-final-8c670-default-rtdb.appspot.com",
   appId: "1:1052807428829:web:ab93f7be8ab5e149f47934"
 };
 
