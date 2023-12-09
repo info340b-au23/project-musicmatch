@@ -89,6 +89,7 @@ export function Form() {
             activity: formData.activity.join(', '),
             image: null
             };
+            console.log('postData:', postData)
 
             firebasePush(postsRef, postData)
             .then(() => {

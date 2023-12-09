@@ -26,7 +26,7 @@
 
 .profile img {
     height: 300px;
-    width: 300px;
+    width: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -35,7 +35,6 @@
 .profile .profile-pic {
     border-radius: 50%;
     margin-top: 2rem;
-    margin-left: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -54,18 +53,39 @@
 }
 
 .profile .profile-container {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
+    display: flex;
     align-items: center;
-    gap: 2rem;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
     margin: 0 auto;
 }
 
 .profile .text-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-left: 5rem;
+}
+
+.profile .buttons {
+    display: flex;
+    flex-direction: column;
     align-items: flex-start;
     margin-left: 5rem;
+    flex-basis: 100%;
+}
+
+.profile .text-container,
+.profile .buttons {
+  flex-basis: 48%;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
 
 .profile #song-form {
