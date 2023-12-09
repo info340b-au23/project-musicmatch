@@ -280,7 +280,7 @@ export function Form() {
                                     <input
                                         type="checkbox"
                                         name="Working Out"
-                                        checked={selectedActivities.includes("OWorking Out")}
+                                        checked={selectedActivities.includes("Working Out")}
                                         onChange={() => handleActivityChange("Working Out")}
                                     />
                                     Working Out
