@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Footer } from './Footer.js';
 
 export default function UserProfile(props) {
+    const formData = props.formData;
+
     return (
         <div className='profile'>
             {/* Navbar */}
@@ -47,15 +49,17 @@ export default function UserProfile(props) {
                                 {/* Post 1 */}
                                 <div className="col-12 col-md-4">
                                     <div className="card">
+                                    {formData && (
                                         <div className="card-body">
-                                            <h2 className="song-name">Song 1</h2>
-                                            <h3 id="artist">Artist name</h3>
+                                            <h2 className="song-name">Song: {formData.songName}</h2>
+                                            <h3 id="artist">Artist: {formData.artistName}</h3>
                                             <img src="../img/lanadelrey.jpeg" alt="user's activity"></img>
-                                            <button className="genre">Pop</button>
-                                            <button className="location">Suzzallo</button>
-                                            <button className="activity">Studying</button>
+                                            <button className="genre">{formData.genre}</button>
+                                            <button className="location">{formData.location}</button>
+                                            <button className="activity">{formData.activity}</button>
                                             <div><button className="play">Play</button></div>
                                         </div>
+                                    )}
                                     </div>
                                 </div>
                             </div>

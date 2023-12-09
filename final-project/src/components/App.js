@@ -65,6 +65,13 @@ export default function App(props) {
   //const [currentUser, setCurrentUser] = useState(users[0]);
   const [currentUser, setCurrentUser] = useState(users[0]);
 
+  // set state for formData
+  const [formData, setFormData] = useState(null);
+
+  const handleFormSubmit = (data) => {
+    setFormData(data);
+  }
+
   //call components here:
   return (
     <>
@@ -86,8 +93,8 @@ export default function App(props) {
           applyFilterCallback={applyFilter}
         />} />
         <Route path='/feed' element={<Feed data={postData} />} />
-        <Route path='/profile' element={<UserProfile />} />
-        <Route path='/profile/form' element={<Form />} />
+        <Route path='/profile' element={<UserProfile formData={formData}/>} />
+        <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit}/>} />
         <Route path="/savedMusic" component={<SavedMusic data={postData} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
