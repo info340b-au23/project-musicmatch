@@ -47,6 +47,7 @@ export default function Feed(props) {
 
     const samplePost = filteredPosts
 
+
         .map((userData) => (
             <div key={userData.id}>
                 <div className="row">
