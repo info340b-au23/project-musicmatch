@@ -1,8 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import '../style.css';
 
-export function UploadAndDisplayImage() {
+export function UploadAndDisplayImage({ handleImageChange}) {
     const [selectedImage, setSelectedImage] = useState(null);
+
+    const handleInputChange = (e) => {
+        const img = e.target.files[0];
+        setSelectedImage(img);
+        handleImageChange(img);
+    };
 
     return (
         <div className="upload-section">
@@ -31,10 +37,7 @@ export function UploadAndDisplayImage() {
             <input
                 type="file"
                 name="myImage"
-                onChange={(event) => {
-                    console.log(event.target.files[0]);
-                    setSelectedImage(event.target.files[0]);
-                }}
+                onChange={handleInputChange}
             />
         </div>
     );

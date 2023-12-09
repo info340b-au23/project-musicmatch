@@ -64,6 +64,10 @@ export function Form() {
         setFormData({ ...formData, activity: selectedActivities });
     };
 
+    const handleImageChange = (img) => {
+        setFormData({ ...formData, image: img });
+    }
+
 
 
     const handleSubmit = (e) => {
@@ -73,8 +77,8 @@ export function Form() {
         if (!formData.songName.trim()) {
             validationErrors.songName = "Song name is required";
         }
-        if (!formData.artisteName.trim()) {
-            validationErrors.songName = "Artist name is required";
+        if (!formData.artistName.trim()) {
+            validationErrors.artistName = "Artist name is required";
         }
 
         if (Object.keys(validationErrors).length === 0) {
@@ -87,7 +91,7 @@ export function Form() {
             genre: selectedGenres.join(', '),
             Location: formData.location.join(', '),
             activity: formData.activity.join(', '),
-            image: null
+            image: formData.image
             };
             console.log('postData:', postData)
 
@@ -96,11 +100,16 @@ export function Form() {
                 console.log('Submitted');
                 setFormData({
                     songName: '',
-                    artistName: ''
+                    artistName: '',
+                    genres: [],
+                    location: [],
+                    activity: [],
+                    image: null
                 })
                 setSelectedGenres([]);
                 setSelectedActivities([]);
-                setSelectedLocations([])
+                setSelectedLocations([]);
+                setError({});
             })
             .catch((error) => {
                 console.error('Error writing to Firebase Database: ', error);
@@ -108,39 +117,6 @@ export function Form() {
         } else {
             setError(validationErrors);
         }
-
-       
-       /* push(postData)
-            .then(() => {
-                console.log('Submitted');
-                setFormData({
-                    songName: '',
-                    artistName: ''
-                })
-                setSelectedGenres([]);
-            })
-            .catch((error) => {
-                console.error('Error: ', error);
-            })*/
-
-        /*  console.log("Form submitted:", {
-             ...formData,
-             genres: selectedGenres,
-             location: selectedLocations,
-             activity: selectedActivities,
-         });
- 
-         //reset the form after submission
-         setFormData({
-             songName: "",
-             artistName: "",
-             genres: [],
-             location: [],
-             activity: []
-         });
-         setSelectedGenres([]);
-         setSelectedLocations([]);
-         setSelectedActivities([]); */
     };
 
     return (
@@ -342,9 +318,13 @@ export function Form() {
                                 Picture:{" "}
                             </label>
                             <div>
-                                <UploadAndDisplayImage />
+                                <UploadAndDisplayImage handleImageChange={handleImageChange}/>
                             </div>
                         </p>
+                    </div>
+                    <div className="error-message">
+                        {error.songName && <p>{error.songName}</p>}
+                        {error.artistName && <p>{error.artistName}</p>}
                     </div>
                     <button type="submit" className="submit-button">
                         Submit
