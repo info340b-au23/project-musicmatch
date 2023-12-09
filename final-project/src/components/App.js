@@ -86,12 +86,6 @@ export default function App(props) {
         </Route>
 
         <Route path='/home' element={<Homepage />} />
-        <Route path='/feed' element={<Feed
-          data={postData}
-        //filterCriteria={filterCriteria}
-        //setFilterCriteria={setFilterCriteria}
-        //applyFilterCallback={applyFilter}
-        />} />
         <Route path='/feed' element={<Feed data={postData} />} />
         <Route path='/profile' element={<UserProfile formData={formData} />} />
         <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit} />} />
