@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { UploadAndDisplayImage } from './UploadImage.js';
 import { getDatabase, ref, onValue, set as firebaseSet, push as firebasePush } from 'firebase/database';
@@ -86,34 +87,34 @@ export function Form() {
             const postsRef = ref(db, 'posts');
 
             const postData = {
-            songTitle: formData.songName,
-            songArtist: formData.artistName,
-            genre: selectedGenres.join(', '),
-            Location: formData.location.join(', '),
-            activity: formData.activity.join(', '),
-            image: formData.image
+                songTitle: formData.songName,
+                songArtist: formData.artistName,
+                genre: selectedGenres.join(', '),
+                Location: formData.location.join(', '),
+                activity: formData.activity.join(', '),
+                image: formData.image
             };
             console.log('postData:', postData)
 
             firebasePush(postsRef, postData)
-            .then(() => {
-                console.log('Submitted');
-                setFormData({
-                    songName: '',
-                    artistName: '',
-                    genres: [],
-                    location: [],
-                    activity: [],
-                    image: null
+                .then(() => {
+                    console.log('Submitted');
+                    setFormData({
+                        songName: '',
+                        artistName: '',
+                        genres: [],
+                        location: [],
+                        activity: [],
+                        image: null
+                    })
+                    setSelectedGenres([]);
+                    setSelectedActivities([]);
+                    setSelectedLocations([]);
+                    setError({});
                 })
-                setSelectedGenres([]);
-                setSelectedActivities([]);
-                setSelectedLocations([]);
-                setError({});
-            })
-            .catch((error) => {
-                console.error('Error writing to Firebase Database: ', error);
-            });
+                .catch((error) => {
+                    console.error('Error writing to Firebase Database: ', error);
+                });
         } else {
             setError(validationErrors);
         }
@@ -318,7 +319,7 @@ export function Form() {
                                 Picture:{" "}
                             </label>
                             <div>
-                                <UploadAndDisplayImage handleImageChange={handleImageChange}/>
+                                <UploadAndDisplayImage handleImageChange={handleImageChange} />
                             </div>
                         </p>
                     </div>

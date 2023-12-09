@@ -50,7 +50,7 @@ export default function App(props) {
     get(postsRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          const data = snapshot.val(); 
+          const data = snapshot.val();
           const array = Object.values(data);
           setPostData(array);
         } else {
@@ -61,8 +61,8 @@ export default function App(props) {
         console.log('Error:', error);
       });
   }, []);
+  
 
-  //const [currentUser, setCurrentUser] = useState(users[0]);
   const [currentUser, setCurrentUser] = useState(users[0]);
 
   // set state for formData
@@ -88,13 +88,13 @@ export default function App(props) {
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed
           data={postData}
-          filterCriteria={filterCriteria}
-          setFilterCriteria={setFilterCriteria}
-          applyFilterCallback={applyFilter}
+        //filterCriteria={filterCriteria}
+        //setFilterCriteria={setFilterCriteria}
+        //applyFilterCallback={applyFilter}
         />} />
         <Route path='/feed' element={<Feed data={postData} />} />
-        <Route path='/profile' element={<UserProfile formData={formData}/>} />
-        <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit}/>} />
+        <Route path='/profile' element={<UserProfile formData={formData} />} />
+        <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit} />} />
         <Route path="/savedMusic" component={<SavedMusic data={postData} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />

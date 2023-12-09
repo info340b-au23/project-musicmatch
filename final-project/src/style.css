@@ -281,7 +281,7 @@
 }
 
 /* Adjust the styling for each filter dropdown */
-.mb-3 {
+.feed .mb-3 {
     width: 150px; 
     margin-right: 10px; 
 }
