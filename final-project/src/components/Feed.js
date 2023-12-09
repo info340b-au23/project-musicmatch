@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import { getDatabase, ref, push } from 'firebase/database';
 
@@ -9,7 +9,7 @@ export default function Feed(props) {
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
-
+    const [filterPosts, setFilterPosts] = useState([]);
 
     //callback functions
     const handleLocation = (event) => {
@@ -44,7 +44,6 @@ export default function Feed(props) {
     }
 
     const filteredPosts = data.filter(filterBy);
-
     const samplePost = filteredPosts
 
         .map((userData) => (
@@ -91,16 +90,16 @@ export default function Feed(props) {
                     {/* song name and artist */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
-                            Song name: {userData.songName}
+                            Song name: {userData.songTitle}
                         </span>
                         <span className="filter-item">
-                            Artist: {userData.artistName}
+                            Artist: {userData.songArtist}
                         </span>
                     </div>
                     {/* Filter information */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
-                            Location: {userData.location}
+                            Location: {userData.Location}
                         </span>
                         <span className="filter-item">
                             Genre: {userData.genre}
