@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import '../style.css';
+import React, { useState } from 'react';
+import { updateProfile } from 'firebase/auth';
 
 export function UploadAndDisplayImage({ handleImageChange}) {
     const [selectedImage, setSelectedImage] = useState(null);

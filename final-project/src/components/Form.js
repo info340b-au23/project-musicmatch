@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { UploadAndDisplayImage } from './UploadImage.js';
-import { getDatabase, ref, onValue, set as firebaseSet, push as firebasePush } from 'firebase/database';
+import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 export function Form() {
     const [formData, setFormData] = useState({

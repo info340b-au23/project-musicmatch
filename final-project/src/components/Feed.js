@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
-import { getDatabase, ref, push, onValue } from 'firebase/database';
+import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function Feed(props) {
+<<<<<<< HEAD
     const data = props.data;
     const handleSaveClick = props.handleSaveClick;
+=======
+>>>>>>> refs/remotes/origin/main
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
     const [postData, setPostData] = useState([]);
+
 
     useEffect(() => {
         const db = getDatabase();
@@ -19,16 +23,15 @@ export default function Feed(props) {
         onValue(postsRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                const array = Object.values(data);
-                setPostData(array);
+               // const array = Object.values(data);
+                setPostData(snapshot.exportVal());
             } else {
                 console.log('No data');
             }
         }, (error) => {
             console.log('Error:', error);
         });
-
-    }, []); // Empty dependency array means it runs once on component mount
+    }, []);
 
     //callback functions
     const handleLocation = (event) => {
@@ -54,30 +57,31 @@ export default function Feed(props) {
 
     function filterBy(postObj) {
         if (
-            ((location !== "All") && ((location !== postObj.location)))
-            || ((genre !== "All") && ((genre !== postObj.genre)))
-            || ((activity !== "All") && ((activity !== postObj.activity)))
+            ((location !== "All") && ((location.toUpperCase() !== postObj.Location.toUpperCase())))
+            || ((genre !== "All") && ((genre.toUpperCase() !== postObj.genre.toUpperCase())))
+            || ((activity !== "All") && ((activity.toUpperCase() !== postObj.activity.toUpperCase())))
         )
-            return false 
-        else return true;
+        {
+            return false;
+        }
+
+         return true;
     }
 
-    const filteredPosts = data.filter(filterBy);
+    var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
     const samplePost = filteredPosts
-
-
         .map((userData) => (
-            <div key={userData.id}>
+            <div id={userData[0]}>
                 <div className="row">
                     {/* Profile name and icon */}
                     <div className="col-12 header">
                         <img
                             className="profile-icon"
-                            src={userData.userNameProfileIcon}
-                            alt={userData.usernameIconAlt}
+                            src={userData[1].userNameProfileIcon}
+                            alt={userData[1].usernameIconAlt}
                         />
                         <span className="profile-name">
-                            {userData.userName}
+                            {userData[1].userName}
                         </span>
                     </div>
 
@@ -85,8 +89,8 @@ export default function Feed(props) {
                     <div className="col-12 ">
                         <img
                             className="img-fluid image"
-                            src={userData.postImage}
-                            alt={userData.postImageAlt}
+                            src={userData[1].postImage}
+                            alt={userData[1].postImageAlt}
                         />
                     </div>
 
@@ -110,22 +114,22 @@ export default function Feed(props) {
                     {/* song name and artist */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
-                            Song name: {userData.songTitle}
+                            Song name: {userData[1].songTitle}
                         </span>
                         <span className="filter-item">
-                            Artist: {userData.songArtist}
+                            Artist: {userData[1].songArtist}
                         </span>
                     </div>
                     {/* Filter information */}
                     <div className="col-12 filter-info text-center">
                         <span className="filter-item">
-                            Location: {userData.Location}
+                            Location: {userData[1].Location}
                         </span>
                         <span className="filter-item">
-                            Genre: {userData.genre}
+                            Genre: {userData[1].genre}
                         </span>
                         <span className="filter-item">
-                            Activity: {userData.activity}
+                            Activity: {userData[1].activity}
                         </span>
                     </div>
                 </div>
@@ -137,6 +141,7 @@ export default function Feed(props) {
         <div className="feed">
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
+                <h3 className="header-2">If you are not seeing the post you just created, refresh the page!</h3>
 
                 <div className={"d-flex justify-content-center filter-container"}>
                     <Form.Group className="mb-3" controlId="Genre">
@@ -161,7 +166,7 @@ export default function Feed(props) {
                             <option value="HUB">HUB</option>
                             <option value="Bus Stop">Bus Stop</option>
                             <option value="Mary Gates">Mary Gates</option>
-                            <option value="Libary">Library</option>
+                            <option value="Library">Library</option>
                             <option value="IMA">IMA</option>
 
                         </Form.Select>

@@ -18,11 +18,8 @@ import { Footer } from './Footer.js';
 import { savedPosts } from './Feed.js'
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
-// import FEED_EXAMPLE_DATA from '../data/postsData.json';
 
 export default function App(props) {
-  //data that will be used in Feed to show an EXAMPLE of the feed
-  // const data = FEED_EXAMPLE_DATA;
   //data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
   //we import the realtime data in index.js
@@ -36,9 +33,7 @@ export default function App(props) {
     get(postsRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          const data = snapshot.val();
-          const array = Object.values(data);
-          setPostData(array);
+          setPostData(snapshot);
         } else {
           console.log('No data');
         }
@@ -55,7 +50,7 @@ export default function App(props) {
   };
   
 
-  const [currentUser, setCurrentUser] = useState(users[0]);
+  //const [currentUser, setCurrentUser] = useState(users[0]);
 
   // set state for formData
   const [formData, setFormData] = useState(null);
