@@ -225,6 +225,12 @@
     display: inline-block;
 }
 
+.feed .header-2 {
+    font-family: "Rubik", sans-serif;
+    font-size: 22px;
+    color: #03dac5;
+}
+
 .feed .profile-name {
     float: left;
     margin-top: .5rem;

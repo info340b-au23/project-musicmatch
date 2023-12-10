@@ -35,9 +35,9 @@ export default function App(props) {
     get(postsRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          const data = snapshot.val();
-          const array = Object.values(data);
-          setPostData(array);
+          //const data = snapshot.val();
+          //const array = Object.values(data);
+          setPostData(snapshot);
         } else {
           console.log('No data');
         }
