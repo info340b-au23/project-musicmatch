@@ -15,6 +15,7 @@ import SavedMusic from './SavedMusic';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
+import { savedPosts } from './Feed.js'
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 // import FEED_EXAMPLE_DATA from '../data/postsData.json';
@@ -46,6 +47,12 @@ export default function App(props) {
         console.log('Error:', error);
       });
   }, []);
+
+  const [savedPosts, setSavedPosts] = useState([]);
+
+  const handleSaveClick = (post) => {
+    setSavedPosts([...savedPosts, post]);
+  };
   
 
   const [currentUser, setCurrentUser] = useState(users[0]);
@@ -71,10 +78,10 @@ export default function App(props) {
         </Route>
 
         <Route path='/home' element={<Homepage />} />
-        <Route path='/feed' element={<Feed data={postData} />} />
+        <Route path='/feed' element={<Feed data={postData} handleSaveClick={handleSaveClick}/>} />
         <Route path='/profile' element={<UserProfile formData={formData} />} />
         <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit} />} />
-        <Route path="/savedMusic" component={<SavedMusic data={postData} />} />
+        <Route path="/savedMusic" element={<SavedMusic data={savedPosts} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
       </Routes>

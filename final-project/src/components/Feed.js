@@ -4,6 +4,7 @@ import { getDatabase, ref, push, onValue } from 'firebase/database';
 
 export default function Feed(props) {
     const data = props.data;
+    const handleSaveClick = props.handleSaveClick;
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
@@ -45,11 +46,11 @@ export default function Feed(props) {
         setActivity(event.target.value);
     }
 
-    //for viewing saved posts 
-    const [savedPosts, setSavedPosts] = useState([]);
-    const handleSaveClick = (post) => {
-        setSavedPosts([...savedPosts, post]);
-    };
+    // //for viewing saved posts 
+    // const [savedPosts, setSavedPosts] = useState([]);
+    // const handleSaveClick = (post) => {
+    //     setSavedPosts([...savedPosts, post]);
+    // };
 
     function filterBy(postObj) {
         if (
