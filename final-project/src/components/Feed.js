@@ -57,12 +57,13 @@ export default function Feed(props) {
             || ((genre !== "All") && ((genre !== postObj.genre)))
             || ((activity !== "All") && ((activity !== postObj.activity)))
         )
-            return false
+            return false 
         else return true;
     }
 
     const filteredPosts = data.filter(filterBy);
     const samplePost = filteredPosts
+
 
         .map((userData) => (
             <div key={userData.id}>

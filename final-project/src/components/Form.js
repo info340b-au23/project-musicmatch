@@ -12,7 +12,7 @@ export function Form() {
         activity: [],
         image: null
     });
-
+ 
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectedActivities, setSelectedActivities] = useState([]);

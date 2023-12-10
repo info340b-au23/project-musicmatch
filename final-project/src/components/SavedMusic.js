@@ -1,11 +1,33 @@
 import React from 'react';
 
 export default function SavedMusic(props) {
-    const savedPosts = props.data;
+    const savedPosts = props.data
+    .map((userData) => (
+        <div key={userData.id}>
+            <div className="row">
+                {/* song name and artist */}
+                <div className="col-12 filter-info text-center">
+                    <span className="filter-item">
+                        Song name: {userData.songTitle}
+                    </span>
+                    <span className="filter-item">
+                        Artist: {userData.songArtist}
+                    </span>
+                </div>
+                
+            </div>
+
+        </div>
+    ));
 
     return (
         <div className="feed">
-            <main>
+            <p></p>
+        </div>
+    );
+}
+
+{/* <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
                 <h2 className="sub-header">Saved Songs</h2>
                 <div className="saved-songs">
@@ -23,8 +45,5 @@ export default function SavedMusic(props) {
                         </div>
                     ))}
                 </div>
-            </main>
-        </div>
-    );
-}
+            </main> */}
 

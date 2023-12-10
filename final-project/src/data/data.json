@@ -69,18 +69,7 @@
             "genre": "Rock",
             "Location": "IMA"
         },
-
-        "post4" : {
-            "ID": "4",
-            "username": "@jasmine22",
-            "image": "../img/cat.jpg",
-            "songTitle": "The Four Seasons",
-            "songArtist": "Antonio Vivaldi",
-            "activity": "Studying",
-            "genre": "Classic",
-            "Location": "Library"
-        },
-
+        
         "post5" : {
             "ID": "5",
             "username": "@timC",
