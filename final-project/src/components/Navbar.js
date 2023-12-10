@@ -1,18 +1,6 @@
 //our navigation bar for each page
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-
-/* export function Navbar() {
-    return (
-        <nav className="navbarAllPages">
-            <div className="navItem"><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></div>
-            <div className="navItem"><NavLink to="/aboutUs">About Us</NavLink></div>
-            <div className="navItem"><NavLink to="/feed">Feed</NavLink></div>
-            <div className="navItem"><NavLink to="/profile">Profile</NavLink></div>
-        </nav>
-    );
-} */
-
 export function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
 

@@ -1,23 +1,10 @@
 import React from 'react';
-import '../style.css';
-import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { Footer } from './Footer.js';
-
 export default function UserProfile(props) {
     const formData = props.formData;
 
     return (
         <div className='profile'>
-            {/* Navbar */}
-            {/* <nav className="navbarAllPages">
-                <ul>
-                    <li><NavLink to="/home"><span className="material-symbols-outlined">Home</span></NavLink></li>
-                    <li><NavLink to="/aboutUs">About Us</NavLink></li>
-                    <li><NavLink to="/feed">Feed</NavLink></li>
-                    <li><NavLink to="/profile">Profile</NavLink></li>
-                </ul>
-            </nav> */}
 
             <body class="container">
                 {/* Main Content */}
@@ -86,15 +73,6 @@ export default function UserProfile(props) {
                             </div>
                         </div>
                     </div> */}
-
-                    {/* Footer */}
-                    {/* <footer className="footerAllPages">
-                        <div className="container">
-                            <p><a href="mailto:email@musicmatch.uw.edu"><span className="material-icons">email</span> email@musicmatch.uw.edu</a></p>
-                            <p><a href="tel:555-123-4567"><span className="material-icons">phone</span> 555-123-4567</a></p>
-                            <p>&copy; MusicMatch 2023</p>
-                        </div>
-                    </footer> */}
 
                 </main>
             </body>

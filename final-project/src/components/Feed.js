@@ -18,7 +18,7 @@ export default function Feed(props) {
         onValue(postsRef, (snapshot) => {
             if (snapshot.exists()) {
                 const data = snapshot.val();
-                const array = Object.values(data);
+               // const array = Object.values(data);
                 setPostData(snapshot.exportVal());
             } else {
                 console.log('No data');

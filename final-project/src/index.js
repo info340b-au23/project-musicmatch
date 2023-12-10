@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import App from './components/App';
 import { BrowserRouter } from 'react-router-dom'
 import { initializeApp } from "firebase/app"; //added from firebase
-import { getDatabase, ref, set as firebaseSet } from 'firebase/database';
 
 //import CSS
 import './style.css'; //import css file!
