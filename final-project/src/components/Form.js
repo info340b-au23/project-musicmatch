@@ -90,8 +90,8 @@ export function Form() {
                 songTitle: formData.songName,
                 songArtist: formData.artistName,
                 genre: selectedGenres.join(', '),
-                Location: formData.location.join(', '),
-                activity: formData.activity.join(', '),
+                Location: selectedLocations.join(', '),
+                activity: selectedActivities.join(', '),
                 image: formData.image
             };
             console.log('postData:', postData)

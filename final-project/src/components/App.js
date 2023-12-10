@@ -27,21 +27,6 @@ export default function App(props) {
   //we import the realtime data in index.js
   let users = props.data;
 
-  //to control the feed filtering
-  const [filterCriteria, setFilterCriteria] = useState({
-    location: "",
-    genre: "",
-    activity: ""
-  });
-
-  let applyFilter = (location, genre, activity) => {
-    setFilterCriteria({
-      location: location,
-      genre: genre,
-      activity: activity
-    });
-  };
-
   const [postData, setPostData] = useState([]);
   useEffect(() => {
     const db = getDatabase()

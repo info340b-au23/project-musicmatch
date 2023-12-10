@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, push, onValue } from 'firebase/database';
 
 export default function Feed(props) {
     const data = props.data;
@@ -9,7 +9,25 @@ export default function Feed(props) {
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
-    const [filterPosts, setFilterPosts] = useState([]);
+    const [postData, setPostData] = useState([]);
+
+    useEffect(() => {
+        const db = getDatabase();
+        const postsRef = ref(db, 'posts');
+
+        onValue(postsRef, (snapshot) => {
+            if (snapshot.exists()) {
+                const data = snapshot.val();
+                const array = Object.values(data);
+                setPostData(array);
+            } else {
+                console.log('No data');
+            }
+        }, (error) => {
+            console.log('Error:', error);
+        });
+
+    }, []); // Empty dependency array means it runs once on component mount
 
     //callback functions
     const handleLocation = (event) => {
