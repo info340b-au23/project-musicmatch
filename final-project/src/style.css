@@ -88,7 +88,7 @@
 @media screen and (max-width: 768px) {
     .profile-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
     }
 }
 
