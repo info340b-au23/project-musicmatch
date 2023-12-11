@@ -84,7 +84,7 @@ export default function Feed(props) {
                     <div className="col-12 ">
                         <img
                             className="img-fluid image"
-                            src={userData[1].postImage}
+                            src={userData[1].image}
                             alt={userData[1].postImageAlt}
                         />
                     </div>
