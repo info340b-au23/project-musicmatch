@@ -9,6 +9,7 @@ export default function Feed(props) {
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
     const [postData, setPostData] = useState([]);
+    const [savedPosts, setSavedPosts] = useState([]);
 
 
     useEffect(() => {
@@ -24,7 +25,23 @@ export default function Feed(props) {
         }, (error) => {
             console.log('Error:', error);
         });
+
+        const savedPostsString = localStorage.getItem('savedPosts');
+        if (savedPostsString) {
+            setSavedPosts(JSON.parse(savedPostsString));
+        }
     }, []);
+
+    const handleSaveClickAndUpdate = (userData) => {
+        // Update state
+        setSavedPosts([...savedPosts, userData]);
+
+        // Save to local storage
+        localStorage.setItem('savedPosts', JSON.stringify([...savedPosts, userData]));
+
+        // Call the original save click handler
+        handleSaveClick(userData);
+    };
 
     //callback functions
     const handleLocation = (event) => {
@@ -91,7 +108,7 @@ export default function Feed(props) {
                         </button>
 
                         {/* Save button */}
-                        <button type="button" className="btn btn-info save" onClick={() => handleSaveClick(userData[1])}>
+                        <button type="button" className="btn btn-info save" onClick={() => handleSaveClickAndUpdate(userData[1])}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
                                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>

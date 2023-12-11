@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function SavedMusic(props) {
-    const savedPosts = props.data || [];
+    // Use local storage to get and set saved posts
+    const getSavedPostsFromStorage = () => {
+        const savedPostsString = localStorage.getItem('savedPosts');
+        return savedPostsString ? JSON.parse(savedPostsString) : [];
+    };
+
+    const [savedPosts, setSavedPosts] = useState(getSavedPostsFromStorage);
+
+    useEffect(() => {
+        // Save posts to local storage whenever the array changes
+        localStorage.setItem('savedPosts', JSON.stringify(savedPosts));
+    }, [savedPosts]);
 
     const savedMusicList = savedPosts.map((userData) => (
         <div key={userData.id}>
@@ -24,17 +35,17 @@ export default function SavedMusic(props) {
     ));
 
     return (
-        <div>
+        <div className="feed">
             <main>
                 <div>
                     <h1 className="musicmatch-header">MUSICMATCH</h1>
                     <h3 className="header-2">See everyone's posts!</h3>
                 </div>
-            </main>
 
-            <div>
-                {savedMusicList}
-            </div>
+                <div>
+                    {savedMusicList}
+                </div>
+            </main>
         </div>
     );
 }
