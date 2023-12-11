@@ -10,7 +10,6 @@
 }
 
 /* Profile */
-
 .profile, .profile body {
     background-color: black;
     font-family: 'Rubik', sans-serif;
@@ -426,6 +425,11 @@ dl {
     cursor: pointer;
 }
 
+/* error handling for Form! */
+.error {
+font-size: 20px;
+color: red;
+}
 
 /* THIS IS CSS CODE FOR ContributorDetail! for carousel bootstrap ONLY*/
 .contributor-detail {

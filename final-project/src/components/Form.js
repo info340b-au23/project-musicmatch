@@ -76,8 +76,21 @@ export function Form() {
         if (!formData.songName.trim()) {
             validationErrors.songName = "Song name is required";
         }
+
         if (!formData.artistName.trim()) {
             validationErrors.artistName = "Artist name is required";
+        }
+
+        if (formData.genres.length === 0) {
+            validationErrors.genres = "You have to select one genre (only 1)!";
+        }
+
+        if (formData.location.length === 0) {
+            validationErrors.location = "You have to select one location (only 1)!";
+        }
+
+        if (formData.activity.length === 0) {
+            validationErrors.activity = "You have to select one activity (only 1)!";
         }
 
         if (Object.keys(validationErrors).length === 0) {
@@ -114,6 +127,7 @@ export function Form() {
                         setSelectedActivities([]);
                         setSelectedLocations([]);
                         setError({});
+                        window.location.href = "/feed";
                     })
                     .catch((error) => {
                         console.error('Error writing to Firebase Database: ', error);
@@ -328,9 +342,13 @@ export function Form() {
                             </div>
                         </p>
                     </div>
-                    <div className="error-message">
+                    <div className="error">
                         {error.songName && <p>{error.songName}</p>}
                         {error.artistName && <p>{error.artistName}</p>}
+                        {error.genres && <p>{error.genres}</p>}
+                        {error.location && <p>{error.location}</p>}
+                        {error.activity && <p>{error.activity}</p>}
+                        {error.image && <p>{error.image}</p>}
                     </div>
                     <button type="submit" className="submit-button">
                         Submit
