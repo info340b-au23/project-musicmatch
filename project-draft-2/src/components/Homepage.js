@@ -24,7 +24,7 @@ export default function Homepage() {
                 </header>
             </main>
 
-            <Map />;
+            {/* <Map />; */}
 
             {/* Footer */}
             {/* <footer>
