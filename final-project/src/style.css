@@ -269,10 +269,16 @@
 
 
 /* Saved Music */
-.savedMusic body {
+.savedMusic {
     background-color: black;
     font-size: 18px;
 }
+
+.savedMusic-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
 
 
 /* Home Page */
