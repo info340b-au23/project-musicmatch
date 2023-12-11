@@ -25,7 +25,16 @@ export default function SavedMusic(props) {
 
     return (
         <div>
-            {savedMusicList}
+            <main>
+                <div>
+                    <h1 className="musicmatch-header">MUSICMATCH</h1>
+                    <h3 className="header-2">See everyone's posts!</h3>
+                </div>
+            </main>
+
+            <div>
+                {savedMusicList}
+            </div>
         </div>
     );
 }
