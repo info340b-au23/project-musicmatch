@@ -3,6 +3,11 @@ import Form from 'react-bootstrap/Form';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function Feed(props) {
+<<<<<<< HEAD
+    const data = props.data;
+    const handleSaveClick = props.handleSaveClick;
+=======
+>>>>>>> refs/remotes/origin/main
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
@@ -44,11 +49,11 @@ export default function Feed(props) {
         setActivity(event.target.value);
     }
 
-    //for viewing saved posts 
-    const [savedPosts, setSavedPosts] = useState([]);
-    const handleSaveClick = (post) => {
-        setSavedPosts([...savedPosts, post]);
-    };
+    // //for viewing saved posts 
+    // const [savedPosts, setSavedPosts] = useState([]);
+    // const handleSaveClick = (post) => {
+    //     setSavedPosts([...savedPosts, post]);
+    // };
 
     function filterBy(postObj) {
         if (
