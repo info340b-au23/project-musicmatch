@@ -9,7 +9,7 @@ export default function Feed(props) {
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
     const [postData, setPostData] = useState([]);
-    const [savedPosts, setSavedPosts] = useState([]);
+    const [savedPosts, setSavedPosts] = useState(new Set());
 
 
     useEffect(() => {
@@ -28,19 +28,26 @@ export default function Feed(props) {
 
         const savedPostsString = localStorage.getItem('savedPosts');
         if (savedPostsString) {
-            setSavedPosts(JSON.parse(savedPostsString));
+            setSavedPosts(new Set(JSON.parse(savedPostsString)));
         }
     }, []);
 
     const handleSaveClickAndUpdate = (userData) => {
-        // Update state
-        setSavedPosts([...savedPosts, userData]);
-
-        // Save to local storage
-        localStorage.setItem('savedPosts', JSON.stringify([...savedPosts, userData]));
-
-        // Call the original save click handler
-        handleSaveClick(userData);
+        // Check if the song is already saved
+        if (!savedPosts.has(userData)) {
+            // Update state using a callback function to ensure the latest state
+            setSavedPosts((prevSavedPosts) => {
+                const newSavedPosts = new Set([...prevSavedPosts, userData]);
+    
+                // Save to local storage
+                localStorage.setItem('savedPosts', JSON.stringify([...newSavedPosts]));
+    
+                // Call the original save click handler
+                handleSaveClick(userData);
+    
+                return newSavedPosts;
+            });
+        }
     };
 
     //callback functions

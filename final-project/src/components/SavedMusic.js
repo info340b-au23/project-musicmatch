@@ -4,17 +4,17 @@ export default function SavedMusic(props) {
     // Use local storage to get and set saved posts
     const getSavedPostsFromStorage = () => {
         const savedPostsString = localStorage.getItem('savedPosts');
-        return savedPostsString ? JSON.parse(savedPostsString) : [];
+        return savedPostsString ? new Set(JSON.parse(savedPostsString)) : new Set();
     };
 
     const [savedPosts, setSavedPosts] = useState(getSavedPostsFromStorage);
 
     useEffect(() => {
-        // Save posts to local storage whenever the array changes
-        localStorage.setItem('savedPosts', JSON.stringify(savedPosts));
+        // Save posts to local storage whenever the set changes
+        localStorage.setItem('savedPosts', JSON.stringify([...savedPosts]));
     }, [savedPosts]);
 
-    const savedMusicList = savedPosts.map((userData) => (
+    const savedMusicList = [...savedPosts].map((userData) => (
         <div key={userData.id}>
             <div className="row">
                 {/* song name and artist */}
