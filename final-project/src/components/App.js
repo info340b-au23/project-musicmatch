@@ -53,11 +53,14 @@ export default function App(props) {
   //const [currentUser, setCurrentUser] = useState(users[0]);
 
   // set state for formData
-  const [formData, setFormData] = useState(null);
-
-  const handleFormSubmit = (data) => {
-    setFormData(data);
-  }
+  const [formData, setFormData] = useState({
+    songName: "",
+    artistName: "",
+    genres: [],
+    location: [],
+    activity: [],
+    image: null
+  });
 
   //call components here:
   return (
@@ -75,7 +78,7 @@ export default function App(props) {
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed data={postData} handleSaveClick={handleSaveClick}/>} />
         <Route path='/profile' element={<UserProfile formData={formData} />} />
-        <Route path='/profile/form' element={<Form onSubmit={handleFormSubmit} />} />
+        <Route path='/profile/form' element={<Form setFormData={setFormData} />} />
         <Route path="/savedMusic" element={<SavedMusic data={savedPosts} />} />
         {/*change route to home!*/}
         <Route path="*" element={<Navigate to='/home' />} />
