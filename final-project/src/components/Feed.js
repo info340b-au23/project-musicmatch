@@ -5,7 +5,6 @@ import { getDatabase, ref, onValue } from 'firebase/database';
 export default function Feed(props) {
     const handleSaveClick = props.handleSaveClick;
 
-    //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
@@ -62,7 +61,7 @@ export default function Feed(props) {
          return true;
     }
 
-    var filteredPosts = Object.entries(postData).filter(([value]) => filterBy(value))
+    var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
     const samplePost = filteredPosts
         .map((userData) => (
             <div id={userData[0]} >
@@ -135,7 +134,7 @@ export default function Feed(props) {
         <div className="feed">
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
-                <h3 className="header-2">If you are not seeing the post you just created, refresh the page!</h3>
+                <h3 className="header-2">See everyone's posts!</h3>
 
                 <div className={"d-flex justify-content-center filter-container"}>
                     <Form.Group className="mb-3" controlId="Genre">

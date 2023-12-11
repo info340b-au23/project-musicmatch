@@ -4,17 +4,17 @@ import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 export function Form() {
     const [formData, setFormData] = useState({
-        songName: '',
-        artistName: '',
+        songName: "",
+        artistName: "",
         genres: [],
         location: [],
         activity: [],
         image: null
     });
 
-    const [selectedGenres, setSelectedGenres] = useState('');
-    const [selectedLocations, setSelectedLocations] = useState('');
-    const [selectedActivities, setSelectedActivities] = useState('');
+    const [selectedGenres, setSelectedGenres] = useState([]);
+    const [selectedLocations, setSelectedLocations] = useState([]);
+    const [selectedActivities, setSelectedActivities] = useState([]);
     const [error, setError] = useState([]);
 
     const handleInputChange = (input) => {
@@ -22,31 +22,120 @@ export function Form() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleGenreChange = (genre) => {
-        setSelectedGenres(genre);
-        setFormData({ ...formData, genres: genre });
+    /* const handleGenreChange = (genre) => {
+        const isSelected = selectedGenres.includes(genre);
+
+        if (isSelected) {
+            // if genre is already selected, remove it
+            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
+        } else {
+            // if genre is not selected, add it
+            setSelectedGenres([...selectedGenres, genre]);
+        }
+
+        //update the formData state with the selected genres
+        setFormData({ ...formData, genres: selectedGenres });
     };
 
     const handleLocationChange = (location) => {
-        setSelectedLocations(location);
-        setFormData({ ...formData, location: location });
+        const isSelected = selectedLocations.includes(location);
+
+        if (isSelected) {
+            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
+        } else {
+            setSelectedLocations([...selectedLocations, location]);
+        }
+
+        //update the formData state with the selected locations
+        setFormData({ ...formData, location: selectedLocations });
+
     };
 
 
     const handleActivityChange = (activity) => {
-        setSelectedActivities(activity);
-        setFormData({ ...formData, activity: activity });
+        const isSelected = selectedActivities.includes(activity);
+
+        if (isSelected) {
+            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
+        } else {
+            setSelectedActivities([...selectedActivities, activity]);
+        }
+
+        //update the formData state with the selected activities
+        setFormData({ ...formData, activity: selectedActivities });
+    };
+ */
+
+    const handleGenreChange = (genre) => {
+        const isSelected = selectedGenres.includes(genre);
+    
+        if (isSelected) {
+            // if genre is already selected, remove it
+            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
+        } else {
+            // if genre is not selected, check if other genres are selected
+            if (selectedGenres.length > 0) {
+                setError({ ...error, genres: "Select only one genre!" });
+                return;
+            }
+            // if no other genre is selected, add the current genre
+            setSelectedGenres([...selectedGenres, genre]);
+        }
+    
+        // update the formData state with the selected genres
+        setFormData({ ...formData, genres: selectedGenres });
+    };
+    
+    const handleLocationChange = (location) => {
+        const isSelected = selectedLocations.includes(location);
+    
+        if (isSelected) {
+            // if location is already selected, remove it
+            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
+        } else {
+            // if location is not selected, check if other locations are selected
+            if (selectedLocations.length > 0) {
+                setError({ ...error, location: "Select only one location!" });
+                return;
+            }
+            // if no other location is selected, add the current location
+            setSelectedLocations([...selectedLocations, location]);
+        }
+    
+        // update the formData state with the selected locations
+        setFormData({ ...formData, location: selectedLocations });
+    };
+    
+    const handleActivityChange = (activity) => {
+        const isSelected = selectedActivities.includes(activity);
+    
+        if (isSelected) {
+            // if activity is already selected, remove it
+            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
+        } else {
+            // if activity is not selected, check if other activities are selected
+            if (selectedActivities.length > 0) {
+                setError({ ...error, activity: "Select only one activity!" });
+                return;
+            }
+            // if no other activity is selected, add the current activity
+            setSelectedActivities([...selectedActivities, activity]);
+        }
+    
+        // update the formData state with the selected activities
+        setFormData({ ...formData, activity: selectedActivities });
     };
 
+    
     const handleImageChange = (img) => {
         //check if the file is a PNG
-    if (img && img.type === "image/png") {
-        setFormData({ ...formData, image: img });
-        setError({ ...error, image: "" }); 
-    } else {
-        setFormData({ ...formData, image: null }); 
-        setError({ ...error, image: "Upload a PNG image" }); 
-    }
+        if (img && img.type === "image/png") {
+            setFormData({ ...formData, image: img });
+            setError({ ...error, image: "" });
+        } else {
+            setFormData({ ...formData, image: null });
+            setError({ ...error, image: "Upload a PNG image" });
+        }
     }
 
     const handleSubmit = (e) => {
@@ -64,15 +153,15 @@ export function Form() {
         if (selectedGenres.length === 0) {
             validationErrors.genres = "Select at least one genre (only 1)!";
         }
-    
+
         if (selectedLocations.length === 0) {
             validationErrors.location = "Select at least one location (only 1)!";
         }
-    
+
         if (selectedActivities.length === 0) {
             validationErrors.activity = "Select at least one activity (only 1)!";
         }
-    
+
         if (!formData.image) {
             validationErrors.image = "Upload an image!";
         }
@@ -83,16 +172,16 @@ export function Form() {
             const postsRef = ref(db, 'posts');
             let imageURL = null;
 
-            // If the image was selected, upload it first
+            //if the image was selected, upload it first
             UploadImage(formData.image).then(result => {
                 imageURL = result;
 
                 const postData = {
                     songTitle: formData.songName,
                     songArtist: formData.artistName,
-                    genre: selectedGenres,
-                    Location: selectedLocations,
-                    activity: selectedActivities,
+                    genre: selectedGenres.join(', '),
+                    Location: selectedLocations.join(', '),
+                    activity: selectedActivities.join(', '),
                     image: imageURL
                 };
                 console.log('postData:', postData)
@@ -103,14 +192,14 @@ export function Form() {
                         setFormData({
                             songName: '',
                             artistName: '',
-                            genres: '',
-                            location: '',
-                            activity: '',
+                            genres: [],
+                            location: [],
+                            activity: [],
                             image: null
                         })
-                        setSelectedGenres('');
-                        setSelectedActivities('');
-                        setSelectedLocations('');
+                        setSelectedGenres([]);
+                        setSelectedActivities([]);
+                        setSelectedLocations([]);
                         setError({});
                         window.location.href = "/feed";
                     })
