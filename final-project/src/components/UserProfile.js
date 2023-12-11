@@ -80,8 +80,8 @@ export default function UserProfile(props) {
                                 <div className="card-body">
                                     <h2 className="song-name">Song name: {userData[1].songTitle}</h2>
                                     <h3 id="artist">Artist: {userData[1].songArtist}</h3>
-                                    <img src={formData.image} alt="user's activity"></img>
-                                    <div className="col-12 filter-info text-center">
+                                    <img id="user-upload" src={userData[1].image} alt="user's activity" />
+                                    <div className="col-12 more-info text-center">
                                         <div className="location">
                                             Location: {userData[1].Location}
                                         </div>
@@ -92,7 +92,6 @@ export default function UserProfile(props) {
                                             Activity: {userData[1].activity}
                                         </div>
                                     </div>
-                                    <div><button className="play">Play</button></div>
                                 </div>
                             </div>
                         </div>

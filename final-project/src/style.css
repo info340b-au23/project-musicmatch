@@ -66,6 +66,11 @@
     margin-left: 5rem;
 }
 
+.profile #user-upload {
+    max-height: 150px;
+    width: auto;
+}
+
 .profile .buttons {
     display: flex;
     flex-direction: column;
@@ -87,12 +92,7 @@
     }
 }
 
-.profile #song-form {
-    width: auto;
-}
-
-.profile .posts,
-.profile .liked-songs {
+.profile .posts {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -109,61 +109,36 @@
     margin-top: 2rem;
 }
 
-.profile .card {
-    width: 350px;
-    height: 400px;
-    margin: 1rem;
-    text-align: center;
-}
-
 .profile h3 {
     padding-top: 0;
-}
-
-.profile .liked-songs img,
-.profile .posts img {
-    margin-bottom: .5rem;
-    max-width: 100%;
-    height: auto;
-    width: 100%;
 }
 
 .profile .song-name {
     color: #343434;
     margin-top: 0;
+    margin-bottom: 0;
 }
 
 .profile .card-body {
+    position: relative;
     text-align: center;
+    height: 100%;
 }
 
-.profile .sub-header {
-    margin-top: 2rem;
+.profile .more-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px;
 }
 
-.profile .play {
-    margin-top: 2rem;
-}
-
-.profile .form-inputs {
-    width: 60%;
-}
-
-.profile .form {
+.profile .card {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    margin: 1rem;
     text-align: center;
-}
-
-.form h2 {
-    text-align: left;
-    margin-left: 2rem;
-}
-
-.profile #submit {
-    margin-left: 2rem;
-}
-
-.profile #song-form {
-    margin-right: 8rem;
 }
 
 /* About Us */

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { DisplayImage, UploadImage } from './UploadImage.js';
 import { getDatabase, ref, push as firebasePush } from 'firebase/database';

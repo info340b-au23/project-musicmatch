@@ -20,6 +20,7 @@ import { savedPosts } from './Feed.js'
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 
 export default function App(props) {
+  
   //data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
   //we import the realtime data in index.js
