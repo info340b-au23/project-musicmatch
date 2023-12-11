@@ -112,7 +112,8 @@
 
 .profile .card {
     width: 350px;
-    margin: 0.5rem;
+    height: 400px;
+    margin: 1rem;
     text-align: center;
 }
 
