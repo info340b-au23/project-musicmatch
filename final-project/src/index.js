@@ -7,9 +7,6 @@ import { initializeApp } from "firebase/app"; //added from firebase
 //import CSS
 import './style.css'; //import css file!
 
-//import json data file for Feed
-import DATA from './data/data.json';
-
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyChR-uCZQrXIuC8l0QGQynq6D6z43cRXN8",
@@ -26,7 +23,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App data={DATA} />
+      <App />
     </ BrowserRouter>
   </React.StrictMode>
 );

@@ -3,10 +3,8 @@ import Form from 'react-bootstrap/Form';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function Feed(props) {
-    const data = props.data;
     const handleSaveClick = props.handleSaveClick;
 
-    //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
@@ -19,8 +17,6 @@ export default function Feed(props) {
 
         onValue(postsRef, (snapshot) => {
             if (snapshot.exists()) {
-                const data = snapshot.val();
-               // const array = Object.values(data);
                 setPostData(snapshot.exportVal());
             } else {
                 console.log('No data');
@@ -46,12 +42,6 @@ export default function Feed(props) {
         setActivity(event.target.value);
     }
 
-    // //for viewing saved posts 
-    // const [savedPosts, setSavedPosts] = useState([]);
-    // const handleSaveClick = (post) => {
-    //     setSavedPosts([...savedPosts, post]);
-    // };
-
     function filterBy(postObj) {
         if (
             ((location !== "All") && ((location.toUpperCase() !== postObj.Location.toUpperCase())))
@@ -68,7 +58,7 @@ export default function Feed(props) {
     var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
     const samplePost = filteredPosts
         .map((userData) => (
-            <div id={userData[0]}>
+            <div id={userData[0]} >
                 <div className="row">
                     {/* Profile name and icon */}
                     <div className="col-12 header">
@@ -86,7 +76,7 @@ export default function Feed(props) {
                     <div className="col-12 ">
                         <img
                             className="img-fluid image"
-                            src={userData[1].postImage}
+                            src={userData[1].image}
                             alt={userData[1].postImageAlt}
                         />
                     </div>
@@ -101,7 +91,7 @@ export default function Feed(props) {
                         </button>
 
                         {/* Save button */}
-                        <button type="button" className="btn btn-info save" onClick={() => handleSaveClick(userData)}>
+                        <button type="button" className="btn btn-info save" onClick={() => handleSaveClick(userData[1])}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-bookmark-heart" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M8 4.41c1.387-1.425 4.854 1.07 0 4.277C3.146 5.48 6.613 2.986 8 4.412z"></path>
                                 <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"></path>
@@ -138,7 +128,7 @@ export default function Feed(props) {
         <div className="feed">
             <main>
                 <h1 className="musicmatch-header">MUSICMATCH</h1>
-                <h3 className="header-2">If you are not seeing the post you just created, refresh the page!</h3>
+                <h3 className="header-2">See everyone's posts!</h3>
 
                 <div className={"d-flex justify-content-center filter-container"}>
                     <Form.Group className="mb-3" controlId="Genre">

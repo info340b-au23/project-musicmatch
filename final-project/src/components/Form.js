@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { UploadAndDisplayImage } from './UploadImage.js';
+import { DisplayImage, UploadImage } from './UploadImage.js';
 import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 export function Form() {
@@ -12,7 +11,7 @@ export function Form() {
         activity: [],
         image: null
     });
- 
+
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectedActivities, setSelectedActivities] = useState([]);
@@ -23,7 +22,7 @@ export function Form() {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleGenreChange = (genre) => {
+    /* const handleGenreChange = (genre) => {
         const isSelected = selectedGenres.includes(genre);
 
         if (isSelected) {
@@ -49,6 +48,7 @@ export function Form() {
 
         //update the formData state with the selected locations
         setFormData({ ...formData, location: selectedLocations });
+
     };
 
 
@@ -64,12 +64,79 @@ export function Form() {
         //update the formData state with the selected activities
         setFormData({ ...formData, activity: selectedActivities });
     };
+ */
 
+    const handleGenreChange = (genre) => {
+        const isSelected = selectedGenres.includes(genre);
+    
+        if (isSelected) {
+            // if genre is already selected, remove it
+            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
+        } else {
+            // if genre is not selected, check if other genres are selected
+            if (selectedGenres.length > 0) {
+                setError({ ...error, genres: "Select only one genre!" });
+                return;
+            }
+            // if no other genre is selected, add the current genre
+            setSelectedGenres([...selectedGenres, genre]);
+        }
+    
+        // update the formData state with the selected genres
+        setFormData({ ...formData, genres: selectedGenres });
+    };
+    
+    const handleLocationChange = (location) => {
+        const isSelected = selectedLocations.includes(location);
+    
+        if (isSelected) {
+            // if location is already selected, remove it
+            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
+        } else {
+            // if location is not selected, check if other locations are selected
+            if (selectedLocations.length > 0) {
+                setError({ ...error, location: "Select only one location!" });
+                return;
+            }
+            // if no other location is selected, add the current location
+            setSelectedLocations([...selectedLocations, location]);
+        }
+    
+        // update the formData state with the selected locations
+        setFormData({ ...formData, location: selectedLocations });
+    };
+    
+    const handleActivityChange = (activity) => {
+        const isSelected = selectedActivities.includes(activity);
+    
+        if (isSelected) {
+            // if activity is already selected, remove it
+            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
+        } else {
+            // if activity is not selected, check if other activities are selected
+            if (selectedActivities.length > 0) {
+                setError({ ...error, activity: "Select only one activity!" });
+                return;
+            }
+            // if no other activity is selected, add the current activity
+            setSelectedActivities([...selectedActivities, activity]);
+        }
+    
+        // update the formData state with the selected activities
+        setFormData({ ...formData, activity: selectedActivities });
+    };
+
+    
     const handleImageChange = (img) => {
-        setFormData({ ...formData, image: img });
+        //check if the file is a PNG
+        if (img && img.type === "image/png") {
+            setFormData({ ...formData, image: img });
+            setError({ ...error, image: "" });
+        } else {
+            setFormData({ ...formData, image: null });
+            setError({ ...error, image: "Upload a PNG image" });
+        }
     }
-
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -78,43 +145,68 @@ export function Form() {
         if (!formData.songName.trim()) {
             validationErrors.songName = "Song name is required";
         }
+
         if (!formData.artistName.trim()) {
             validationErrors.artistName = "Artist name is required";
         }
 
+        if (selectedGenres.length === 0) {
+            validationErrors.genres = "Select at least one genre (only 1)!";
+        }
+
+        if (selectedLocations.length === 0) {
+            validationErrors.location = "Select at least one location (only 1)!";
+        }
+
+        if (selectedActivities.length === 0) {
+            validationErrors.activity = "Select at least one activity (only 1)!";
+        }
+
+        if (!formData.image) {
+            validationErrors.image = "Upload an image!";
+        }
+
+
         if (Object.keys(validationErrors).length === 0) {
             const db = getDatabase();
             const postsRef = ref(db, 'posts');
+            let imageURL = null;
 
-            const postData = {
-                songTitle: formData.songName,
-                songArtist: formData.artistName,
-                genre: selectedGenres.join(', '),
-                Location: selectedLocations.join(', '),
-                activity: selectedActivities.join(', '),
-                image: formData.image
-            };
-            console.log('postData:', postData)
+            //if the image was selected, upload it first
+            UploadImage(formData.image).then(result => {
+                imageURL = result;
 
-            firebasePush(postsRef, postData)
-                .then(() => {
-                    console.log('Submitted');
-                    setFormData({
-                        songName: '',
-                        artistName: '',
-                        genres: [],
-                        location: [],
-                        activity: [],
-                        image: null
+                const postData = {
+                    songTitle: formData.songName,
+                    songArtist: formData.artistName,
+                    genre: selectedGenres.join(', '),
+                    Location: selectedLocations.join(', '),
+                    activity: selectedActivities.join(', '),
+                    image: imageURL
+                };
+                console.log('postData:', postData)
+
+                firebasePush(postsRef, postData)
+                    .then(() => {
+                        console.log('Submitted');
+                        setFormData({
+                            songName: '',
+                            artistName: '',
+                            genres: [],
+                            location: [],
+                            activity: [],
+                            image: null
+                        })
+                        setSelectedGenres([]);
+                        setSelectedActivities([]);
+                        setSelectedLocations([]);
+                        setError({});
+                        window.location.href = "/feed";
                     })
-                    setSelectedGenres([]);
-                    setSelectedActivities([]);
-                    setSelectedLocations([]);
-                    setError({});
-                })
-                .catch((error) => {
-                    console.error('Error writing to Firebase Database: ', error);
-                });
+                    .catch((error) => {
+                        console.error('Error writing to Firebase Database: ', error);
+                    });
+            });
         } else {
             setError(validationErrors);
         }
@@ -124,6 +216,7 @@ export function Form() {
         <div className="form">
             <header>
                 <h1 className="size">Post</h1>
+                <h2 className="sizeTwo">Refresh the page after you hit submit!</h2>
             </header>
             <main>
                 <form onSubmit={handleSubmit}>
@@ -319,13 +412,17 @@ export function Form() {
                                 Picture:{" "}
                             </label>
                             <div>
-                                <UploadAndDisplayImage handleImageChange={handleImageChange} />
+                                <DisplayImage handleImageChange={handleImageChange} />
                             </div>
                         </p>
                     </div>
-                    <div className="error-message">
+                    <div className="error">
                         {error.songName && <p>{error.songName}</p>}
                         {error.artistName && <p>{error.artistName}</p>}
+                        {error.genres && <p>{error.genres}</p>}
+                        {error.location && <p>{error.location}</p>}
+                        {error.activity && <p>{error.activity}</p>}
+                        {error.image && <p>{error.image}</p>}
                     </div>
                     <button type="submit" className="submit-button">
                         Submit
