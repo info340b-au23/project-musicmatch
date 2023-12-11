@@ -13,9 +13,9 @@ export function Form() {
         image: null
     });
 
-    const [selectedGenres, setSelectedGenres] = useState([]);
-    const [selectedLocations, setSelectedLocations] = useState([]);
-    const [selectedActivities, setSelectedActivities] = useState([]);
+    const [selectedGenres, setSelectedGenres] = useState("" /* [] */);
+    const [selectedLocations, setSelectedLocations] = useState("" /* [] */);
+    const [selectedActivities, setSelectedActivities] = useState("" /* [] */);
     const [error, setError] = useState([]);
 
     const handleInputChange = (input) => {
@@ -24,7 +24,7 @@ export function Form() {
     };
 
     const handleGenreChange = (genre) => {
-        const isSelected = selectedGenres.includes(genre);
+        /* const isSelected = selectedGenres.includes(genre);
 
         if (isSelected) {
             // if genre is already selected, remove it
@@ -35,11 +35,13 @@ export function Form() {
         }
 
         //update the formData state with the selected genres
-        setFormData({ ...formData, genres: selectedGenres });
+        setFormData({ ...formData, genres: selectedGenres }); */
+        setSelectedGenres(genre);
+        setFormData({ ...formData, genres: genre });
     };
 
     const handleLocationChange = (location) => {
-        const isSelected = selectedLocations.includes(location);
+       /*  const isSelected = selectedLocations.includes(location);
 
         if (isSelected) {
             setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
@@ -48,12 +50,14 @@ export function Form() {
         }
 
         //update the formData state with the selected locations
-        setFormData({ ...formData, location: selectedLocations });
+        setFormData({ ...formData, location: selectedLocations }); */
+        setSelectedLocations(location);
+        setFormData({ ...formData, location: location });
     };
 
 
     const handleActivityChange = (activity) => {
-        const isSelected = selectedActivities.includes(activity);
+       /*  const isSelected = selectedActivities.includes(activity);
 
         if (isSelected) {
             setSelectedActivities(selectedActivities.filter((act) => act !== activity));
@@ -62,11 +66,20 @@ export function Form() {
         }
 
         //update the formData state with the selected activities
-        setFormData({ ...formData, activity: selectedActivities });
+        setFormData({ ...formData, activity: selectedActivities }); */
+        setSelectedActivities(activity);
+        setFormData({ ...formData, activity: activity });
     };
 
     const handleImageChange = (img) => {
+        //check if the file is a PNG
+    if (img && img.type === "image/png") {
         setFormData({ ...formData, image: img });
+        setError({ ...error, image: "" }); //should clear the image error if it was previously set
+    } else {
+        setFormData({ ...formData, image: null }); 
+        setError({ ...error, image: "Upload a PNG image" }); 
+    }
     }
 
     const handleSubmit = (e) => {
@@ -81,17 +94,22 @@ export function Form() {
             validationErrors.artistName = "Artist name is required";
         }
 
-        if (formData.genres.length === 0) {
-            validationErrors.genres = "You have to select one genre (only 1)!";
+        if (selectedGenres.length === 0) {
+            validationErrors.genres = "Select at least one genre (only 1)!";
+        }
+    
+        if (selectedLocations.length === 0) {
+            validationErrors.location = "Select at least one location (only 1)!";
+        }
+    
+        if (selectedActivities.length === 0) {
+            validationErrors.activity = "Select at least one activity (only 1)!";
+        }
+    
+        if (!formData.image) {
+            validationErrors.image = "Upload an image!";
         }
 
-        if (formData.location.length === 0) {
-            validationErrors.location = "You have to select one location (only 1)!";
-        }
-
-        if (formData.activity.length === 0) {
-            validationErrors.activity = "You have to select one activity (only 1)!";
-        }
 
         if (Object.keys(validationErrors).length === 0) {
             const db = getDatabase();
@@ -103,11 +121,17 @@ export function Form() {
                 imageURL = result;
 
                 const postData = {
-                    songTitle: formData.songName,
+                    /* songTitle: formData.songName,
                     songArtist: formData.artistName,
                     genre: selectedGenres.join(', '),
                     Location: selectedLocations.join(', '),
                     activity: selectedActivities.join(', '),
+                    image: imageURL */
+                    songTitle: formData.songName,
+                    songArtist: formData.artistName,
+                    genre: selectedGenres,
+                    Location: selectedLocations,
+                    activity: selectedActivities,
                     image: imageURL
                 };
                 console.log('postData:', postData)
@@ -118,14 +142,17 @@ export function Form() {
                         setFormData({
                             songName: '',
                             artistName: '',
-                            genres: [],
-                            location: [],
-                            activity: [],
+                            genres: ''/* [] */,
+                            location: ''/* [] */,
+                            activity: ''/* [] */,
                             image: null
                         })
-                        setSelectedGenres([]);
+                        /* setSelectedGenres([]);
                         setSelectedActivities([]);
-                        setSelectedLocations([]);
+                        setSelectedLocations([]); */
+                        setSelectedGenres('');
+                        setSelectedActivities('');
+                        setSelectedLocations('');
                         setError({});
                         window.location.href = "/feed";
                     })

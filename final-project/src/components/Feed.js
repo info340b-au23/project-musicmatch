@@ -3,7 +3,6 @@ import Form from 'react-bootstrap/Form';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function Feed(props) {
-    const data = props.data;
     const handleSaveClick = props.handleSaveClick;
 
     //filtering code to let the user filter on posts:
@@ -19,8 +18,6 @@ export default function Feed(props) {
 
         onValue(postsRef, (snapshot) => {
             if (snapshot.exists()) {
-                const data = snapshot.val();
-               // const array = Object.values(data);
                 setPostData(snapshot.exportVal());
             } else {
                 console.log('No data');
@@ -65,10 +62,10 @@ export default function Feed(props) {
          return true;
     }
 
-    var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
+    var filteredPosts = Object.entries(postData).filter(([value]) => filterBy(value))
     const samplePost = filteredPosts
         .map((userData) => (
-            <div id={userData[0]}>
+            <div id={userData[0]} >
                 <div className="row">
                     {/* Profile name and icon */}
                     <div className="col-12 header">

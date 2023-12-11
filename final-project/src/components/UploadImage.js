@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { updateProfile } from 'firebase/auth';
 import { getStorage, ref as storageRef, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
 
 export async function UploadImage(fileObject)
