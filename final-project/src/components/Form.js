@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { UploadAndDisplayImage } from './UploadImage.js';
+import { DisplayImage, UploadImage } from './UploadImage.js';
 import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 export function Form() {
@@ -12,7 +12,7 @@ export function Form() {
         activity: [],
         image: null
     });
- 
+
     const [selectedGenres, setSelectedGenres] = useState([]);
     const [selectedLocations, setSelectedLocations] = useState([]);
     const [selectedActivities, setSelectedActivities] = useState([]);
@@ -69,8 +69,6 @@ export function Form() {
         setFormData({ ...formData, image: img });
     }
 
-
-
     const handleSubmit = (e) => {
         e.preventDefault();
         const validationErrors = {};
@@ -85,36 +83,42 @@ export function Form() {
         if (Object.keys(validationErrors).length === 0) {
             const db = getDatabase();
             const postsRef = ref(db, 'posts');
+            let imageURL = null;
 
-            const postData = {
-                songTitle: formData.songName,
-                songArtist: formData.artistName,
-                genre: selectedGenres.join(', '),
-                Location: selectedLocations.join(', '),
-                activity: selectedActivities.join(', '),
-                image: formData.image
-            };
-            console.log('postData:', postData)
+            // If the image was selected, upload it first
+            UploadImage(formData.image).then(result => {
+                imageURL = result;
 
-            firebasePush(postsRef, postData)
-                .then(() => {
-                    console.log('Submitted');
-                    setFormData({
-                        songName: '',
-                        artistName: '',
-                        genres: [],
-                        location: [],
-                        activity: [],
-                        image: null
+                const postData = {
+                    songTitle: formData.songName,
+                    songArtist: formData.artistName,
+                    genre: selectedGenres.join(', '),
+                    Location: selectedLocations.join(', '),
+                    activity: selectedActivities.join(', '),
+                    image: imageURL
+                };
+                console.log('postData:', postData)
+
+                firebasePush(postsRef, postData)
+                    .then(() => {
+                        console.log('Submitted');
+                        setFormData({
+                            songName: '',
+                            artistName: '',
+                            genres: [],
+                            location: [],
+                            activity: [],
+                            image: null
+                        })
+                        setSelectedGenres([]);
+                        setSelectedActivities([]);
+                        setSelectedLocations([]);
+                        setError({});
                     })
-                    setSelectedGenres([]);
-                    setSelectedActivities([]);
-                    setSelectedLocations([]);
-                    setError({});
-                })
-                .catch((error) => {
-                    console.error('Error writing to Firebase Database: ', error);
-                });
+                    .catch((error) => {
+                        console.error('Error writing to Firebase Database: ', error);
+                    });
+            });
         } else {
             setError(validationErrors);
         }
@@ -124,6 +128,7 @@ export function Form() {
         <div className="form">
             <header>
                 <h1 className="size">Post</h1>
+                <h2 className="sizeTwo">Refresh the page after you hit submit!</h2>
             </header>
             <main>
                 <form onSubmit={handleSubmit}>
@@ -319,7 +324,7 @@ export function Form() {
                                 Picture:{" "}
                             </label>
                             <div>
-                                <UploadAndDisplayImage handleImageChange={handleImageChange} />
+                                <DisplayImage handleImageChange={handleImageChange} />
                             </div>
                         </p>
                     </div>
