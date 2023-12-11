@@ -5,17 +5,17 @@ import { getDatabase, ref, push as firebasePush } from 'firebase/database';
 
 export function Form() {
     const [formData, setFormData] = useState({
-        songName: "",
-        artistName: "",
+        songName: '',
+        artistName: '',
         genres: [],
         location: [],
         activity: [],
         image: null
     });
 
-    const [selectedGenres, setSelectedGenres] = useState("" /* [] */);
-    const [selectedLocations, setSelectedLocations] = useState("" /* [] */);
-    const [selectedActivities, setSelectedActivities] = useState("" /* [] */);
+    const [selectedGenres, setSelectedGenres] = useState('');
+    const [selectedLocations, setSelectedLocations] = useState('');
+    const [selectedActivities, setSelectedActivities] = useState('');
     const [error, setError] = useState([]);
 
     const handleInputChange = (input) => {
@@ -24,49 +24,17 @@ export function Form() {
     };
 
     const handleGenreChange = (genre) => {
-        /* const isSelected = selectedGenres.includes(genre);
-
-        if (isSelected) {
-            // if genre is already selected, remove it
-            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
-        } else {
-            // if genre is not selected, add it
-            setSelectedGenres([...selectedGenres, genre]);
-        }
-
-        //update the formData state with the selected genres
-        setFormData({ ...formData, genres: selectedGenres }); */
         setSelectedGenres(genre);
         setFormData({ ...formData, genres: genre });
     };
 
     const handleLocationChange = (location) => {
-       /*  const isSelected = selectedLocations.includes(location);
-
-        if (isSelected) {
-            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
-        } else {
-            setSelectedLocations([...selectedLocations, location]);
-        }
-
-        //update the formData state with the selected locations
-        setFormData({ ...formData, location: selectedLocations }); */
         setSelectedLocations(location);
         setFormData({ ...formData, location: location });
     };
 
 
     const handleActivityChange = (activity) => {
-       /*  const isSelected = selectedActivities.includes(activity);
-
-        if (isSelected) {
-            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
-        } else {
-            setSelectedActivities([...selectedActivities, activity]);
-        }
-
-        //update the formData state with the selected activities
-        setFormData({ ...formData, activity: selectedActivities }); */
         setSelectedActivities(activity);
         setFormData({ ...formData, activity: activity });
     };
@@ -75,7 +43,7 @@ export function Form() {
         //check if the file is a PNG
     if (img && img.type === "image/png") {
         setFormData({ ...formData, image: img });
-        setError({ ...error, image: "" }); //should clear the image error if it was previously set
+        setError({ ...error, image: "" }); 
     } else {
         setFormData({ ...formData, image: null }); 
         setError({ ...error, image: "Upload a PNG image" }); 
@@ -121,12 +89,6 @@ export function Form() {
                 imageURL = result;
 
                 const postData = {
-                    /* songTitle: formData.songName,
-                    songArtist: formData.artistName,
-                    genre: selectedGenres.join(', '),
-                    Location: selectedLocations.join(', '),
-                    activity: selectedActivities.join(', '),
-                    image: imageURL */
                     songTitle: formData.songName,
                     songArtist: formData.artistName,
                     genre: selectedGenres,
@@ -142,14 +104,11 @@ export function Form() {
                         setFormData({
                             songName: '',
                             artistName: '',
-                            genres: ''/* [] */,
-                            location: ''/* [] */,
-                            activity: ''/* [] */,
+                            genres: '',
+                            location: '',
+                            activity: '',
                             image: null
                         })
-                        /* setSelectedGenres([]);
-                        setSelectedActivities([]);
-                        setSelectedLocations([]); */
                         setSelectedGenres('');
                         setSelectedActivities('');
                         setSelectedLocations('');
