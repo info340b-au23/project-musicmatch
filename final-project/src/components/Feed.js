@@ -80,6 +80,7 @@ export default function Feed(props) {
     }
 
     var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
+    filteredPosts.reverse();
     const samplePost = filteredPosts
         .map((userData) => (
             <div id={userData[0]} >
