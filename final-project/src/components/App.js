@@ -16,6 +16,7 @@ import SavedMusic from './SavedMusic';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
+import SignIn from './SignIn.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 import USERS from '../data/users.json';
@@ -116,7 +117,7 @@ export default function App(props) {
 
 function ProtectedPage(props) {
   if(props.currentUser.userId === null) {
-    return <Navigate to="/signin" />
+    return <SignIn />
   }
   else { 
     return <Outlet />
