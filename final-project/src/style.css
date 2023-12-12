@@ -289,7 +289,6 @@
     font-family: "Rubik", sans-serif;
     font-size: 16px;
     background-color: black;
-    /* text-align: center; */
 }
 
 .homepage header>p {
@@ -663,5 +662,18 @@ color: red;
     .profile-container {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* for Header */
+@media only screen and (max-width: 768px) {
+    .musicmatch-header {
+        font-size: 3rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .musicmatch-header {
+        font-size: 2rem;
     }
 }
