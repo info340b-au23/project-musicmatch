@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { getAuth, EmailAuthProvider } from 'firebase/auth';
 import { StyledFirebaseAuth } from 'react-firebaseui'; 
-import '../style.css';
 
 import DEFAULT_USERS from '../data/data.json';
 

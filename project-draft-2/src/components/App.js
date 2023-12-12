@@ -38,15 +38,21 @@ export default function App(props) {
 	const navigateTo = useNavigate();
 		
 	useEffect(() => {
+		const auth = getAuth();
+		onAuthStateChanged(auth, (firebaseUser) => {
+			if (firebaseUser) {
+				console.log('signing in as', firebaseUser.userName)
+				console.log(firebaseUser);
+				firebaseUser.userId = firebaseUser.uid;
+				firebaseUser.userName = firebaseUser.displayName;
+				firebaseUser.userImg = firebaseUser.photoURL || 'img/null.jpg';
+				setCurrentUser(firebaseUser);
+			} else {
+				console.log('signed out');
+				setCurrentUser(users[0]);
+			}
+		})
 	}, [])
-
-	const loginUser = (userObj) => {
-		console.log('logging in as', userObj.userName);
-		setCurrentUser(userObj);
-		if(userObj.userId !== null) {
-			navigateTo('/homepage');
-		}
-	}
 
 	//call components here:
 	return (

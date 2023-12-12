@@ -1,13 +1,16 @@
 //our navigation bar for each page
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { getAuth, signOut } from 'firebase/auth';
+
 export function Navbar(props) {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
     const currentUser = props.currentUser;
 
     const handleSignOut = (event) => {
-        console.log('signing out');
+        signOut(getAuth())
+        .catch(err => console.log(err));
     }
 
     const toggleMenu = () => {
