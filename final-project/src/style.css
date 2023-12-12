@@ -85,13 +85,6 @@
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .profile .posts {
     display: flex;
     flex-wrap: wrap;
@@ -146,8 +139,9 @@
 .aboutus header {
     font-family: 'Rubik', sans-serif;
     text-align: center;
-    color: antiquewhite;
     background-color: black;
+    font-size: 1.25rem;
+    color: white;
 }
 
 .aboutus body {
@@ -203,8 +197,9 @@
 
 .feed .header-2 {
     font-family: "Rubik", sans-serif;
-    font-size: 22px;
-    color: #03dac5;
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
 }
 
 .feed .profile-name {
@@ -656,5 +651,14 @@ color: red;
         font-size: 2rem;
         padding-top: 1rem;
         padding-bottom: 0.25rem;
+    }
+}
+
+/* for Profile class */
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
