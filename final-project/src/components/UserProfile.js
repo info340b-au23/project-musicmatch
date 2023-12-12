@@ -6,6 +6,7 @@ export default function UserProfile(props) {
 
     const data = props.data;
     const handleSaveClick = props.handleSaveClick;
+    const displayName = props.currentUser.userName;
 
     //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
