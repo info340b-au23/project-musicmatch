@@ -85,13 +85,6 @@
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 768px) {
-    .profile-container {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
 .profile .posts {
     display: flex;
     flex-wrap: wrap;
@@ -647,5 +640,14 @@ color: red;
         font-size: 2rem;
         padding-top: 1rem;
         padding-bottom: 0.25rem;
+    }
+}
+
+/* for Profile class */
+
+@media screen and (max-width: 768px) {
+    .profile-container {
+        flex-direction: column;
+        align-items: center;
     }
 }
