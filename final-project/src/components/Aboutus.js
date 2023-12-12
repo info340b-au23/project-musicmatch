@@ -5,7 +5,7 @@ export default function Aboutus() {
     return (
         <div className="aboutus">
             {/* Body */}
-            <body>
+            <div className="body">
 
                 {/* Header */}
                 <header>
@@ -81,7 +81,7 @@ export default function Aboutus() {
                     {/*display the child routes element, which will be information about each contributor*/}
                     <Outlet />
                 </main>
-            </body>
+            </div>
            
         </div>
     );

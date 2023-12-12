@@ -104,7 +104,7 @@ export default function UserProfile(props) {
     return (
         <div className='profile'>
 
-            <body class="container">
+            <div class="container">
                 {/* Main Content */}
                 <header>
                     <h1 class="musicmatch-header">MY PROFILE</h1>
@@ -153,7 +153,7 @@ export default function UserProfile(props) {
                     </div> */}
 
                 </main>
-            </body>
+            </div>
         </div>
     );
 }
