@@ -10,7 +10,7 @@ export function Map() {
     return (
         <main>
             <div id="map">
-                map;
+                {map};
             </div>
         </main>
     );
