@@ -18,13 +18,14 @@ import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
+import USERS from '../data/users.json';
 
 export default function App(props) {
   
   //data that will be used in AboutUs
   const infoAboutUs = INFO_ABOUT_US;
   //we import the realtime data in index.js
-  let users = props.data;
+  const users = USERS;
 
   const [currentUser, setCurrentUser] = useState(users[0]);
 
