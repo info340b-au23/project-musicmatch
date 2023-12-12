@@ -146,8 +146,9 @@
 .aboutus header {
     font-family: 'Rubik', sans-serif;
     text-align: center;
-    color: antiquewhite;
     background-color: black;
+    font-size: 1.25rem;
+    color: white;
 }
 
 .aboutus body {
@@ -203,8 +204,9 @@
 
 .feed .header-2 {
     font-family: "Rubik", sans-serif;
-    font-size: 22px;
-    color: #03dac5;
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
 }
 
 .feed .profile-name {
