@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
@@ -85,8 +85,8 @@ export default function App(props) {
   //call components here:
   return (
     <>
-      <Navbar />
-
+      <Navbar  currentUser={currentUser} />
+ 
       <Routes>
         <Route path='/aboutUs' element={<Aboutus infoAboutUs={infoAboutUs} />}>
           {/*route for information a specific person out of the 4 contributors*/}
@@ -94,18 +94,31 @@ export default function App(props) {
           {/*child route*/}
           <Route index element={<ContributorList infoAboutUs={infoAboutUs} />} />
         </Route>
-
+ 
         <Route path='/home' element={<Homepage />} />
         <Route path='/feed' element={<Feed data={postData} handleSaveClick={handleSaveClick} savedPosts={savedPosts} setSavedPosts={setSavedPosts} />} />
         <Route path='/profile' element={<UserProfile formData={formData} />} />
         <Route path='/profile/form' element={<Form setFormData={setFormData} />} />
         <Route path="/savedMusic" element={<SavedMusic data={savedPosts} />} />
         {/*change route to home!*/}
+        <Route element={<ProtectedPage currentUser={currentUser} />}>
+          <Route path="signin" element={<Navigate to="/signin" />} />
+        </Route>
+ 
         <Route path="*" element={<Navigate to='/home' />} />
       </Routes>
-
+ 
       <Footer />
     </>
-
+ 
   );
+}
+
+function ProtectedPage(props) {
+  if(props.currentUser.userId === null) {
+    return <Navigate to="/signin" />
+  }
+  else { 
+    return <Outlet />
+  }
 }

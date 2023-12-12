@@ -37,7 +37,7 @@ export function Navbar(props) {
                     </>
                 }
                 {!currentUser.userId &&
-                    <div className="navItem" onClick={closeMenu}><NavLink to="/signin">Profile</NavLink></div>
+                    <div className="navItem" onClick={closeMenu}><NavLink to="/signin">Sign In</NavLink></div>
                 }
             </div>
         </nav>
