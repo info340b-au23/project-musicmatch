@@ -79,7 +79,7 @@ export default function Feed(props) {
          return true;
     }
 
-    var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
+    let filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
     filteredPosts.reverse();
     const samplePost = filteredPosts
         .map((userData) => (

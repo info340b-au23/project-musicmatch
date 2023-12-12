@@ -62,7 +62,7 @@ export default function UserProfile(props) {
     }
 
     {/* filter by only user's posts */}
-    var filteredPosts = Object.entries(formData).filter(([k,v]) => filterBy(v))
+    let filteredPosts = Object.entries(formData).filter(([k,v]) => filterBy(v))
     const samplePost = filteredPosts
         .map((userData, index) => (
             <div id={userData[0]}>
