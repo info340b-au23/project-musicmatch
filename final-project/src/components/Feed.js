@@ -103,6 +103,7 @@ export default function Feed(props) {
                             className="img-fluid image"
                             src={userData[1].image}
                             alt={userData[1].postImageAlt}
+                            aria-label={`associated with the song ${userData[1].songName}`}
                         />
                     </div>
 
