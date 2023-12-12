@@ -20,8 +20,6 @@ export default function UserProfile(props) {
 
         onValue(postsRef, (snapshot) => {
             if (snapshot.exists()) {
-                const data = snapshot.val();
-               // const array = Object.values(data);
                 setFormData(snapshot.exportVal());
             } else {
                 console.log('No data');
@@ -110,10 +108,6 @@ export default function UserProfile(props) {
                 </header>
                 <main>
                     <div className="profile-container">
-                        {/*<img
-                            className="profile-pic"
-                            src={props.userNameProfileIcon}
-                            alt={props.usernameIconAlt}/>*/}
                         <img class="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
                         <div className="text-container">
                             <p id="username">music_lover21</p>
@@ -129,27 +123,6 @@ export default function UserProfile(props) {
                     <div className="row">
                         {samplePost}
                     </div>
-
-                    {/* Sample Liked Song */}
-                    {/* <div class="container">
-                        <div class="row">
-                            <h2 class="sub-header">Liked Songs</h2>
-                            <div class="liked-songs"> */}
-                                {/* Song 1 */}
-                                {/* <div class="col-12 col-md-4">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <h2 class="song-name">Song 1</h2>
-                                            <h3 id="artist">Artist name</h3>
-                                            <button class="genre">Pop</button>
-                                            <button class="location">Suzzallo</button>
-                                            <button class="activity">Studying</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
 
                 </main>
             </div>
