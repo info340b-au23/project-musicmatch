@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { getAuth, EmailAuthProvider } from 'firebase/auth';
 import { StyledFirebaseAuth } from 'react-firebaseui'; 
 
-import DEFAULT_USERS from '../data/data.json';
+import DEFAULT_USERS from '../data/users.json';
 
 const configObj = {
     signInOptions: [
@@ -10,9 +10,6 @@ const configObj = {
             provider: EmailAuthProvider.PROVIDER_ID,
             requireDisplayName: true,
         },
-        // {
-        //     provider: GoogleAuthProvider.PROVIDER_ID
-        // }
     ],
     signInFlow: 'popup',
     callbacks: {
@@ -24,7 +21,7 @@ const configObj = {
 export default function SignIn(props) {
     const currentUser = props.currentUser;
     const loginFunction = props.loginCallback;
-    
+
     const auth = getAuth();
 
     const handleClick = (event) => {

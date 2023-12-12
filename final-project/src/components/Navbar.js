@@ -10,7 +10,6 @@ export function Navbar(props) {
 
     const handleSignOut = (event) => {
         signOut(getAuth())
-        .catch(err => console.log(err));
     }
 
     const toggleMenu = () => {

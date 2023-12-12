@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
 export default function UserProfile(props) {
-
     const data = props.data;
     const handleSaveClick = props.handleSaveClick;
     const displayName = props.currentUser.userName;
