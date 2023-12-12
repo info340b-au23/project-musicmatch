@@ -16,7 +16,6 @@ import SavedMusic from './SavedMusic';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
-import { savedPosts } from './Feed.js'
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 
