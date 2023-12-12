@@ -1,6 +1,6 @@
 # Project MusicMatch
 
-As a group of students that loves music and uses it daily to commute, study, work out, and more, we wanted to create a place for students like us all over UW to share their favorite music and save new music that they discovered! Join us to listen to new music and share your favorites!
+As a group of students that loves music and uses it daily to commute, study, work out, and more, we wanted to create a place for students like us all over UW to share their favorite music and save new music that they discovered! Join us to listen to new music and share your favorites! Also, read more about each creator of this project on the Home Page and get to know us more as well!
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
