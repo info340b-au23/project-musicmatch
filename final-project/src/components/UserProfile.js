@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getDatabase, ref, onValue } from 'firebase/database';
 
-export default function UserProfile(props) {
-    const data = props.data;
-    const handleSaveClick = props.handleSaveClick;
+export default function UserProfile() {
 
-    //filtering code to let the user filter on posts:
     const [location, setlocation] = useState("All");
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
@@ -27,23 +24,6 @@ export default function UserProfile(props) {
             console.log('Error:', error);
         });
     }, []);
-
-    //callback functions
-    const handleLocation = (event) => {
-        console.log("Selected Location: ", event.target.value)
-        setlocation(event.target.value);
-    }
-
-    const handleGenre = (event) => {
-        console.log("Selected Genre: ", event.target.value)
-        setGenre(event.target.value);
-    }
-
-    const handleActivity = (event) => {
-        console.log("SelectedActivity: ", event.target.value)
-        setActivity(event.target.value);
-    }
-
 
     function filterBy(postObj) {
         if (
