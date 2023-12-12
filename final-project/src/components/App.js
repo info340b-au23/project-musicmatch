@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { getDatabase, ref, get } from 'firebase/database';
+import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 
 import '../style.css'; //import the custom CSS file
 
@@ -25,6 +26,27 @@ export default function App(props) {
   const infoAboutUs = INFO_ABOUT_US;
   //we import the realtime data in index.js
   let users = props.data;
+
+  const [currentUser, setCurrentUser] = useState(users[0]);
+
+	// const navigateTo = useNavigate();
+		
+	useEffect(() => {
+		const auth = getAuth();
+		onAuthStateChanged(auth, (firebaseUser) => {
+			if (firebaseUser) {
+				console.log('signing in as', firebaseUser.userName)
+				console.log(firebaseUser);
+				firebaseUser.userId = firebaseUser.uid;
+				firebaseUser.userName = firebaseUser.displayName;
+				firebaseUser.userImg = firebaseUser.photoURL || 'img/null.jpg';
+				setCurrentUser(firebaseUser);
+			} else {
+				console.log('signed out');
+				setCurrentUser(users[0]);
+			}
+		})
+	}, [])
 
   const [postData, setPostData] = useState([]);
   useEffect(() => {
