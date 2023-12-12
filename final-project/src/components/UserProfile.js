@@ -100,7 +100,7 @@ export default function UserProfile(props) {
     return (
         <div className='profile'>
 
-            <div class="container">
+            <div className="container">
                 {/* Main Content */}
                 <header>
                     <h1 className="musicmatch-header">MY PROFILE</h1>
@@ -109,8 +109,8 @@ export default function UserProfile(props) {
                     <div className="profile-container">
                         <img className="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
                         <div className="text-container">
-                            <p id="username">music_lover21</p>
-                            <p id="email">yaymusic@gmail.com</p>
+                            <p>music_lover21</p>
+                            <p>yaymusic@gmail.com</p>
                         </div>
                         <div className="buttons">
                             <Link to='/profile/form'><button id='song-form'>Create Post</button></Link>
