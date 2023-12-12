@@ -9,7 +9,7 @@ export default function Feed(props) {
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
     const [postData, setPostData] = useState([]);
-    const [savedPosts, setSavedPosts] = useState(new Set());
+    const { savedPosts, setSavedPosts } = props;
 
 
     useEffect(() => {
@@ -79,7 +79,8 @@ export default function Feed(props) {
          return true;
     }
 
-    var filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
+    let filteredPosts = Object.entries(postData).filter(([k,v]) => filterBy(v))
+    filteredPosts.reverse();
     const samplePost = filteredPosts
         .map((userData) => (
             <div id={userData[0]} >
@@ -102,6 +103,7 @@ export default function Feed(props) {
                             className="img-fluid image"
                             src={userData[1].image}
                             alt={userData[1].postImageAlt}
+                            aria-label={`associated with the song ${userData[1].songName}`}
                         />
                     </div>
 
