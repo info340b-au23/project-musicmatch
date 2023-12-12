@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Jasmine",
+        "description": "My name is Jasmine Losovsky, and I am a junior majoring in informatics and business administration. In my free time, I like to read, listen to music, hang out with friends, and travel (when I am not broke). I also LOVE pickles",
+        "images": [
+            "img/jasmine1.png",
+            "img/jasmine2.png",
+            "img/jasmine3.png",
+            "img/jasmine4.png",
+            "img/jasmine5.png"
+        ]
+    },
+    {
+        "name": "Kylah",
+        "description": "My name is Kylah Moon, and I am a Junior in Informatics with a data science minor. I spend most of my time either rock climbing, drawing, cooking, listening to music, and spending time with my friends. I love to be outside and enjoy hiking, camping, and pretty much anything outdoors! ",
+        "images": [
+            "img/cat.jpg",
+            "img/lanadelrey.jpeg",
+            "img/logo.png",
+            "img/profile.jpg"
+        ]
+    },
+    {
+        "name": "Jessica",
+        "description": "info about Jessica Wang",
+        "images": [
+            "img/cat.jpg",
+            "img/lanadelrey.jpeg",
+            "img/logo.png",
+            "img/profile.jpg"
+        ]
+    },
+    {
+        "name": "Anu",
+        "description": "Hi! I'm Anu, and I'm a junior majoring in Informatics at UW. I like to travel, listen to music, and am on a dance team!",
+        "images": [
+            "img/cat.jpg",
+            "img/lanadelrey.jpeg",
+            "img/logo.png",
+            "img/profile.jpg"
+        ]
+    }
+]
