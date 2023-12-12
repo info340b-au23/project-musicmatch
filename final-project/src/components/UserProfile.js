@@ -103,11 +103,11 @@ export default function UserProfile(props) {
             <div class="container">
                 {/* Main Content */}
                 <header>
-                    <h1 class="musicmatch-header">MY PROFILE</h1>
+                    <h1 className="musicmatch-header">MY PROFILE</h1>
                 </header>
                 <main>
                     <div className="profile-container">
-                        <img class="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
+                        <img className="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
                         <div className="text-container">
                             <p id="username">music_lover21</p>
                             <p id="email">yaymusic@gmail.com</p>

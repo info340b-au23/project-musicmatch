@@ -1,18 +1,22 @@
 import React from 'react';
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import { StyledFirebaseAuth } from 'react-firebaseui'; 
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { initializeApp } from 'firebase/app';
 
 import DEFAULT_USERS from '../data/users.json';
 
 const firebaseConfig = {
-    // Your Firebase project configuration goes here
-    apiKey: 'AIzaSyDLMUske3Ucs05Wm_x2NJ-gAfXu47y8788',
-    authDomain: 'YOUR_AUTH_DOMAIN',
-    projectId: 'info-340-final-8c670',
-    storageBucket: 'YOUR_STORAGE_BUCKET',
-    messagingSenderId: 'YOUR_MESSAGING_SENDER_ID',
-    appId: 'YOUR_APP_ID',
-};
+    apiKey: "AIzaSyDLMUske3Ucs05Wm_x2NJ-gAfXu47y8788",
+    authDomain: "info-340-final-8c670.firebaseapp.com",
+    databaseURL: "https://info-340-final-8c670-default-rtdb.firebaseio.com",
+    projectId: "info-340-final-8c670",
+    storageBucket: "info-340-final-8c670.appspot.com",
+    messagingSenderId: "510854116733",
+    appId: "1:510854116733:web:ec89012579511b06f68814"
+  };
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
 
 export default function SignIn(props) {
     const currentUser = props.currentUser;
@@ -37,14 +41,6 @@ export default function SignIn(props) {
         credentialHelper: 'none'
     }
 
-    // const handleClick = (event) => {
-    //     const whichUser = event.currentTarget.className
-    //     console.log(whichUser);
-    //     const selectedUserObj = DEFAULT_USERS.filter((userObj) => userObj.userId === whichUser)[0] || DEFAULT_USERS[0]
-        
-    //     loginFunction(selectedUserObj)
-    // }
-
     return (
         <div className="card bg-dark">
             <div className="container card-body">
@@ -52,4 +48,22 @@ export default function SignIn(props) {
             </div>
         </div>
     )
+}
+
+
+const configObj = {
+    signInOptions: [
+        {
+            provider: EmailAuthProvider.PROVIDER_ID,
+            requireDisplayName: true,
+        },
+        {
+            provider: GoogleAuthProvider.PROVIDER_ID,
+        }
+    ],
+    signInFlow: 'popup',
+    callbacks: {
+        signInSuccessWithAuthResult: () => false
+    },
+    credentialHelper: 'none'
 }
