@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate, Outlet } from 'react-router-dom';
 import firebase from 'firebase/app';
 import { getDatabase, ref, onValue, set as firebaseSet } from 'firebase/database';
@@ -15,6 +15,7 @@ import UserProfile from './UserProfile.js';
 import { Form } from './Form.js';
 import { Navbar } from './Navbar.js';
 import { Footer } from './Footer.js';
+import SignIn from './SignIn.js';
 
 import INFO_ABOUT_US from '../data/infoAboutus.json';
 import users from '../data/data.json';
@@ -64,9 +65,8 @@ export default function App(props) {
 
 			<Route path='/feed' element={<Feed data={data} />} />
 			{/* <Route path='/profile' element={<UserProfile />} /> */}
-			<ROute path='/signin' element={<SignIn currentUser={currentUser} loginCallback={login} />}
+			<Route path='/signin' element={<SignIn currentUser={currentUser} loginCallback={loginUser} />} />
 
-			{/* protected routes */}
 			<Route element={<ProtectedPage currentUser={currentUser} />}>
 				<Route path='/profile/form' element={<Form />} />
 			</Route>

@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 import { Footer } from './Footer.js';
 
 export default function UserProfile(props) {
+    const displayName = props.currentUser.userName;
+
     return (
         <div className='profile'>
             {/* Navbar */}
@@ -30,7 +32,7 @@ export default function UserProfile(props) {
                             alt={props.usernameIconAlt}/>*/}
                         <img class="profile-pic" src="../img/cat.jpg" alt="user's profile picture"></img>
                         <div className="text-container">
-                            <p id="username">{props.userName}music_lover21</p>
+                            <p id="username">{displayName}music_lover21</p>
                             <p id="email">y{props.userEmail}yaymusic@gmail.com</p>
                             <button id='profile-button'>Edit Profile</button>
                         </div>

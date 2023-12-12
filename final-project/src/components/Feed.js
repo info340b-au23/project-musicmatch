@@ -9,7 +9,7 @@ export default function Feed(props) {
     const [genre, setGenre] = useState("All");
     const [activity, setActivity] = useState("All");
     const [postData, setPostData] = useState([]);
-    const [savedPosts, setSavedPosts] = useState(new Set());
+    const { savedPosts, setSavedPosts } = props;
 
 
     useEffect(() => {

@@ -22,50 +22,6 @@ export function Form() {
         setFormData({ ...formData, [name]: value });
     };
 
-    /* const handleGenreChange = (genre) => {
-        const isSelected = selectedGenres.includes(genre);
-
-        if (isSelected) {
-            // if genre is already selected, remove it
-            setSelectedGenres(selectedGenres.filter((g) => g !== genre));
-        } else {
-            // if genre is not selected, add it
-            setSelectedGenres([...selectedGenres, genre]);
-        }
-
-        //update the formData state with the selected genres
-        setFormData({ ...formData, genres: selectedGenres });
-    };
-
-    const handleLocationChange = (location) => {
-        const isSelected = selectedLocations.includes(location);
-
-        if (isSelected) {
-            setSelectedLocations(selectedLocations.filter((loc) => loc !== location));
-        } else {
-            setSelectedLocations([...selectedLocations, location]);
-        }
-
-        //update the formData state with the selected locations
-        setFormData({ ...formData, location: selectedLocations });
-
-    };
-
-
-    const handleActivityChange = (activity) => {
-        const isSelected = selectedActivities.includes(activity);
-
-        if (isSelected) {
-            setSelectedActivities(selectedActivities.filter((act) => act !== activity));
-        } else {
-            setSelectedActivities([...selectedActivities, activity]);
-        }
-
-        //update the formData state with the selected activities
-        setFormData({ ...formData, activity: selectedActivities });
-    };
- */
-
     const handleGenreChange = (genre) => {
         const isSelected = selectedGenres.includes(genre);
     

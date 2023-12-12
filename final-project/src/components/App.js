@@ -44,14 +44,11 @@ export default function App(props) {
       });
   }, []);
 
-  const [savedPosts, setSavedPosts] = useState([]);
+  const [savedPosts, setSavedPosts] = useState(new Set());
 
   const handleSaveClick = (post) => {
-    setSavedPosts([...savedPosts, post]);
+    setSavedPosts((prevSavedPosts) => new Set([...prevSavedPosts, post]));
   };
-  
-
-  //const [currentUser, setCurrentUser] = useState(users[0]);
 
   // set state for formData
   const [formData, setFormData] = useState({
@@ -77,7 +74,7 @@ export default function App(props) {
         </Route>
 
         <Route path='/home' element={<Homepage />} />
-        <Route path='/feed' element={<Feed data={postData} handleSaveClick={handleSaveClick}/>} />
+        <Route path='/feed' element={<Feed data={postData} handleSaveClick={handleSaveClick} savedPosts={savedPosts} setSavedPosts={setSavedPosts} />} />
         <Route path='/profile' element={<UserProfile formData={formData} />} />
         <Route path='/profile/form' element={<Form setFormData={setFormData} />} />
         <Route path="/savedMusic" element={<SavedMusic data={savedPosts} />} />
