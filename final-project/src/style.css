@@ -72,8 +72,6 @@
     margin-right: auto;
 }
 
-
-
 .profile #user-upload {
     max-height: 150px;
     width: auto;
@@ -152,6 +150,11 @@
     color: white;
 }
 
+.aboutus main {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
 .aboutus img {
     max-width: 300px;
     max-height: 300px;
@@ -166,7 +169,7 @@
 
 .feed main {
     text-align: center;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     background-color: black;
 }
 
@@ -323,6 +326,7 @@ dl {
     font-size: 1.25rem;
     text-align: center;
     color: white;
+    font-family: "Rubik", sans-serif;
 }
 
 .homepage .filters {
@@ -339,13 +343,23 @@ dl {
     margin: 0;
 }
 
+.homepage .instructions {
+    font-size: 1.25rem;
+    text-align: center;
+    color: white;
+    padding-bottom: 2rem;
+    font-family: "Rubik", sans-serif;
+    padding-right: 2rem;
+    padding-left: 2rem;
+}
+
 /* Form */
 .form {
     margin: 0 auto;
     padding: 20px;
     border-radius: 5px;
     background-color: black;
-    font-family: "Rubik";
+    font-family: "Rubik", sans-serif;
     text-align: center;
 }
 
