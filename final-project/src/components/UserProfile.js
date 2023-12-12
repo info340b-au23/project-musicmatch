@@ -47,11 +47,6 @@ export default function UserProfile(props) {
         setActivity(event.target.value);
     }
 
-    // //for viewing saved posts 
-    // const [savedPosts, setSavedPosts] = useState([]);
-    // const handleSaveClick = (post) => {
-    //     setSavedPosts([...savedPosts, post]);
-    // };
 
     function filterBy(postObj) {
         if (
