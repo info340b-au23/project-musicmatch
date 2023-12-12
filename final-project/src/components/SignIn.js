@@ -1,7 +1,6 @@
 import React from 'react';
 import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
-import { initializeApp } from 'firebase/app';
 
 import DEFAULT_USERS from '../data/users.json';
 
