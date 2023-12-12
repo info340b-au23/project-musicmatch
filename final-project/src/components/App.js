@@ -49,9 +49,6 @@ export default function App(props) {
   const handleSaveClick = (post) => {
     setSavedPosts([...savedPosts, post]);
   };
-  
-
-  //const [currentUser, setCurrentUser] = useState(users[0]);
 
   // set state for formData
   const [formData, setFormData] = useState({
